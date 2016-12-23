@@ -1,6 +1,6 @@
 #Team
 
-##Arbeitaufteilung 
+##Arbeitsaufteilung 
 
 Grundsätzlich ist die Arbeitsaufteilung auf Alle Teammitglieder gleich aufgeteilt. Eine genauere Beschreibung finden Sie im Proposal. https://github.com/Gulasch4ever/resifo-android/blob/master/proposal.md/ 
 
@@ -18,7 +18,7 @@ Arbeitsaufteilung **23.12.2016**
 
 ###Teresa Neuhold 
 * Erstes Meeting 
-* Zeichung des Prototyps 
+* Zeichnung des Prototyps 
 
 
 
