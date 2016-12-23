@@ -2,9 +2,9 @@
 
 ##Arbeitsaufteilung 
 
-Grundsätzlich ist die Arbeitsaufteilung auf Alle Teammitglieder gleich aufgeteilt. Eine genauere Beschreibung finden Sie im Proposal. https://github.com/Gulasch4ever/resifo-android/blob/master/proposal.md/ 
+Grundsätzlich ist die Arbeitsaufteilung auf alle Teammitglieder gleich aufgeteilt. Eine genauere Beschreibung finden Sie im Proposal. https://github.com/Gulasch4ever/resifo-android/blob/master/proposal.md/ 
 
-Natürlich gibt es spezielle Aufgaben die auf eine Person aufgeteilt werden aufgrund Ihrer speziellen Kenntnisse oder auch Arbeitslust. Eine genaue Auflistung dieser Einteilung sehen Sie unten aufgelistet, bitte Beachten Sie, dass die Auflistung nur Daten bis dato beinhalten. 
+Natürlich gibt es spezielle Aufgaben die auf eine Person aufgeteilt werden aufgrund Ihrer speziellen Kenntnisse oder auch Arbeitslust. Eine genaue Auflistung dieser Einteilung sehen Sie unten aufgelistet, bitte beachten Sie, dass die Auflistung nur Daten bis dato beinhalten. 
 
 Arbeitsaufteilung **23.12.2016**
 
