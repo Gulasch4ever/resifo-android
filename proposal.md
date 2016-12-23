@@ -25,14 +25,16 @@ https://github.com/Gulasch4ever/resifo-android/blob/master/README.md
   * pro Person —> 8 h
 * Implementierung 
   * pro Person —> 15 h
+* Testen 
+ * pro Person -> 5 h
 
-Pro **Person** ca. 40 Stunden aufwand.
+Pro **Person** ca. 45 Stunden aufwand.
 
-40 * 3 = 120 
+45 * 3 = 135 
 
-120 * 30 € = 3600 €
+135 * 30 € = 4050 €
 
-Das Projekt würde ca. 3600€ kosten, wenn man davon ausgeht das keine weiteren Kosten anfallen. 
+Das Projekt würde ca. 4050€ kosten, wenn man davon ausgeht das keine weiteren Kosten anfallen. 
 
 
 
