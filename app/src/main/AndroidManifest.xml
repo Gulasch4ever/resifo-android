@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="at.fh.swengb.resifoandroid">
+    package="at.fh.swengb.resifoAndroid">
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="at.fh.swengb.resifoAndroid.view.Credits" />
+        <activity
+            android:name="at.fh.swengb.resifoAndroid.view.ListActivity"
+            android:label="ListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="at.fh.swengb.resifoAndroid.view.Meldezettel01"></activity>
     </application>
 
 </manifest>
