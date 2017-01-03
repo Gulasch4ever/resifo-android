@@ -9,41 +9,61 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="at.fh.swengb.resifoAndroid.view.Meldezettel01">
+    tools:context="at.fh.swengb.resifoAndroid.view.Meldezettel02">
 
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="30dp"
         android:layout_toEndOf="@+id/button6"
-        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/button6">
 
         <TextView
-            android:id="@+id/textView9"
+            android:text="Geburtsdatum:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nachname:"
+            android:id="@+id/Geburtsdatum"
             android:textSize="20sp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"/>
 
-        <EditText
-            android:id="@+id/editText2"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="" />
+            android:gravity="right">
+
+            <TextView
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:text="@string/date_selected"
+                android:layout_marginBottom="10dp"
+                android:textSize="20sp"
+                android:gravity="center|fill"
+                android:textColor="@android:color/black"/>
+
+            <Button
+                android:text="Datum"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:id="@+id/buttonDatum"
+                android:textSize="12sp"
+                android:layout_below="@+id/button80"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp"
+                android:onClick="setDate" />
+
+        </LinearLayout>
 
         <TextView
-            android:text="AKAD. Grad (abgekürzt):"
+            android:text="Geburtsort:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView99"
+            android:id="@+id/Geburtsort"
             android:layout_marginTop="15dp"
             android:textSize="20sp"
             android:textColor="@android:color/black"/>
@@ -54,82 +74,77 @@
             android:inputType="textPersonName"
             android:text=""
             android:ems="10"
-            android:id="@+id/editText99" />
+            android:id="@+id/editText" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:text="Religionsbekenntnis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/Religionsbekenntnis"
             android:layout_marginTop="15dp"
-            android:text="Vorname:"
             android:textSize="20sp"
             android:textColor="@android:color/black"/>
 
         <EditText
-            android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""
+            android:ems="10"
+            android:id="@+id/editText3" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:text="ZRM (falls bekannt):"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/ZRM"
             android:layout_marginTop="15dp"
-            android:text="Familienname vor ersten Ehe:"
             android:textSize="20sp"
             android:textColor="@android:color/black"/>
 
         <EditText
-            android:id="@+id/editText3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""
+            android:ems="10"
+            android:id="@+id/ZRMEingabe" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:text="Staatsangehörigkeit:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/Staatsangehörigkeit"
             android:layout_marginTop="15dp"
-            android:text="Geschlecht:"
             android:textSize="20sp"
             android:textColor="@android:color/black"/>
 
-        <LinearLayout
+        <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <RadioButton
+                android:text="Österreich"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:checked="false" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:duplicateParentState="false"
-                    android:text="männlich" />
+            <RadioButton
+                android:text="anderer Staat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton2"
+                android:layout_weight="1" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonW"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:duplicateParentState="false"
-                    android:text="weiblich" />
-            </RadioGroup>
+        </RadioGroup>
 
-        </LinearLayout>
 
     </LinearLayout>
+
+
 
     <Button
         android:id="@+id/button1"
@@ -137,11 +152,8 @@
         android:layout_height="52dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@android:color/darker_gray"
         android:minWidth="15dp"
         android:text="1"
-        android:textColor="@android:color/white"
-        android:textColorLink="@android:color/white"
         android:layout_alignParentLeft="true" />
 
     <Button
@@ -214,7 +226,10 @@
         android:layout_marginTop="1dp"
         android:minWidth="15dp"
         android:text="2"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@android:color/darker_gray"
+        android:textColor="@android:color/white"
+        android:textColorLink="@android:color/white"/>
 
     <Button
         android:id="@+id/button98"
@@ -236,7 +251,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -256,5 +270,4 @@
             android:src="@drawable/next_arrow_bootstrap" />
 
     </RelativeLayout>
-
 </RelativeLayout>

@@ -18,8 +18,7 @@ class ListActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_list)
 
-    val toolbar = findViewById(R.id.toolbar).asInstanceOf[Toolbar]
-    setSupportActionBar(toolbar)
+
 
     val fab = findViewById(R.id.fab).asInstanceOf[FloatingActionButton]
     fab.setOnClickListener(new View.OnClickListener() {

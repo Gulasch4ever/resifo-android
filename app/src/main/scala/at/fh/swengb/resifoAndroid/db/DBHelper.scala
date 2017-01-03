@@ -1,4 +1,4 @@
-package at.fh.swengb.resifoAndroid
+package at.fh.swengb.resifoAndroid.db
 
 /**
   * Created by laszlobalo on 30.12.16.

@@ -9,127 +9,110 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="at.fh.swengb.resifoAndroid.view.Meldezettel01">
+    tools:context="at.fh.swengb.resifoAndroid.view.Meldezettel03">
 
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="30dp"
         android:layout_toEndOf="@+id/button6"
-        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/button6">
 
         <TextView
-            android:id="@+id/textView9"
+            android:text="Familienstand:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nachname:"
-            android:textSize="20sp"
-            android:textColor="@android:color/black" />
+            android:id="@+id/Familienstand"
+            android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/editText2"
+        <RadioGroup
+            android:id="@+id/option"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:text="AKAD. Grad (abgekürzt):"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView99"
-            android:layout_marginTop="15dp"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text=""
-            android:ems="10"
-            android:id="@+id/editText99" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Vorname:"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"/>
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Familienname vor ersten Ehe:"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"/>
-
-        <EditText
-            android:id="@+id/editText3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Geschlecht:"
-            android:textSize="20sp"
-            android:textColor="@android:color/black"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioGroup
+            <RadioButton
+                android:text="ledig"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton"
+                android:checked="false"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:duplicateParentState="false"
-                    android:text="männlich" />
+            <RadioButton
+                android:text="verheiratet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton2"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp" />
 
-                <RadioButton
-                    android:id="@+id/radioButtonW"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:duplicateParentState="false"
-                    android:text="weiblich" />
-            </RadioGroup>
+            <RadioButton
+                android:text="in eingetragener Partnerschaft lebend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton3"
+                android:layout_marginTop="9dp"
+                android:textSize="18sp"
+                android:layout_weight="1" />
 
-        </LinearLayout>
+            <RadioButton
+                android:text="geschieden"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton4"
+                android:layout_marginTop="9dp"
+                android:textSize="18sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="Ehe aufgehoben oder für nichtig erklärt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton5"
+                android:layout_marginTop="9dp"
+                android:textSize="18sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="eingetragene Partnerschaft aufgelöst oder für nichtig erklärt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton6"
+                android:layout_marginTop="9dp"
+                android:textSize="18sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="verwitwet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton7"
+                android:layout_marginTop="9dp"
+                android:textSize="18sp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="hinterbliebener eingetragener Partnerschaft"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton8"
+                android:layout_marginTop="9dp"
+                android:textSize="18sp"
+                android:layout_weight="1" />
+        </RadioGroup>
+
 
     </LinearLayout>
+
+
 
     <Button
         android:id="@+id/button1"
@@ -137,11 +120,8 @@
         android:layout_height="52dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@android:color/darker_gray"
         android:minWidth="15dp"
         android:text="1"
-        android:textColor="@android:color/white"
-        android:textColorLink="@android:color/white"
         android:layout_alignParentLeft="true" />
 
     <Button
@@ -154,7 +134,10 @@
         android:layout_marginTop="1dp"
         android:minWidth="15dp"
         android:text="3"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:background="@android:color/darker_gray"
+        android:textColor="@android:color/white"
+        android:textColorLink="@android:color/white"/>
 
     <Button
         android:id="@+id/button4"
@@ -235,7 +218,6 @@
         android:layout_below="@+id/button98"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
 
     <RelativeLayout
         android:layout_width="match_parent"
