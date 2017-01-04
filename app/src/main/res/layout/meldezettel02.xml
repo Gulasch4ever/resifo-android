@@ -94,7 +94,7 @@
             android:id="@+id/editText3" />
 
         <TextView
-            android:text="ZRM (falls bekannt):"
+            android:text="ZMR (falls bekannt):"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/ZRM"

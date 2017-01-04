@@ -34,6 +34,9 @@
         <activity android:name=".view.Meldezettel08"/>
         <activity android:name=".view.PopHelpView1"
             android:theme="@style/AppTheme.PopUp"/>
+        <activity android:name=".view.PopSwitchView"
+            android:theme="@style/AppTheme.PopUp"/>
+
 
 
 

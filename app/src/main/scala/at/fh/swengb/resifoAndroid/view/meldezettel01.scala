@@ -1,6 +1,7 @@
 package at.fh.swengb.resifoAndroid.view
 
 import android.content.Intent
+import android.graphics.{Color, PorterDuff}
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -21,8 +22,19 @@ class Meldezettel01 extends AppCompatActivity {
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
     val radioB1: RadioButton = findViewById(R.id.radioButtonW).asInstanceOf[RadioButton]
     val radioB2: RadioButton = findViewById(R.id.radioButtonM).asInstanceOf[RadioButton]
+    val buttonView1: Button = findViewById(R.id.button1).asInstanceOf[Button]
+    val importantB1: EditText = findViewById(R.id.editText2).asInstanceOf[EditText]
+    val importantB2: EditText = findViewById(R.id.editText).asInstanceOf[EditText]
 
 
+    importantB1.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+    importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+
+    buttonView1.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+      startActivity(new Intent(Meldezettel01.this,classOf[PopSwitchView]))
+      }
+    })
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
@@ -31,12 +43,15 @@ class Meldezettel01 extends AppCompatActivity {
         } else Toast.makeText(getApplicationContext, "männlich oder weiblich auswählen", Toast.LENGTH_SHORT).show()
       }
     })
+
     val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
     helpButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel01.this,classOf[PopHelpView1]))
+        startActivity(new Intent(Meldezettel01.this, classOf[PopHelpView1]))
       }
 
     })
+
+
   }
 }

@@ -4,8 +4,10 @@ import java.util.Calendar
 
 import android.app.{DatePickerDialog, Dialog}
 import android.content.Intent
+import android.graphics.{Color, Paint, PorterDuff}
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.text.Html
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget._
@@ -32,14 +34,28 @@ class Meldezettel02 extends AppCompatActivity {
     day = calendar.get(Calendar.DAY_OF_MONTH)
     showDate(year, month + 1, day)
 
-    val radioB1 : RadioButton = findViewById(R.id.radioButton).asInstanceOf[RadioButton]
-    val radioB2 : RadioButton = findViewById(R.id.radioButton2).asInstanceOf[RadioButton]
+
+    val radioB1: RadioButton = findViewById(R.id.radioButton).asInstanceOf[RadioButton]
+    val radioB2: RadioButton = findViewById(R.id.radioButton2).asInstanceOf[RadioButton]
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
     val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+    val buttonView1: Button = findViewById(R.id.button1).asInstanceOf[Button]
+    val importantB2: EditText = findViewById(R.id.editText).asInstanceOf[EditText]
+
+
+    importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+
+
+
+    buttonView1.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel02.this, classOf[PopSwitchView]))
+      }
+    })
 
     helpButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02.this,classOf[PopHelpView1]))
+        startActivity(new Intent(Meldezettel02.this, classOf[PopHelpView1]))
       }
 
     })
@@ -47,11 +63,11 @@ class Meldezettel02 extends AppCompatActivity {
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
 
-        if (radioB1.isChecked && !radioB2.isChecked ) {
+        if (radioB1.isChecked && !radioB2.isChecked) {
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]))
-        }else if (radioB2.isChecked && !radioB1.isChecked){
+        } else if (radioB2.isChecked && !radioB1.isChecked) {
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel02a]))
-        }else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
+        } else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
       }
     })
   }

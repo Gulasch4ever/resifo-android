@@ -4,6 +4,7 @@ import java.util.Calendar
 
 import android.app.{DatePickerDialog, Dialog}
 import android.content.Intent
+import android.graphics.{Color, PorterDuff}
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -35,6 +36,16 @@ class Meldezettel02a extends AppCompatActivity {
 
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
     val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+    val importantB2: EditText = findViewById(R.id.editText4).asInstanceOf[EditText]
+    val importantB1: EditText = findViewById(R.id.editText5).asInstanceOf[EditText]
+    val importantB3: EditText = findViewById(R.id.editText6).asInstanceOf[EditText]
+    val importantB4: EditText = findViewById(R.id.editText8).asInstanceOf[EditText]
+
+
+    importantB1.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+    importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+    importantB3.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+    importantB4.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
 
     helpButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {

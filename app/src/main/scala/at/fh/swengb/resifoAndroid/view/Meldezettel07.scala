@@ -17,8 +17,8 @@ class Meldezettel07 extends AppCompatActivity {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.meldezettel07)
 
-
     val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+
     helpButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         startActivity(new Intent(Meldezettel07.this,classOf[PopHelpView1]))

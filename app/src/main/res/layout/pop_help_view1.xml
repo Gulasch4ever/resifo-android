@@ -4,12 +4,15 @@
     android:background="@color/colorPrimaryDark">
 
     <TextView
-        android:text="help Text"
-        android:layout_width="wrap_content"
+        android:text="You have to design a prototype of your app and place it in a pdf named proposal.md in the base of the project directory. By viewing this md, it should be clear how your application will look like. An estimation on costs should be given in tabular form which will give an estimation about how long you plan to work on certain aspects of the application. Think about what your time is worth and give an offer in Euro which describes what a customer would be charged to pay for your app.  "
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="218dp"
         android:id="@+id/textView5"
         android:textColor="@color/white"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="79dp" />
 </RelativeLayout>

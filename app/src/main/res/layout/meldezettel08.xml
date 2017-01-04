@@ -126,17 +126,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-        <ImageView
-            android:id="@+id/nxtButton"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+        <Button
+            android:text="  Speichern   "
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:id="@+id/buttonSave"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_gravity="end"
-            android:layout_weight="1"
-            android:src="@drawable/next_arrow_bootstrap" />
-
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="94dp"
+            android:layout_marginEnd="94dp" />
 
 
     </RelativeLayout>
