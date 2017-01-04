@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.ImageView
+import android.widget._
 import at.fh.swengb.resifoAndroid.R
 
 /**
@@ -19,12 +19,23 @@ class Meldezettel01 extends AppCompatActivity {
 
 
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
+    val radioB1: RadioButton = findViewById(R.id.radioButtonW).asInstanceOf[RadioButton]
+    val radioB2: RadioButton = findViewById(R.id.radioButtonM).asInstanceOf[RadioButton]
+    val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(getApplicationContext, classOf[Meldezettel02]))
+        if (radioB1.isChecked || radioB2.isChecked) {
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel02]))
+        } else Toast.makeText(getApplicationContext, "männlich oder weiblich auswählen", Toast.LENGTH_SHORT).show()
       }
     })
 
+    helpButton.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel01.this,classOf[PopHelpView1]))
+      }
+
+    })
   }
 }
