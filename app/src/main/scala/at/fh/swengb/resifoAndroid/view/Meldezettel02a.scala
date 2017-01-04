@@ -34,6 +34,14 @@ class Meldezettel02a extends AppCompatActivity {
     showDate(year, month + 1, day)
 
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
+    val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+
+    helpButton.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel02a.this, classOf[PopHelpView1]))
+      }
+
+    })
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
@@ -66,7 +74,6 @@ class Meldezettel02a extends AppCompatActivity {
   private def showDate(year: Int, month: Int, day: Int) {
     dateView.setText(s"$day/$month/$year")
   }
-
 
 
 }

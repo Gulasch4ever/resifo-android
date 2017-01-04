@@ -25,18 +25,25 @@ class Meldezettel05 extends AppCompatActivity {
     val textAusland: TextView = findViewById(R.id.AdAusland).asInstanceOf[TextView]
     val textStaat: TextView = findViewById(R.id.AdStaat).asInstanceOf[TextView]
     val editTextStaat: EditText = findViewById(R.id.AdStaatN).asInstanceOf[EditText]
+    val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+    helpButton.setOnClickListener(new OnClickListener {
+
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel05.this, classOf[PopHelpView1]))
+      }
+
+    })
 
 
-
-        nextButton.setOnClickListener(new OnClickListener {
-          def onClick(v: View): Unit = {
-            if (radioB1.isChecked && (radioB3.isChecked || radioB4.isChecked)) {
-              startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
-            }else if (radioB2.isChecked){
-              startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]))
-            }else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
-          }
-        })
+    nextButton.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        if (radioB1.isChecked && (radioB3.isChecked || radioB4.isChecked)) {
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
+        } else if (radioB2.isChecked) {
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]))
+        } else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
+      }
+    })
 
     radioB1.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {

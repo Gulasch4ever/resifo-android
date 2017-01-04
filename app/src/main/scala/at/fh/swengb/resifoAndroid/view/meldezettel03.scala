@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.{ImageView, RadioButton, RadioGroup, Toast}
+import android.widget._
 import at.fh.swengb.resifoAndroid.R
 
 /**
@@ -27,6 +27,14 @@ class Meldezettel03 extends AppCompatActivity {
     val radioB7: RadioButton = findViewById(R.id.radioButton7).asInstanceOf[RadioButton]
     val radioB8: RadioButton = findViewById(R.id.radioButton8).asInstanceOf[RadioButton]
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
+    val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+
+    helpButton.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel03.this,classOf[PopHelpView1]))
+      }
+
+    })
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {

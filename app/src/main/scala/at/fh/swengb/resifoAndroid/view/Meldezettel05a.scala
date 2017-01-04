@@ -22,6 +22,14 @@ class Meldezettel05a extends AppCompatActivity {
     val radioB4: RadioButton = findViewById(R.id.radioAd4).asInstanceOf[RadioButton]
     val textStaat: TextView = findViewById(R.id.AdStaat).asInstanceOf[TextView]
     val editTextStaat: EditText = findViewById(R.id.AdStaatN).asInstanceOf[EditText]
+    val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+    helpButton.setOnClickListener(new OnClickListener {
+
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel05a.this,classOf[PopHelpView1]))
+      }
+
+    })
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {

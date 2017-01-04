@@ -23,6 +23,14 @@ class Meldezettel06 extends AppCompatActivity {
     val textStaat: TextView = findViewById(R.id.AdStaat).asInstanceOf[TextView]
     val editTextStaat: EditText = findViewById(R.id.AdStaatN).asInstanceOf[EditText]
 
+    val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+    helpButton.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel06.this, classOf[PopHelpView1]))
+      }
+
+    })
+
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         if (radioB3.isChecked || radioB4.isChecked) {

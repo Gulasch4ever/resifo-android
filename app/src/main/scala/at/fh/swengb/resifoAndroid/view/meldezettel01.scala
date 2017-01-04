@@ -21,7 +21,8 @@ class Meldezettel01 extends AppCompatActivity {
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
     val radioB1: RadioButton = findViewById(R.id.radioButtonW).asInstanceOf[RadioButton]
     val radioB2: RadioButton = findViewById(R.id.radioButtonM).asInstanceOf[RadioButton]
-    val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+
+
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
@@ -30,7 +31,7 @@ class Meldezettel01 extends AppCompatActivity {
         } else Toast.makeText(getApplicationContext, "männlich oder weiblich auswählen", Toast.LENGTH_SHORT).show()
       }
     })
-
+    val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
     helpButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         startActivity(new Intent(Meldezettel01.this,classOf[PopHelpView1]))
