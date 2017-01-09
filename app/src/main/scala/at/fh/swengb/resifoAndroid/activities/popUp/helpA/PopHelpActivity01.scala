@@ -1,4 +1,4 @@
-package at.fh.swengb.resifoAndroid.activities.popUp
+package at.fh.swengb.resifoAndroid.activities.popUp.helpA
 
 import android.app.Activity
 import android.os.Bundle

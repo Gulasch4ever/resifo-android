@@ -1,4 +1,4 @@
-package at.fh.swengb.resifoAndroid.activities.popUp
+package at.fh.swengb.resifoAndroid.activities.popUp.switchA
 
 import android.app.Activity
 import android.content.Intent
@@ -11,14 +11,14 @@ import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.Meldezettel01
 
 /**
-  * Created by laszlobalo on 04.01.17.
+  * Created by laszlobalo on 09.01.17.
   */
-class PopSwitchActivity01 extends Activity{
+class PopSwitchActivity02 extends Activity{
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.pop_switch_view)
+    setContentView(R.layout.pop_switch_view_02)
 
-    val buttonView1: Button = findViewById(R.id.button1).asInstanceOf[Button]
+    val buttonWechseln: Button = findViewById(R.id.button).asInstanceOf[Button]
 
 
     val dm: DisplayMetrics = new DisplayMetrics
@@ -27,7 +27,8 @@ class PopSwitchActivity01 extends Activity{
     val height: Int = dm.heightPixels
     getWindow.setLayout((width * .8).toInt, (height * .6).toInt)
 
-    buttonView1.setOnClickListener(new OnClickListener {
+
+    buttonWechseln.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         startActivity(new Intent(getApplicationContext,classOf[Meldezettel01]))
       }

@@ -11,7 +11,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget._
 import at.fh.swengb.resifoAndroid.R
-import at.fh.swengb.resifoAndroid.activities.popUp.PopHelpActivity01
+import at.fh.swengb.resifoAndroid.activities.popUp.helpA.PopHelpActivity01
 
 /**
   * Created by laszlobalo on 02.01.17.
