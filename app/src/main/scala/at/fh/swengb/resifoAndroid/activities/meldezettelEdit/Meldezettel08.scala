@@ -1,4 +1,4 @@
-package at.fh.swengb.resifoAndroid.view
+package at.fh.swengb.resifoAndroid.activities.meldezettelEdit
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.{View, Window, WindowManager}
 import android.view.View.OnClickListener
 import android.widget.ImageView
-import at.fh.swengb.resifoAndroid.view.{Credits, ListActivity}
+import at.fh.swengb.resifoAndroid.activities.list.{Credits, ListActivity}
 
 
 /**

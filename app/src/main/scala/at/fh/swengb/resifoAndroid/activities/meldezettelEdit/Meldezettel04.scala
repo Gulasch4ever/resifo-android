@@ -1,4 +1,4 @@
-package at.fh.swengb.resifoAndroid.view
+package at.fh.swengb.resifoAndroid.activities.meldezettelEdit
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.{Button, ImageView, RadioButton, Toast}
 import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.activities.popUp.PopHelpActivity01
 
 /**
   * Created by laszlobalo on 02.01.17.
@@ -25,7 +26,7 @@ class Meldezettel04 extends AppCompatActivity {
     helpButton.setOnClickListener(new OnClickListener {
 
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel04.this, classOf[PopHelpView1]))
+        startActivity(new Intent(Meldezettel04.this, classOf[PopHelpActivity01]))
       }
 
     })

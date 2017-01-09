@@ -1,4 +1,4 @@
-package at.fh.swengb.resifoAndroid.view
+package at.fh.swengb.resifoAndroid.activities.meldezettelEdit
 
 import android.content.Intent
 import android.graphics.{Color, PorterDuff}
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget._
 import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.activities.popUp.{PopHelpActivity01, PopSwitchActivity01}
 
 /**
   * Created by laszlobalo on 31.12.16.
@@ -32,7 +33,7 @@ class Meldezettel01 extends AppCompatActivity {
 
     buttonView1.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-      startActivity(new Intent(Meldezettel01.this,classOf[PopSwitchView]))
+      startActivity(new Intent(Meldezettel01.this,classOf[PopSwitchActivity01]))
       }
     })
 
@@ -47,7 +48,7 @@ class Meldezettel01 extends AppCompatActivity {
     val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
     helpButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel01.this, classOf[PopHelpView1]))
+        startActivity(new Intent(Meldezettel01.this, classOf[PopHelpActivity01]))
       }
 
     })

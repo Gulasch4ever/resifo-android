@@ -1,4 +1,4 @@
-package at.fh.swengb.resifoAndroid.view
+package at.fh.swengb.resifoAndroid.activities.popUp
 
 import android.app.Activity
 import android.content.Intent
@@ -8,11 +8,12 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
 import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.Meldezettel01
 
 /**
   * Created by laszlobalo on 04.01.17.
   */
-class PopSwitchView extends Activity{
+class PopSwitchActivity01 extends Activity{
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.pop_switch_view)

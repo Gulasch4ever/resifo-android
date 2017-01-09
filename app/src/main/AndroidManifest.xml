@@ -17,24 +17,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.Credits" />
+        <activity android:name=".activities.list.Credits" />
         <activity
-            android:name=".view.ListActivity"
+            android:name=".activities.list.ListActivity"
             android:label="ListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".view.Meldezettel01"/>
-        <activity android:name=".view.Meldezettel02"/>
-        <activity android:name=".view.Meldezettel02a"/>
-        <activity android:name=".view.Meldezettel03"/>
-        <activity android:name=".view.Meldezettel04"/>
-        <activity android:name=".view.Meldezettel05"/>
-        <activity android:name=".view.Meldezettel05a"/>
-        <activity android:name=".view.Meldezettel06"/>
-        <activity android:name=".view.Meldezettel07"/>
-        <activity android:name=".view.Meldezettel08"/>
-        <activity android:name=".view.PopHelpView1"
+        <activity android:name=".activities.meldezettelEdit.Meldezettel01"/>
+        <activity android:name=".activities.meldezettelEdit.Meldezettel02"/>
+        <activity android:name=".activities.meldezettelEdit.Meldezettel02a"/>
+        <activity android:name=".activities.meldezettelEdit.Meldezettel03"/>
+        <activity android:name=".activities.meldezettelEdit.Meldezettel04"/>
+        <activity android:name=".activities.meldezettelEdit.Meldezettel05"/>
+        <activity android:name=".activities.meldezettelEdit.Meldezettel05a"/>
+        <activity android:name=".activities.meldezettelEdit.Meldezettel06"/>
+        <activity android:name=".activities.meldezettelEdit.Meldezettel07"/>
+        <activity android:name=".activities.meldezettelEdit.Meldezettel08"/>
+        <activity android:name=".activities.popUp.PopHelpActivity01"
             android:theme="@style/AppTheme.PopUp"/>
-        <activity android:name=".view.PopSwitchView"
+        <activity android:name=".activities.popUp.PopSwitchActivity01"
             android:theme="@style/AppTheme.PopUp"/>
 
 

@@ -1,22 +1,23 @@
-package at.fh.swengb.resifoAndroid.view
+package at.fh.swengb.resifoAndroid.activities.meldezettelEdit
 
 import java.util.Calendar
 
 import android.app.{DatePickerDialog, Dialog}
 import android.content.Intent
-import android.graphics.{Color, Paint, PorterDuff}
+import android.graphics.{Color, PorterDuff}
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.text.Html
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget._
 import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.activities.popUp.PopHelpActivity01
 
 /**
   * Created by laszlobalo on 02.01.17.
   */
-class Meldezettel02 extends AppCompatActivity {
+class Meldezettel02a extends AppCompatActivity {
+
   val datePicker: DatePicker = null
   var calendar: Calendar = null
   var dateView: TextView = null
@@ -26,7 +27,7 @@ class Meldezettel02 extends AppCompatActivity {
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.meldezettel02)
+    setContentView(R.layout.meldezettel02a)
     dateView = findViewById(R.id.textView3).asInstanceOf[TextView]
     calendar = Calendar.getInstance
     year = calendar.get(Calendar.YEAR)
@@ -34,43 +35,34 @@ class Meldezettel02 extends AppCompatActivity {
     day = calendar.get(Calendar.DAY_OF_MONTH)
     showDate(year, month + 1, day)
 
-
-    val radioB1: RadioButton = findViewById(R.id.radioButton).asInstanceOf[RadioButton]
-    val radioB2: RadioButton = findViewById(R.id.radioButton2).asInstanceOf[RadioButton]
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
     val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
-    val buttonView1: Button = findViewById(R.id.button1).asInstanceOf[Button]
-    val importantB2: EditText = findViewById(R.id.editText).asInstanceOf[EditText]
+    val importantB2: EditText = findViewById(R.id.editText4).asInstanceOf[EditText]
+    val importantB1: EditText = findViewById(R.id.editText5).asInstanceOf[EditText]
+    val importantB3: EditText = findViewById(R.id.editText6).asInstanceOf[EditText]
+    val importantB4: EditText = findViewById(R.id.editText8).asInstanceOf[EditText]
 
 
+    importantB1.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
     importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
-
-
-
-    buttonView1.setOnClickListener(new OnClickListener {
-      def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02.this, classOf[PopSwitchView]))
-      }
-    })
+    importantB3.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+    importantB4.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
 
     helpButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02.this, classOf[PopHelpView1]))
+        startActivity(new Intent(Meldezettel02a.this, classOf[PopHelpActivity01]))
       }
 
     })
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-
-        if (radioB1.isChecked && !radioB2.isChecked) {
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]))
-        } else if (radioB2.isChecked && !radioB1.isChecked) {
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel02a]))
-        } else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
+        startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]))
       }
     })
+
   }
+
 
   @SuppressWarnings(Array("deprecation"))
   def setDate(view: View) {
@@ -97,4 +89,3 @@ class Meldezettel02 extends AppCompatActivity {
 
 
 }
-

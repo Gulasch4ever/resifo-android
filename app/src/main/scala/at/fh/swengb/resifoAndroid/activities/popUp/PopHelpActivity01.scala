@@ -1,4 +1,4 @@
-package at.fh.swengb.resifoAndroid.view
+package at.fh.swengb.resifoAndroid.activities.popUp
 
 import android.app.Activity
 import android.os.Bundle
@@ -8,7 +8,7 @@ import at.fh.swengb.resifoAndroid.R
 /**
   * Created by laszlobalo on 03.01.17.
   */
-class PopHelpView1 extends Activity {
+class PopHelpActivity01 extends Activity {
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)

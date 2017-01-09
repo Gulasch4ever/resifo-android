@@ -1,4 +1,4 @@
-package at.fh.swengb.resifoAndroid.view
+package at.fh.swengb.resifoAndroid.activities.meldezettelEdit
 
 import android.content.Intent
 import android.graphics.{Color, PorterDuff}
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget._
 import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.activities.popUp.PopHelpActivity01
 
 /**
   * Created by laszlobalo on 03.01.17.
@@ -47,7 +48,7 @@ class Meldezettel06 extends AppCompatActivity {
 
 
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel06.this, classOf[PopHelpView1]))
+        startActivity(new Intent(Meldezettel06.this, classOf[PopHelpActivity01]))
       }
 
     })

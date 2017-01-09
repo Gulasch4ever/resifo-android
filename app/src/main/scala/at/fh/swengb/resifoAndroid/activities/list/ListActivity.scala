@@ -1,13 +1,13 @@
-package at.fh.swengb.resifoAndroid.view
+package at.fh.swengb.resifoAndroid.activities.list
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.ListView
 import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.Meldezettel01
 
 /**
   * Created by laszlobalo on 31.12.16.

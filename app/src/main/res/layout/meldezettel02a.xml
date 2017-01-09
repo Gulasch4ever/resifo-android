@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".view.Meldezettel02a">
+    tools:context=".activities.meldezettelEdit.Meldezettel02a">
 
 
     <LinearLayout
