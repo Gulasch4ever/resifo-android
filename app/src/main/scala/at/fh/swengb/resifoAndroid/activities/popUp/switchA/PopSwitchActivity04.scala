@@ -8,7 +8,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
 import at.fh.swengb.resifoAndroid.R
-import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.Meldezettel01
+import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.{Meldezettel01, Meldezettel04}
 
 /**
   * Created by laszlobalo on 09.01.17.
@@ -29,7 +29,7 @@ class PopSwitchActivity04 extends Activity{
 
     buttonWechseln.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(getApplicationContext,classOf[Meldezettel01]))
+        startActivity(new Intent(getApplicationContext,classOf[Meldezettel04]))
       }
 
     })

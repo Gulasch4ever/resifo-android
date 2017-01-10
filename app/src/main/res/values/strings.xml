@@ -7,4 +7,5 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="date_selected"></string>
     <string name="action_settings">Settings</string>
+    <string name="felder_welche_rot_unterstrichen_sind_sind_pflichtfelder_und_m_ssen_daher_ausgef_llt_werden_ansonsten_k_nnen_sie_die_seite_nicht_verlassen_und_die_daten_speichern_die_buttons_auf_der_seite_zeigen_an_auf_welcher_seite_sie_sich_zurzeit_befinden_aktuelle_button_ist_ausgegraut_und_gr_er_sie_k_nnen_diese_auch_verwenden_um_auf_eine_vorherige_seite_zu_gelangen">Felder, welche rot unterstrichen sind, sind Pflichtfelder und müssen daher ausgefüllt werden, ansonsten können Sie die Seite nicht verlassen und die Daten speichern. Die Buttons auf der Seite zeigen an, auf welcher Seite Sie sich zurzeit befinden (aktuelle Button ist ausgegraut und größer). Sie können diese auch verwenden, um auf eine vorherige Seite zu gelangen.</string>
 </resources>

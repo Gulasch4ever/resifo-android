@@ -3,6 +3,9 @@ package at.fh.swengb.resifoAndroid.activities.popUp.switchA
 import android.app.Activity
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.view.View
+import android.view.View.OnClickListener
+import android.widget.Button
 import at.fh.swengb.resifoAndroid.R
 
 /**
@@ -15,10 +18,19 @@ class PopSwitchActivitySelf extends Activity{
 
     val dm: DisplayMetrics = new DisplayMetrics
     getWindowManager.getDefaultDisplay.getMetrics(dm)
+
     val width: Int = dm.widthPixels
     val height: Int = dm.heightPixels
     getWindow.setLayout((width * .8).toInt, (height * .4).toInt)
+    val buttonAbbrechen: Button = findViewById(R.id.buttonAbbrechen).asInstanceOf[Button]
 
 
+
+    buttonAbbrechen.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        onBackPressed()
+      }
+
+    })
   }
 }
