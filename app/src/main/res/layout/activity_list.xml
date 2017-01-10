@@ -43,7 +43,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="526dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="41dp">
 
         <ListView
