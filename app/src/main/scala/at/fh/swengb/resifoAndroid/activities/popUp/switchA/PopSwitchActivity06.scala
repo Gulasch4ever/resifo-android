@@ -34,7 +34,13 @@ class PopSwitchActivity06 extends Activity{
 
     })
 
+    val buttonAbbrechen: Button = findViewById(R.id.buttonAbbrechen).asInstanceOf[Button]
+    buttonAbbrechen.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        onBackPressed()
+      }
 
+    })
 
   }
 }

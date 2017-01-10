@@ -23,9 +23,6 @@ class PopSwitchActivitySelf extends Activity{
     val height: Int = dm.heightPixels
     getWindow.setLayout((width * .8).toInt, (height * .4).toInt)
     val buttonAbbrechen: Button = findViewById(R.id.buttonAbbrechen).asInstanceOf[Button]
-
-
-
     buttonAbbrechen.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         onBackPressed()

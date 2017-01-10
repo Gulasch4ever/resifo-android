@@ -72,7 +72,7 @@ class Meldezettel01 extends AppCompatActivity {
 
     activity3Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel01.this, classOf[PopSwitchActivity02a]))
+        startActivity(new Intent(Meldezettel01.this, classOf[PopSwitchActivity03]))
       }
     })
 

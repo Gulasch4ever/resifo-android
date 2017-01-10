@@ -18,7 +18,7 @@ class PopSwitchActivity01 extends Activity{
     super.onCreate(savedInstanceState)
     setContentView(R.layout.pop_switch_view_01)
 
-    val buttonWechseln: Button = findViewById(R.id.button).asInstanceOf[Button]
+
 
 
     val dm: DisplayMetrics = new DisplayMetrics
@@ -27,10 +27,18 @@ class PopSwitchActivity01 extends Activity{
     val height: Int = dm.heightPixels
     getWindow.setLayout((width * .8).toInt, (height * .6).toInt)
 
-
+    val buttonWechseln: Button = findViewById(R.id.button).asInstanceOf[Button]
     buttonWechseln.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         startActivity(new Intent(getApplicationContext,classOf[Meldezettel01]))
+      }
+
+    })
+
+    val buttonAbbrechen: Button = findViewById(R.id.buttonAbbrechen).asInstanceOf[Button]
+    buttonAbbrechen.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        onBackPressed()
       }
 
     })

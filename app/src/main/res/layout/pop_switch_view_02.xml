@@ -34,11 +34,19 @@
         android:gravity="bottom">
 
         <Button
+            android:text="Abbrechen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonAbbrechen"
+            android:layout_weight="1" />
+
+        <Button
             android:text="Wechseln"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button"
             android:layout_weight="1" />
+
 
     </LinearLayout>
 </RelativeLayout>

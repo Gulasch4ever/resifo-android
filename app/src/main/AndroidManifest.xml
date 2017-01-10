@@ -42,9 +42,6 @@
             android:name=".activities.popUp.switchA.PopSwitchActivity02"
             android:theme="@style/AppTheme.PopUp" />
         <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity02a"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
             android:name=".activities.popUp.switchA.PopSwitchActivity03"
             android:theme="@style/AppTheme.PopUp" />
         <activity
@@ -52,9 +49,6 @@
             android:theme="@style/AppTheme.PopUp" />
         <activity
             android:name=".activities.popUp.switchA.PopSwitchActivity05"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity05a"
             android:theme="@style/AppTheme.PopUp" />
         <activity
             android:name=".activities.popUp.switchA.PopSwitchActivity06"
