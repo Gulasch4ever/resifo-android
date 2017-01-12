@@ -39,7 +39,7 @@
             android:name=".activities.popUp.switchA.PopSwitchActivity01"
             android:theme="@style/AppTheme.PopUp" />
         <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity02"
+            android:name=".activities.popUp.switchA.PopSwitchActivity2a"
             android:theme="@style/AppTheme.PopUp" />
         <activity
             android:name=".activities.popUp.switchA.PopSwitchActivity03"
@@ -60,7 +60,10 @@
             android:name=".activities.popUp.switchA.PopSwitchActivity08"
             android:theme="@style/AppTheme.PopUp" />
         <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivitySelf"
+        android:name=".activities.popUp.switchA.PopSwitchActivitySelf"
+        android:theme="@style/AppTheme.PopUp" />
+        <activity
+            android:name=".activities.popUp.switchA.PopSwitchActivity2a"
             android:theme="@style/AppTheme.PopUp" />
         <activity
             android:name=".activities.list.ItemDetailsActivity"

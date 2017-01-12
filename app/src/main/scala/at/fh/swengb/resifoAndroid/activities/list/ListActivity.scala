@@ -45,6 +45,7 @@ class ListActivity extends AppCompatActivity {
     val fab = findViewById(R.id.fab).asInstanceOf[FloatingActionButton]
     fab.setOnClickListener(new View.OnClickListener() {
       def onClick(view: View) {
+        db.insertFirstPage
         startActivity(new Intent(getApplicationContext, classOf[Meldezettel01]))
       }
     })

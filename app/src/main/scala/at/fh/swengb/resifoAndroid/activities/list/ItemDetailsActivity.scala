@@ -43,5 +43,36 @@ class ItemDetailsActivity extends AppCompatActivity {
 
     val nachname: TextView = findViewById(R.id.showNachname).asInstanceOf[TextView]
     nachname.setText(item.nachname)
+
+    val famVErsterEhe: TextView = findViewById(R.id.showFamVErsterEhe).asInstanceOf[TextView]
+    famVErsterEhe.setText(item.fam_v_erster_ehe)
+
+    val akad: TextView = findViewById(R.id.showAkad).asInstanceOf[TextView]
+    akad.setText(item.akad)
+
+    val gebDatum: TextView = findViewById(R.id.showGebdatum).asInstanceOf[TextView]
+    gebDatum.setText(item.geburtsdatum)
+
+    val gebOrt: TextView = findViewById(R.id.showGebort).asInstanceOf[TextView]
+    gebOrt.setText(item.geburtsort)
+
+    val religion: TextView = findViewById(R.id.showReligion).asInstanceOf[TextView]
+    religion.setText(item.religion)
+
+    val ZMR: TextView = findViewById(R.id.showZMR).asInstanceOf[TextView]
+    ZMR.setText(item.zmr)
+
+    val staat: TextView = findViewById(R.id.showStaat).asInstanceOf[TextView]
+    staat.setText(item.country)
+
+    val reiseArt: TextView = findViewById(R.id.showReiseArt).asInstanceOf[TextView]
+    reiseArt.setText(item.reiseArt)
+
+    val reiseDatum: TextView = findViewById(R.id.showDatum).asInstanceOf[TextView]
+    reiseDatum.setText(item.reiseDatum)
+
+    val behoerde: TextView = findViewById(R.id.showBehoerde).asInstanceOf[TextView]
+    behoerde.setText(item.behoerde)
   }
 }
+

@@ -12,12 +12,15 @@ import android.view.View.OnClickListener
 import android.widget._
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.popUp.helpA.PopHelpActivity01
+import at.fh.swengb.resifoAndroid.activities.popUp.switchA.{PopSwitchActivity06, PopSwitchActivity07, PopSwitchActivity08, _}
+import at.fh.swengb.resifoAndroid.db.DBHelper
 
 /**
   * Created by laszlobalo on 02.01.17.
   */
 class Meldezettel02a extends AppCompatActivity {
 
+  val db = new DBHelper(this)
   val datePicker: DatePicker = null
   var calendar: Calendar = null
   var dateView: TextView = null
@@ -42,11 +45,68 @@ class Meldezettel02a extends AppCompatActivity {
     val importantB3: EditText = findViewById(R.id.editText6).asInstanceOf[EditText]
     val importantB4: EditText = findViewById(R.id.editText8).asInstanceOf[EditText]
 
+    val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
+    val activity2Button: Button = findViewById(R.id.button2).asInstanceOf[Button]
+    val activity3Button: Button = findViewById(R.id.button3).asInstanceOf[Button]
+    val activity4Button: Button = findViewById(R.id.button4).asInstanceOf[Button]
+    val activity5Button: Button = findViewById(R.id.button5).asInstanceOf[Button]
+    val activity6Button: Button = findViewById(R.id.button6).asInstanceOf[Button]
+    val activity7Button: Button = findViewById(R.id.button7).asInstanceOf[Button]
+    val activity8Button: Button = findViewById(R.id.button98).asInstanceOf[Button]
 
     importantB1.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
     importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
     importantB3.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
     importantB4.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+
+    activity1Button.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel02a.this, classOf[PopSwitchActivity01]))
+      }
+    })
+
+    activity2Button.setOnClickListener(new OnClickListener {
+
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel02a.this, classOf[PopSwitchActivitySelf]))
+      }
+    })
+
+    activity3Button.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel02a.this, classOf[PopSwitchActivity03]))
+      }
+    })
+
+    activity4Button.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel02a.this, classOf[PopSwitchActivity04]))
+      }
+    })
+
+    activity5Button.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel02a.this, classOf[PopSwitchActivity05]))
+      }
+    })
+
+    activity6Button.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel02a.this, classOf[PopSwitchActivity06]))
+      }
+    })
+
+    activity7Button.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel02a.this, classOf[PopSwitchActivity07]))
+      }
+    })
+
+    activity8Button.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(Meldezettel02a.this, classOf[PopSwitchActivity08]))
+      }
+    })
 
     helpButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
@@ -57,6 +117,8 @@ class Meldezettel02a extends AppCompatActivity {
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
+        db.updatePage2a(importantB2.getText.toString, importantB1.getText.toString, importantB3.getText.toString, dateView.getText.toString,importantB4.getText.toString)
+
         startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]))
       }
     })

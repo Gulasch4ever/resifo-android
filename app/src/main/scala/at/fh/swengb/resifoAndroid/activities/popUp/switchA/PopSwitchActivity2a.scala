@@ -8,42 +8,39 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Button
 import at.fh.swengb.resifoAndroid.R
-import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.Meldezettel01
+import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.Meldezettel02
 
 /**
-  * Created by laszlobalo on 04.01.17.
+  * Created by laszlobalo on 12.01.17.
   */
-class PopSwitchActivity01 extends Activity{
+class PopSwitchActivity2a extends Activity{
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.pop_switch_view_01)
+    setContentView(R.layout.pop_switch_view_02a)
+
+    val buttonWechseln: Button = findViewById(R.id.button).asInstanceOf[Button]
+
 
     val dm: DisplayMetrics = new DisplayMetrics
-
     getWindowManager.getDefaultDisplay.getMetrics(dm)
-
     val width: Int = dm.widthPixels
     val height: Int = dm.heightPixels
-
     getWindow.setLayout((width * .8).toInt, (height * .4).toInt)
-
-    val buttonAbbrechen: Button = findViewById(R.id.buttonAbbrechen).asInstanceOf[Button]
-    val buttonWechseln: Button = findViewById(R.id.button).asInstanceOf[Button]
 
 
     buttonWechseln.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(getApplicationContext,classOf[Meldezettel01]))
+        startActivity(new Intent(getApplicationContext,classOf[Meldezettel02]))
       }
 
     })
 
+    val buttonAbbrechen: Button = findViewById(R.id.buttonAbbrechen).asInstanceOf[Button]
     buttonAbbrechen.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         onBackPressed()
       }
 
     })
-
   }
 }
