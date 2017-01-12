@@ -4,17 +4,18 @@ import android.content.Context
 import android.view.{LayoutInflater, View, ViewGroup}
 import android.widget.{BaseAdapter, TextView}
 import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.db.objects.FinalItem
 
 /**
   * Created by laszlobalo on 31.12.16.
   */
-class CustomAdapter(val context: Context, var listItems: List[Item]) extends BaseAdapter{
+class CustomAdapter(val context: Context, var listItems: List[FinalItem]) extends BaseAdapter{
 
   override def getCount: Int = {
     listItems.size
   }
 
-  override def getItem(position: Int):Item = {
+  override def getItem(position: Int):FinalItem = {
     listItems(position)
   }
 
@@ -23,9 +24,9 @@ class CustomAdapter(val context: Context, var listItems: List[Item]) extends Bas
   }
 
   def convertView(position: Int, value: View):View = {
-    value.findViewById(R.id.viewFirstname).asInstanceOf[TextView].setText(getItem(position).firstname)
-    value.findViewById(R.id.viewLastname).asInstanceOf[TextView].setText(getItem(position).lastname)
-    value.findViewById(R.id.viewBirthdate).asInstanceOf[TextView].setText(getItem(position).birthdate)
+    value.findViewById(R.id.viewNachname).asInstanceOf[TextView].setText(getItem(position).nachname)
+    value.findViewById(R.id.viewVorname).asInstanceOf[TextView].setText(getItem(position).vorname)
+    value.findViewById(R.id.viewAkad).asInstanceOf[TextView].setText(getItem(position).akad)
     value
   }
 
@@ -34,5 +35,6 @@ class CustomAdapter(val context: Context, var listItems: List[Item]) extends Bas
     case _ => convertView(position,view)
   }
 }
+
 
 

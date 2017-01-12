@@ -62,7 +62,10 @@
         <activity
             android:name=".activities.popUp.switchA.PopSwitchActivitySelf"
             android:theme="@style/AppTheme.PopUp" />
-
+        <activity
+            android:name=".activities.list.ItemDetailsActivity"
+            android:label="Entry Details"
+            android:theme="@style/AppTheme.NoActionBar" />
 
     </application>
 

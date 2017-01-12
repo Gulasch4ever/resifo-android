@@ -8,14 +8,17 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget._
 import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.activities.list.Item
 import at.fh.swengb.resifoAndroid.activities.popUp.helpA.PopHelpActivity01
 import at.fh.swengb.resifoAndroid.activities.popUp.switchA._
+import at.fh.swengb.resifoAndroid.db.DBHelper
 
 /**
   * Created by laszlobalo on 31.12.16.
   */
 class Meldezettel01 extends AppCompatActivity {
 
+  val db = new DBHelper(this)
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
@@ -35,6 +38,8 @@ class Meldezettel01 extends AppCompatActivity {
     val activity6Button: Button = findViewById(R.id.button6).asInstanceOf[Button]
     val activity7Button: Button = findViewById(R.id.button7).asInstanceOf[Button]
     val activity8Button: Button = findViewById(R.id.button98).asInstanceOf[Button]
+    val famVErsterEhe = findViewById(R.id.viewFamVErsterEhe).asInstanceOf[EditText]
+    val akad = findViewById(R.id.viewAkad).asInstanceOf[EditText]
 
 
     importantB1.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
@@ -111,6 +116,8 @@ class Meldezettel01 extends AppCompatActivity {
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         if (importantFill && importantCheck) {
+          val item = new Item(importantB1.getText.toString, importantB2.getText.toString, famVErsterEhe.toString, akad.toString, if (radioB1.isChecked) "Frau" else "Herr")
+          db.insertItem(item)
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel02]))
         }
       }
@@ -121,7 +128,6 @@ class Meldezettel01 extends AppCompatActivity {
         startActivity(new Intent(Meldezettel01.this, classOf[PopHelpActivity01]))
       }
     })
-
   }
 
 

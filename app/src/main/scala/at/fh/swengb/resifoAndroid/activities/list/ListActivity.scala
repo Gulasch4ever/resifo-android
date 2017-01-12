@@ -5,19 +5,41 @@ import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.ListView
+import android.widget.{AdapterView, ListView}
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.Meldezettel01
+import at.fh.swengb.resifoAndroid.db.DBHelper
+import at.fh.swengb.resifoAndroid.db.objects.FinalItem
 
 /**
   * Created by laszlobalo on 31.12.16.
   */
 class ListActivity extends AppCompatActivity {
 
+  val db = new DBHelper(this)
+
+
+
   override protected def onCreate(savedInstanceState: Bundle) {
+
+
     super.onCreate(savedInstanceState)
+    db.createTable
     setContentView(R.layout.activity_list)
 
+    val listOfItems  = db.readData
+    val listView  = findViewById(R.id.myEntryList).asInstanceOf[ListView]
+    val adapter = new CustomAdapter(getApplicationContext, listOfItems)
+    listView.setAdapter(adapter)
+
+    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+      override def onItemClick(parent: AdapterView[_], view: View, position: Int, id: Long): Unit = {
+        val selectedItem = adapter.getItem(position)
+        val intent = new Intent(view.getContext, classOf[ItemDetailsActivity])
+        intent.putExtra("item",selectedItem)
+        startActivity(intent)
+      }
+    })
 
 
     val fab = findViewById(R.id.fab).asInstanceOf[FloatingActionButton]
@@ -26,18 +48,6 @@ class ListActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext, classOf[Meldezettel01]))
       }
     })
-
-    val listOfItems = List(new Item("David", "Mischak", "26-10-1994"),
-      new Item("Klara", "Schöffmann", "21-05-1997"),
-      new Item("David", "Mischak", "26-10-1994"),
-      new Item("Klara", "Schöffmann", "21-05-1997"),
-      new Item("David", "Mischak", "26-10-1994"),
-      new Item("Klara", "Schöffmann", "21-05-1997"),
-      new Item("David", "Mischak", "26-10-1994"),
-      new Item("Klara", "Schöffmann", "21-05-1997"))
-    val listView = findViewById(R.id.myEntryList).asInstanceOf[ListView]
-    listView.setAdapter(new CustomAdapter(getApplicationContext, listOfItems))
-
   }
 
 }

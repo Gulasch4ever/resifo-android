@@ -54,7 +54,7 @@
             android:inputType="textPersonName"
             android:text=""
             android:ems="10"
-            android:id="@+id/editText99" />
+            android:id="@+id/viewAkad" />
 
         <TextView
             android:id="@+id/textView10"
@@ -83,7 +83,7 @@
             android:textColor="@android:color/black"/>
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/viewFamVErsterEhe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
