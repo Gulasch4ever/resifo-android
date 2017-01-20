@@ -44,22 +44,26 @@ class Meldezettel01 extends AppCompatActivity {
 
     importantB1.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
     importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+    famVErsterEhe.getBackground.clearColorFilter()
+    akad.getBackground.clearColorFilter()
+
 
     def importantFill: Boolean = {
       if ((importantB1.getText.toString.trim == "") || (importantB2.getText.toString.trim == "")) {
         Toast.makeText(getApplicationContext, "Pflichtpfelder ausfüllen!", Toast
           .LENGTH_SHORT).show()
         return false
-        } else return true
+      } else return true
     }
 
-      def importantCheck :Boolean = {
-        if (radioB1.isChecked || radioB2.isChecked){
-          return true
-        }else {Toast.makeText(getApplicationContext, "männlich oder weiblich ausfüllen", Toast
+    def importantCheck: Boolean = {
+      if (radioB1.isChecked || radioB2.isChecked) {
+        return true
+      } else {
+        Toast.makeText(getApplicationContext, "männlich oder weiblich ausfüllen", Toast
           .LENGTH_SHORT).show()
         return false
-        }
+      }
     }
 
     activity1Button.setOnClickListener(new OnClickListener {
@@ -111,8 +115,6 @@ class Meldezettel01 extends AppCompatActivity {
       }
     })
 
-
-
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         if (importantFill && importantCheck) {
@@ -128,6 +130,5 @@ class Meldezettel01 extends AppCompatActivity {
       }
     })
   }
-
 
 }

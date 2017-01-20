@@ -60,7 +60,16 @@ class Meldezettel02 extends AppCompatActivity {
     val zmr: EditText = findViewById(R.id.ZRMEingabe).asInstanceOf[EditText] //ZMR
 
     importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+    religion.getBackground.clearColorFilter()
+    zmr.getBackground.clearColorFilter()
 
+    def importantFill: Boolean = {
+        if (importantB2.getText.toString.trim == "") {
+        Toast.makeText(getApplicationContext, "Pflichtpfeld ausfüllen!", Toast
+          .LENGTH_SHORT).show()
+        false
+      } else true
+    }
 
     def timeChanged: Boolean = {
       if (currentDate == "") {
@@ -129,7 +138,7 @@ class Meldezettel02 extends AppCompatActivity {
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        if (radioB1.isChecked && !radioB2.isChecked && timeChanged) {
+        if ((radioB1.isChecked && !radioB2.isChecked) && timeChanged && importantFill) {
           val country = "Österreich"
           db.updatePage2(dateView.getText.toString, importantB2.getText.toString, religion.getText.toString, zmr.getText.toString, country)
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]))

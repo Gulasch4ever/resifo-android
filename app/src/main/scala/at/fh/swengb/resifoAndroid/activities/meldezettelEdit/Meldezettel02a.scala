@@ -27,6 +27,7 @@ class Meldezettel02a extends AppCompatActivity {
   var year: Int = 0
   var month: Int = 0
   var day: Int = 0
+  var currentDate: String = ""
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
@@ -37,6 +38,7 @@ class Meldezettel02a extends AppCompatActivity {
     month = calendar.get(Calendar.MONTH)
     day = calendar.get(Calendar.DAY_OF_MONTH)
     showDate(year, month + 1, day)
+    currentDate = ""
 
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
     val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
@@ -59,6 +61,23 @@ class Meldezettel02a extends AppCompatActivity {
     importantB3.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
     importantB4.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
 
+    def timeChanged: Boolean = {
+      if (currentDate == "") {
+        Toast.makeText(getApplicationContext, "Sie haben das Datum noch nicht geändert!", Toast.LENGTH_SHORT).show()
+        false
+      }
+      else true
+
+    }
+
+    def importantFill: Boolean = {
+      if ((importantB1.getText.toString.trim == "" || importantB2.getText.toString.trim == "") || (importantB3.getText.toString.trim == "" || importantB4.getText.toString.trim == "")) {
+        Toast.makeText(getApplicationContext, "Pflichtpfeld ausfüllen!", Toast
+          .LENGTH_SHORT).show()
+        false
+      } else true
+    }
+
     activity1Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         startActivity(new Intent(Meldezettel02a.this, classOf[PopSwitchActivity01]))
@@ -68,7 +87,7 @@ class Meldezettel02a extends AppCompatActivity {
     activity2Button.setOnClickListener(new OnClickListener {
 
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02a.this, classOf[PopSwitchActivitySelf]))
+        startActivity(new Intent(Meldezettel02a.this, classOf[PopSwitchActivity2a]))
       }
     })
 
@@ -117,9 +136,10 @@ class Meldezettel02a extends AppCompatActivity {
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        db.updatePage2a(importantB2.getText.toString, importantB1.getText.toString, importantB3.getText.toString, dateView.getText.toString,importantB4.getText.toString)
-
-        startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]))
+        if (importantFill && timeChanged) {
+          db.updatePage2a(importantB2.getText.toString, importantB1.getText.toString, importantB3.getText.toString, dateView.getText.toString, importantB4.getText.toString)
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]))
+        }
       }
     })
 
@@ -136,7 +156,7 @@ class Meldezettel02a extends AppCompatActivity {
     if (id == 999) {
       return new DatePickerDialog(this, myDateListener, year, month, day)
     }
-    return null
+    null
   }
 
   private val myDateListener: DatePickerDialog.OnDateSetListener = new DatePickerDialog.OnDateSetListener() {

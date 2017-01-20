@@ -11,7 +11,7 @@
         android:layout_centerHorizontal="true">
 
         <TextView
-            android:text="Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?"
+            android:text="Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert.Sie werden auf die  Möchten Sie fortfahren? "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
