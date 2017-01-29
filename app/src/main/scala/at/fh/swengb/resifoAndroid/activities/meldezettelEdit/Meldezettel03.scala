@@ -8,11 +8,14 @@ import android.view.View.OnClickListener
 import android.widget._
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.popUp.helpA.PopHelpActivity01
+import at.fh.swengb.resifoAndroid.db.DBHelper
 
 /**
   * Created by laszlobalo on 02.01.17.
   */
 class Meldezettel03 extends AppCompatActivity {
+
+  val db = new DBHelper(this)
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
@@ -37,6 +40,10 @@ class Meldezettel03 extends AppCompatActivity {
 
     })
 
+    def nextActivity: Unit = {
+      startActivity(new Intent(getApplicationContext, classOf[Meldezettel04]))
+    }
+
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
 
@@ -44,6 +51,14 @@ class Meldezettel03 extends AppCompatActivity {
           Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
         }
         else {
+          if (radioB1.isChecked) db.updatePage3("ledig");nextActivity
+          if (radioB2.isChecked) db.updatePage3("verheiratet");nextActivity
+          if (radioB3.isChecked) db.updatePage3("in eingetragener Partnerschaft lebend");nextActivity
+          if (radioB4.isChecked) db.updatePage3("geschieden");nextActivity
+          if (radioB5.isChecked) db.updatePage3("Ehe aufgehoben oder für nichtig erklärt");nextActivity
+          if (radioB6.isChecked) db.updatePage3("eingetragene Ehe aufgelöst oder für nichtig erklärt");nextActivity
+          if (radioB7.isChecked) db.updatePage3("verwitwet");nextActivity
+          if (radioB8.isChecked) db.updatePage3("hinterbliebener eingetragener Partnerschaft");nextActivity
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel04]))
         }
       }

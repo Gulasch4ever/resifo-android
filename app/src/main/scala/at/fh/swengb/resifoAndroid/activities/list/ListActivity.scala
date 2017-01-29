@@ -16,15 +16,13 @@ import at.fh.swengb.resifoAndroid.db.objects.FinalItem
   */
 class ListActivity extends AppCompatActivity {
 
-  val db = new DBHelper(this)
-
-
-
   override protected def onCreate(savedInstanceState: Bundle) {
-
-
     super.onCreate(savedInstanceState)
-    db.createTable
+
+    val db = new DBHelper(this)
+//    db.restartTable
+     db.createTable
+
     setContentView(R.layout.activity_list)
 
     val listOfItems  = db.readData
@@ -40,7 +38,6 @@ class ListActivity extends AppCompatActivity {
         startActivity(intent)
       }
     })
-
 
     val fab = findViewById(R.id.fab).asInstanceOf[FloatingActionButton]
     fab.setOnClickListener(new View.OnClickListener() {

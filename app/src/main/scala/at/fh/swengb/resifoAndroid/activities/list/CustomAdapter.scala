@@ -24,9 +24,9 @@ class CustomAdapter(val context: Context, var listItems: List[FinalItem]) extend
   }
 
   def convertView(position: Int, value: View):View = {
-    value.findViewById(R.id.viewNachname).asInstanceOf[TextView].setText(getItem(position).nachname)
-    value.findViewById(R.id.viewVorname).asInstanceOf[TextView].setText(getItem(position).vorname)
-    value.findViewById(R.id.viewAkad).asInstanceOf[TextView].setText(getItem(position).akad)
+    value.findViewById(R.id.showLastname).asInstanceOf[TextView].setText(getItem(position).lastname)
+    value.findViewById(R.id.showFirstname).asInstanceOf[TextView].setText(getItem(position).firstname)
+    value.findViewById(R.id.showBirthdate).asInstanceOf[TextView].setText(getItem(position).birthdate)
     value
   }
 

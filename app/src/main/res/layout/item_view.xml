@@ -30,7 +30,7 @@
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/viewVorname"
+                android:id="@+id/showFirstname"
                 android:layout_weight="1"
                 android:layout_marginLeft="20dp"
                 android:textStyle="normal|bold"
@@ -54,7 +54,7 @@
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/viewNachname"
+                android:id="@+id/showLastname"
                 android:layout_weight="1"
                 android:layout_marginLeft="20dp"
                 android:textStyle="normal|bold"
@@ -72,13 +72,13 @@
                 android:layout_marginStart="3dp"
                 android:textColor="#888"
 
-                android:text="Akad. Grad.:" />
+                android:text="Geburtsdatum:" />
 
             <TextView
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/viewAkad"
+                android:id="@+id/showBirthdate"
                 android:layout_weight="1"
                 android:layout_marginLeft="25dp"
                 android:textColor="#888" />
@@ -88,4 +88,4 @@
 </LinearLayout>
 
 
-<!-- android:typeface="noneBirthdate:" -->
+    <!-- android:typeface="noneBirthdate:" -->

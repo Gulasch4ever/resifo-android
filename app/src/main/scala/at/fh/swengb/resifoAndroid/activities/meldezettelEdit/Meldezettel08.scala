@@ -8,11 +8,14 @@ import android.view.View.OnClickListener
 import android.widget.Button
 import at.fh.swengb.resifoAndroid.activities.list.ListActivity
 import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.db.DBHelper
 
 /**
   * Created by laszlobalo on 03.01.17.
   */
 class Meldezettel08 extends AppCompatActivity {
+
+  val db = new DBHelper(this)
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)

@@ -69,6 +69,10 @@
             android:name=".activities.list.ItemDetailsActivity"
             android:label="Entry Details"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.list.ModificationActivity"
+            android:label="ModificationActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
 
     </application>
 

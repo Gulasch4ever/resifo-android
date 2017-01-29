@@ -13,48 +13,46 @@ import at.fh.swengb.resifoAndroid.db.objects.FinalItem
 
 class ItemDetailsActivity extends AppCompatActivity {
 
-  val db = new DBHelper(this)
-
-  def deleteItem(vorname: String, nachname: String):Unit = db.deleteItem(vorname, nachname)
-
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
+    val db = new DBHelper(this)
     setContentView(R.layout.activity_item_details)
     val toolbar: Toolbar = findViewById(R.id.toolbar).asInstanceOf[Toolbar]
     setSupportActionBar(toolbar)
 
     val intent = getIntent
     val item: FinalItem = intent.getExtras.get("item").asInstanceOf[FinalItem]
+    println(item.immigrationCountry)
+    val modButton: Button = findViewById(R.id.modButton).asInstanceOf[Button]
 
-    val delButton: Button = findViewById(R.id.delButton).asInstanceOf[Button]
-
-    delButton.setOnClickListener(new OnClickListener {
-      def onClick(v: View): Unit = {
-        deleteItem(item.vorname, item.nachname)
-        startActivity(new Intent(getApplicationContext, classOf[ListActivity]))
+    modButton.setOnClickListener(new OnClickListener {
+      def onClick(view: View): Unit = {
+        val intent = new Intent(view.getContext, classOf[ModificationActivity])
+        intent.putExtra("item",item)
+        startActivity(intent)
       }
     })
 
-    val gender: TextView = findViewById(R.id.showAnrede).asInstanceOf[TextView]
-    gender.setText(item.gender)
+    val salutation: TextView = findViewById(R.id.showSalutation).asInstanceOf[TextView]
+    salutation.setText(item.gender)
 
-    val vorname: TextView = findViewById(R.id.showVorname).asInstanceOf[TextView]
-    vorname.setText(item.vorname)
+    val firstname: TextView = findViewById(R.id.showFirstname).asInstanceOf[TextView]
+    firstname.setText(item.firstname)
 
-    val nachname: TextView = findViewById(R.id.showNachname).asInstanceOf[TextView]
-    nachname.setText(item.nachname)
+    val lastname: TextView = findViewById(R.id.showLastname).asInstanceOf[TextView]
+    lastname.setText(item.lastname)
 
-    val famVErsterEhe: TextView = findViewById(R.id.showFamVErsterEhe).asInstanceOf[TextView]
-    famVErsterEhe.setText(item.fam_v_erster_ehe)
+    val surnameBeforeFirstMarriage: TextView = findViewById(R.id.showSurnameBeforeFirstMarriage).asInstanceOf[TextView]
+    surnameBeforeFirstMarriage.setText(item.surnameBeforeFirstMarriage)
 
-    val akad: TextView = findViewById(R.id.showAkad).asInstanceOf[TextView]
-    akad.setText(item.akad)
+    val academicDegree: TextView = findViewById(R.id.showAcademicDegree).asInstanceOf[TextView]
+    academicDegree.setText(item.academicDegree)
 
-    val gebDatum: TextView = findViewById(R.id.showGebdatum).asInstanceOf[TextView]
-    gebDatum.setText(item.geburtsdatum)
+    val birthdate: TextView = findViewById(R.id.showBirthdate).asInstanceOf[TextView]
+    birthdate.setText(item.birthdate)
 
-    val gebOrt: TextView = findViewById(R.id.showGebort).asInstanceOf[TextView]
-    gebOrt.setText(item.geburtsort)
+    val birthplace: TextView = findViewById(R.id.showBirthplace).asInstanceOf[TextView]
+    birthplace.setText(item.birthplace)
 
     val religion: TextView = findViewById(R.id.showReligion).asInstanceOf[TextView]
     religion.setText(item.religion)
@@ -62,17 +60,38 @@ class ItemDetailsActivity extends AppCompatActivity {
     val ZMR: TextView = findViewById(R.id.showZMR).asInstanceOf[TextView]
     ZMR.setText(item.zmr)
 
-    val staat: TextView = findViewById(R.id.showStaat).asInstanceOf[TextView]
-    staat.setText(item.country)
+    val nationality: TextView = findViewById(R.id.showNationality).asInstanceOf[TextView]
+    nationality.setText(item.nationality)
 
-    val reiseArt: TextView = findViewById(R.id.showReiseArt).asInstanceOf[TextView]
-    reiseArt.setText(item.reiseArt)
+    val traveldocumentType: TextView = findViewById(R.id.showTraveldocumentType).asInstanceOf[TextView]
+    traveldocumentType.setText(item.traveldocumentType)
 
-    val reiseDatum: TextView = findViewById(R.id.showDatum).asInstanceOf[TextView]
-    reiseDatum.setText(item.reiseDatum)
+    val traveldocumentDate: TextView = findViewById(R.id.showTraveldocumentDate).asInstanceOf[TextView]
+    traveldocumentDate.setText(item.traveldocumentDate)
 
-    val behoerde: TextView = findViewById(R.id.showBehoerde).asInstanceOf[TextView]
-    behoerde.setText(item.behoerde)
+    val traveldocumentAgency: TextView = findViewById(R.id.showTraveldocumentAgency).asInstanceOf[TextView]
+    traveldocumentAgency.setText(item.traveldocumentAgency)
+
+    val familyStatus: TextView = findViewById(R.id.showFamilyStatus).asInstanceOf[TextView]
+    familyStatus.setText(item.familyStatus)
+
+    val firstStreet: TextView = findViewById(R.id.showFirstStreet).asInstanceOf[TextView]
+    firstStreet.setText(item.firstStreet)
+
+    val firstHouseNumber: TextView = findViewById(R.id.showHouseNumber).asInstanceOf[TextView]
+    firstHouseNumber.setText(item.firstHouseNumber)
+
+    val firstStairs: TextView = findViewById(R.id.showFirstStairs).asInstanceOf[TextView]
+    firstStairs.setText(item.firstStairs)
+
+    val firstZipcode: TextView = findViewById(R.id.showFirstZipcode).asInstanceOf[TextView]
+    firstZipcode.setText(item.firstZipcode)
+
+    val firstDoor: TextView = findViewById(R.id.showFirstDoor).asInstanceOf[TextView]
+    firstDoor.setText(item.firstDoor)
+
+    val immigrationCountry: TextView = findViewById(R.id.showImmigrationCountry).asInstanceOf[TextView]
+    immigrationCountry.setText(item.immigrationCountry)
   }
 }
 

@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="at.fh.swengb.resifoAndroid.activities.list.ItemDetailsActivity"
-    tools:showIn="@layout/activity_item_details">
+    tools:context="at.fh.swengb.resifoAndroid.activities.list.ModificationActivity"
+    tools:showIn="@layout/activity_modification">
 
     <LinearLayout
         android:orientation="vertical"
@@ -25,11 +25,11 @@
                 android:id="@+id/textView8"
                 android:textSize="18sp" />
 
-            <TextView
-                android:text="TextView"
+            <EditText
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showSalutation"
+                android:id="@+id/modSalutation"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -48,11 +48,11 @@
                 android:id="@+id/textView9"
                 android:textSize="18sp" />
 
-            <TextView
-                android:text="TextView"
+            <EditText
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showFirstname"
+                android:id="@+id/modFirstname"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -71,11 +71,11 @@
                 android:id="@+id/textView10"
                 android:textSize="18sp" />
 
-            <TextView
-                android:text="TextView"
+            <EditText
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showLastname"
+                android:id="@+id/modLastname"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -88,17 +88,17 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="Familienname v. erster Ehe:"
+                android:text="Familienname von erster Ehe:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView11"
+                android:id="@+id/textView10"
                 android:textSize="18sp" />
 
-            <TextView
-                android:text="TextView"
+            <EditText
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showSurnameBeforeFirstMarriage"
+                android:id="@+id/modSurnameBeforeFirstMarriage"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -114,14 +114,14 @@
                 android:text="Akademischer Grad:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView12"
+                android:id="@+id/textView11"
                 android:textSize="18sp" />
 
-            <TextView
-                android:text="TextView"
+            <EditText
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showAcademicDegree"
+                android:id="@+id/modAcademicDegree"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -137,14 +137,14 @@
                 android:text="Geburtsdatum:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView14"
+                android:id="@+id/textView12"
                 android:textSize="18sp" />
 
-            <TextView
-                android:text="TextView"
+            <EditText
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showBirthdate"
+                android:id="@+id/modBirthdate"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -160,14 +160,14 @@
                 android:text="Geburtsort:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView15"
+                android:id="@+id/textView13"
                 android:textSize="18sp" />
 
-            <TextView
-                android:text="TextView"
+            <EditText
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showBirthplace"
+                android:id="@+id/modBirthplace"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -183,14 +183,14 @@
                 android:text="Religion:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView16"
+                android:id="@+id/textView14"
                 android:textSize="18sp" />
 
-            <TextView
-                android:text="TextView"
+            <EditText
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showReligion"
+                android:id="@+id/modReligion"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -206,14 +206,14 @@
                 android:text="ZMR:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView17"
+                android:id="@+id/textView15"
                 android:textSize="18sp" />
 
-            <TextView
-                android:text="TextView"
+            <EditText
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showZMR"
+                android:id="@+id/modZMR"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -229,14 +229,14 @@
                 android:text="Staatsangehörigkeit:"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView18"
+                android:id="@+id/textView16"
                 android:textSize="18sp" />
 
-            <TextView
-                android:text="TextView"
+            <EditText
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showNationality"
+                android:id="@+id/modNationality"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -255,11 +255,11 @@
                 android:id="@+id/textView19"
                 android:textSize="18sp" />
 
-            <TextView
+            <EditText
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showTraveldocumentType"
+                android:id="@+id/modTraveldocumentType"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -278,11 +278,11 @@
                 android:id="@+id/textView20"
                 android:textSize="18sp" />
 
-            <TextView
+            <EditText
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showTraveldocumentDate"
+                android:id="@+id/modTraveldocumentDate"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -301,11 +301,11 @@
                 android:id="@+id/textView21"
                 android:textSize="18sp" />
 
-            <TextView
+            <EditText
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showTraveldocumentAgency"
+                android:id="@+id/modTraveldocumentAgency"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
@@ -324,154 +324,17 @@
                 android:id="@+id/textView22"
                 android:textSize="18sp" />
 
-            <TextView
+            <EditText
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/showFamilyStatus"
+                android:id="@+id/modFamilyStatus"
                 android:layout_weight="1"
                 android:textSize="18sp"
                 android:textStyle="normal|bold"
                 android:fontFamily="sans-serif" />
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="Erste Straße:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView23"
-                android:textSize="18sp" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/showFirstStreet"
-                android:layout_weight="1"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:fontFamily="sans-serif" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="Erste Hausnr.:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView24"
-                android:textSize="18sp" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/showHouseNumber"
-                android:layout_weight="1"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:fontFamily="sans-serif" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="Erste Stiege:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView25"
-                android:textSize="18sp" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/showFirstStairs"
-                android:layout_weight="1"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:fontFamily="sans-serif" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="Erste Tür:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView26"
-                android:textSize="18sp" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/showFirstDoor"
-                android:layout_weight="1"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:fontFamily="sans-serif" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="Erste PLZ:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView27"
-                android:textSize="18sp" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/showFirstZipcode"
-                android:layout_weight="1"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:fontFamily="sans-serif" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="Zuzugsstaat:"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView28"
-                android:textSize="18sp" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/showImmigrationCountry"
-                android:layout_weight="1"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
-                android:fontFamily="sans-serif" />
-        </LinearLayout>
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

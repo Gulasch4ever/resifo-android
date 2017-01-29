@@ -9,11 +9,14 @@ import android.view.View.OnClickListener
 import android.widget._
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.popUp.helpA.PopHelpActivity01
+import at.fh.swengb.resifoAndroid.db.DBHelper
 
 /**
   * Created by laszlobalo on 02.01.17.
   */
 class Meldezettel05 extends AppCompatActivity {
+
+  val db = new DBHelper(this)
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
@@ -58,6 +61,8 @@ class Meldezettel05 extends AppCompatActivity {
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         if (radioB1.isChecked && (radioB3.isChecked || radioB4.isChecked)) {
+          db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
+            getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString)
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
         } else if (radioB2.isChecked) {
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]))

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="at.fh.swengb.resifoAndroid.activities.list.ItemDetailsActivity">
+    tools:context="at.fh.swengb.resifoAndroid.activities.list.ModificationActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
@@ -32,14 +32,22 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_item_details" />
+    <include layout="@layout/content_modification" />
 
     <Button
-        android:text="BEARBEITEN"
+        android:text="SPEICHERN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/modButton"
+        android:id="@+id/saveButton"
         app:layout_anchorGravity="center_vertical|right"
-        android:layout_gravity="bottom|center" />
+        android:layout_gravity="bottom|right" />
+
+    <Button
+        android:text="LÖSCHEN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/delButton"
+        app:layout_anchorGravity="center_vertical|right"
+        android:layout_gravity="bottom|left" />
 
 </android.support.design.widget.CoordinatorLayout>
