@@ -8,7 +8,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget._
 import at.fh.swengb.resifoAndroid.R
-import at.fh.swengb.resifoAndroid.activities.list.Item
+import at.fh.swengb.resifoAndroid.activities.list.{Item, ListActivity}
 import at.fh.swengb.resifoAndroid.activities.popUp.helpA.PopHelpActivity01
 import at.fh.swengb.resifoAndroid.activities.popUp.switchA._
 import at.fh.swengb.resifoAndroid.db.DBHelper
@@ -119,7 +119,7 @@ class Meldezettel01 extends AppCompatActivity {
       def onClick(v: View): Unit = {
         if (importantFill && importantCheck) {
           db.updatePage1(importantB1.getText.toString, importantB2.getText.toString, famVErsterEhe.getText.toString, akad.getText.toString, if (radioB1.isChecked) "Frau" else "Herr")
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel02]))
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel02]).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
         }
       }
     })
@@ -129,6 +129,9 @@ class Meldezettel01 extends AppCompatActivity {
         startActivity(new Intent(Meldezettel01.this, classOf[PopHelpActivity01]))
       }
     })
+  }
+   override  def onBackPressed() {
+    startActivity(new Intent(this,classOf[ListActivity]).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
   }
 
 }
