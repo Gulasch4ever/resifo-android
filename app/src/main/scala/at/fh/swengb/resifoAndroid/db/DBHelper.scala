@@ -150,6 +150,8 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     ??? //wenn ein vorhandener Meldezettel bearbeitet wird
   }
 
+  //TODO
+  //SEARCH
 
   def insertFirstPage: Unit = {
     val db = this.getWritableDatabase

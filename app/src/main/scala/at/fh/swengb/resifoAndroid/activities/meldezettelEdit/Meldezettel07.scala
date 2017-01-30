@@ -15,6 +15,8 @@ import at.fh.swengb.resifoAndroid.db.DBHelper
   */
 class Meldezettel07 extends AppCompatActivity {
 
+  //TODO fancy scrollVIEW
+
   val db = new DBHelper(this)
 
   override protected def onCreate(savedInstanceState: Bundle) {

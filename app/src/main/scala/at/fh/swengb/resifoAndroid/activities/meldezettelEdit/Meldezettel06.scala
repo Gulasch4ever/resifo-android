@@ -18,6 +18,8 @@ class Meldezettel06 extends AppCompatActivity {
 
   val db = new DBHelper(this)
 
+  //TODO auto google address
+
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.meldezettel06)
