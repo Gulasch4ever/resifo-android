@@ -16,6 +16,8 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
   private val DATABASE_VERSION: Int = 3
   private val DATABASE_NAME: String = "MeldezettelInfo.db"
   private val TABLE_NAME: String = "Meldezettel"
+  private val TABLE_NAME_Final: String = "MeldezettelFINAL" //TODO
+
 
   private val COLUMN_ID: String = "id"
   private val COLUMN_FIRSTNAME: String = "firstname"
@@ -40,6 +42,7 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
   private val COLUMN_FIRST_ZIPCODE = "firstZipcode"
   private val COLUMN_FIRST_LOCATION = "firstLocation"
   private val COLUMN_IMMIGRATION_COUNTRY = "immigrationCountry"
+  private val COLUMN_FUNCTION = "function"
 
 
   def createTable: Unit = {
@@ -52,6 +55,23 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
       s"$COLUMN_FIRST_STAIRS text, $COLUMN_FIRST_DOOR text, $COLUMN_FIRST_ZIPCODE text, $COLUMN_FIRST_LOCATION text, $COLUMN_IMMIGRATION_COUNTRY text)"
     db.execSQL(sql)
   }
+
+  //TODO
+  def checkCorrect:List[Int] = {
+
+    def tableFunction:Int = {
+      ??? //prüft ob 1,2 oder 3
+    }
+    def checkFunction:Int ={
+      ??? //prüft ob funktion 1,2 oder 3 korrekt ist
+    }
+    def checkOther:Int = {
+      ??? //prüft Pflichfelkder von 01-03
+    }
+
+    return List(tableFunction,checkFunction,checkOther)
+  }
+
 
   def restartTable: Unit = {
     dropTable
@@ -118,6 +138,18 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     cursor.close
     id.toString
   }
+
+  //TODO
+  def insertFinal:Unit = {
+    ??? //insert Fertigen Meldezettel in MeldezettelFInal
+  }
+
+  //TODO
+  def updateFinal:Unit={
+    //check auf ID
+    ??? //wenn ein vorhandener Meldezettel bearbeitet wird
+  }
+
 
   def insertFirstPage: Unit = {
     val db = this.getWritableDatabase

@@ -26,6 +26,10 @@ class Meldezettel08 extends AppCompatActivity {
 
     saveButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
+
+       // if (db.checkCorrect == 1111)
+        //TODO
+        //db.insertFinal
         startActivity(new Intent(getApplicationContext, classOf[ListActivity]))
       }
 

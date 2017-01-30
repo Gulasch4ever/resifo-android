@@ -46,8 +46,17 @@ class Meldezettel03 extends AppCompatActivity {
     activity1Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel03.this)
-          .setMessage("Sie befinden sich bereits auf der zweiten Seite!")
-          .setNegativeButton("Zurück", null)
+          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel03.this, classOf[Meldezettel01])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
       }
     })
 
@@ -71,16 +80,8 @@ class Meldezettel03 extends AppCompatActivity {
     activity3Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel03.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
-          .setNegativeButton("Nein", null)
-          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
-            override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel03.this, classOf[Meldezettel03])
-              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-              startActivity(intent)
-              dialog.dismiss()
-            }
-          })
+          .setMessage("Sie befinden sich bereits auf der dritten Seite!")
+          .setNegativeButton("Zurück", null)
           .show()
       }
     })

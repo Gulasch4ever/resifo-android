@@ -97,8 +97,17 @@ class Meldezettel02a extends AppCompatActivity {
     activity2Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel02a.this)
-          .setMessage("Sie befinden sich bereits auf der zweiten Seite!")
-          .setNegativeButton("Zurück", null)
+          .setMessage("Möchten Sie keinen anderen Staat angeben?")
+          .setNegativeButton("Doch", null)
+          .setPositiveButton("Nein, möchte ich nicht!", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel02a.this, classOf[HelpActivity])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
       }
     })
 

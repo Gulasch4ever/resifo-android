@@ -68,8 +68,9 @@ class Meldezettel01 extends AppCompatActivity {
     activity1Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel01.this)
-          .setMessage("Sie befinden sich bereits auf der zweiten Seite!")
+          .setMessage("Sie befinden sich bereits auf der ersten Seite!")
           .setNegativeButton("Zurück", null)
+          .show()
       }
     })
 
@@ -176,6 +177,7 @@ class Meldezettel01 extends AppCompatActivity {
 
     activity8Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
+        //if (db.checkCorrect == List(1,1))
         startActivity(new Intent(Meldezettel01.this, classOf[Meldezettel08]))
       }
     })
@@ -209,6 +211,8 @@ class Meldezettel01 extends AppCompatActivity {
   }
    override  def onBackPressed() {
     startActivity(new Intent(this,classOf[ListActivity]).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+     //TODO
+     //delete erstellten eintrag 
   }
 
 }
