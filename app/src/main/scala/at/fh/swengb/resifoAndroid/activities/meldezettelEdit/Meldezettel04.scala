@@ -7,6 +7,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.{Button, ImageView, RadioButton, Toast}
 import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.activities.help.HelpActivity
 
 /**
   * Created by laszlobalo on 02.01.17.
@@ -31,7 +32,7 @@ class Meldezettel04 extends AppCompatActivity {
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
             override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel04.this, classOf[HelpView])
+              val intent: Intent = new Intent(Meldezettel04.this, classOf[HelpActivity])
               intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
               startActivity(intent)
               dialog.dismiss()

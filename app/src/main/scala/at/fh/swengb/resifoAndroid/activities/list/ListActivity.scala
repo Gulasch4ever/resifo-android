@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.{AdapterView, ListView}
 import at.fh.swengb.resifoAndroid.R
-import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.{HelpView, Meldezettel01}
+import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.Meldezettel01
 import at.fh.swengb.resifoAndroid.db.DBHelper
 import at.fh.swengb.resifoAndroid.db.objects.FinalItem
 

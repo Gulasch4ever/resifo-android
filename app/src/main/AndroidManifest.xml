@@ -22,7 +22,7 @@
             android:name=".activities.list.ListActivity"
             android:label="ListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.meldezettelEdit.HelpView" />
+        <activity android:name=".activities.help.HelpActivity" />
         <activity android:name=".activities.meldezettelEdit.Meldezettel01" />
         <activity android:name=".activities.meldezettelEdit.Meldezettel02" />
         <activity android:name=".activities.meldezettelEdit.Meldezettel02a" />

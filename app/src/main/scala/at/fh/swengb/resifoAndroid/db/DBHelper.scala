@@ -41,6 +41,7 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
   private val COLUMN_FIRST_LOCATION = "firstLocation"
   private val COLUMN_IMMIGRATION_COUNTRY = "immigrationCountry"
 
+
   def createTable: Unit = {
     val db = this.getWritableDatabase
     val sql = s"CREATE TABLE IF NOT EXISTS $TABLE_NAME ($COLUMN_ID integer primary key, $COLUMN_LASTNAME text, $COLUMN_FIRSTNAME text," +
