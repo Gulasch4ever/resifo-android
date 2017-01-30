@@ -22,6 +22,7 @@
             android:name=".activities.list.ListActivity"
             android:label="ListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.meldezettelEdit.HelpView" />
         <activity android:name=".activities.meldezettelEdit.Meldezettel01" />
         <activity android:name=".activities.meldezettelEdit.Meldezettel02" />
         <activity android:name=".activities.meldezettelEdit.Meldezettel02a" />
@@ -32,39 +33,7 @@
         <activity android:name=".activities.meldezettelEdit.Meldezettel06" />
         <activity android:name=".activities.meldezettelEdit.Meldezettel07" />
         <activity android:name=".activities.meldezettelEdit.Meldezettel08" />
-        <activity
-            android:name=".activities.popUp.helpA.PopHelpActivity01"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity01"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity2a"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity03"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity04"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity05"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity06"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity07"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity08"
-            android:theme="@style/AppTheme.PopUp" />
-        <activity
-        android:name=".activities.popUp.switchA.PopSwitchActivitySelf"
-        android:theme="@style/AppTheme.PopUp" />
-        <activity
-            android:name=".activities.popUp.switchA.PopSwitchActivity2a"
-            android:theme="@style/AppTheme.PopUp" />
+
         <activity
             android:name=".activities.list.ItemDetailsActivity"
             android:label="Entry Details"

@@ -11,8 +11,6 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget._
 import at.fh.swengb.resifoAndroid.R
-import at.fh.swengb.resifoAndroid.activities.popUp.helpA.PopHelpActivity01
-import at.fh.swengb.resifoAndroid.activities.popUp.switchA.{PopSwitchActivity05, PopSwitchActivity06, PopSwitchActivity07, PopSwitchActivity08, _}
 import at.fh.swengb.resifoAndroid.db.DBHelper
 
 /**
@@ -83,63 +81,116 @@ class Meldezettel02 extends AppCompatActivity {
     activity1Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel02.this)
-          .setMessage("Hallo Laszlo")
-          .setNegativeButton("no", null)
-          .setPositiveButton("Ok", new android.content.DialogInterface.OnClickListener() {
+          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
             override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel02.this, classOf[Meldezettel01])
+              val intent: Intent = new Intent(Meldezettel02.this, classOf[HelpView])
               intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
               startActivity(intent)
-
               dialog.dismiss()
             }
           })
           .show()
-
-        //
       }
     })
 
     activity2Button.setOnClickListener(new OnClickListener {
 
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02.this, classOf[PopSwitchActivitySelf]))
+        new AlertDialog.Builder(Meldezettel02.this)
+          .setMessage("Sie befinden sich bereits auf der zweiten Seite!")
+          .setNegativeButton("Zurück", null)
       }
     })
 
     activity3Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02.this, classOf[PopSwitchActivity03]))
+        new AlertDialog.Builder(Meldezettel02.this)
+          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel02.this, classOf[Meldezettel03])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
       }
     })
 
     activity4Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02.this, classOf[PopSwitchActivity04]))
+        new AlertDialog.Builder(Meldezettel02.this)
+          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel02.this, classOf[Meldezettel04])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
       }
     })
 
     activity5Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02.this, classOf[PopSwitchActivity05]))
+        new AlertDialog.Builder(Meldezettel02.this)
+          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel02.this, classOf[Meldezettel05])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
       }
     })
 
     activity6Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02.this, classOf[PopSwitchActivity06]))
-      }
+        new AlertDialog.Builder(Meldezettel02 .this)
+          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel02.this, classOf[Meldezettel06])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()      }
     })
 
     activity7Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02.this, classOf[PopSwitchActivity07]))
+        new AlertDialog.Builder(Meldezettel02.this)
+          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel02.this, classOf[Meldezettel07])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
       }
     })
 
     activity8Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02.this, classOf[PopSwitchActivity08]))
+        startActivity(new Intent(Meldezettel02.this, classOf[Meldezettel08]))
       }
     })
 
@@ -147,9 +198,19 @@ class Meldezettel02 extends AppCompatActivity {
 
     helpButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel02.this, classOf[PopHelpActivity01]))
+        new AlertDialog.Builder(Meldezettel02.this)
+          .setMessage("Benötigen Sie Hilfe?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel02.this, classOf[HelpView])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
       }
-
     })
 
     nextButton.setOnClickListener(new OnClickListener {
@@ -160,15 +221,13 @@ class Meldezettel02 extends AppCompatActivity {
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
         } else if (radioB2.isChecked && !radioB1.isChecked && timeChanged) {
           db.updatePage2(dateView.getText.toString, importantB2.getText.toString, religion.getText.toString, zmr.getText.toString, "")
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel02a]))
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel02a]).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
         } else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
       }
     })
   }
 
-  override def onBackPressed() {
-    startActivity(new Intent(Meldezettel02.this, classOf[Meldezettel01]).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
-  }
+
 
   @SuppressWarnings(Array("deprecation"))
   def setDate(view: View) {

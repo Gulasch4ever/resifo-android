@@ -1,14 +1,13 @@
 package at.fh.swengb.resifoAndroid.activities.meldezettelEdit
 
-import android.content.Intent
+import android.content.{DialogInterface, Intent}
 import android.graphics.{Color, PorterDuff}
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import android.support.v7.app.{AlertDialog, AppCompatActivity}
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget._
 import at.fh.swengb.resifoAndroid.R
-import at.fh.swengb.resifoAndroid.activities.popUp.helpA.PopHelpActivity01
 import at.fh.swengb.resifoAndroid.db.DBHelper
 
 /**
@@ -46,11 +45,20 @@ class Meldezettel05a extends AppCompatActivity {
     editTextStaat.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
 
     helpButton.setOnClickListener(new OnClickListener {
-
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel05a.this,classOf[PopHelpActivity01]))
+        new AlertDialog.Builder(Meldezettel05a.this)
+          .setMessage("Benötigen Sie Hilfe?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel05a.this, classOf[HelpView])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
       }
-
     })
 
     nextButton.setOnClickListener(new OnClickListener {

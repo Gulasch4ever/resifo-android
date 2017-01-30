@@ -1,13 +1,12 @@
 package at.fh.swengb.resifoAndroid.activities.meldezettelEdit
 
-import android.content.Intent
+import android.content.{DialogInterface, Intent}
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import android.support.v7.app.{AlertDialog, AppCompatActivity}
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.{Button, ImageView, RadioButton, Toast}
 import at.fh.swengb.resifoAndroid.R
-import at.fh.swengb.resifoAndroid.activities.popUp.helpA.PopHelpActivity01
 
 /**
   * Created by laszlobalo on 02.01.17.
@@ -23,12 +22,23 @@ class Meldezettel04 extends AppCompatActivity {
     val radioB3: RadioButton = findViewById(R.id.radioButton3).asInstanceOf[RadioButton]
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
     val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+
+
     helpButton.setOnClickListener(new OnClickListener {
-
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel04.this, classOf[PopHelpActivity01]))
+        new AlertDialog.Builder(Meldezettel04.this)
+          .setMessage("Benötigen Sie Hilfe?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel04.this, classOf[HelpView])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
       }
-
     })
 
     nextButton.setOnClickListener(new OnClickListener {
