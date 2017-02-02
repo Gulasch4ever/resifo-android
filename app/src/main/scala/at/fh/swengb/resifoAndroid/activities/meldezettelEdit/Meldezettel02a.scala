@@ -223,7 +223,7 @@ class Meldezettel02a extends AppCompatActivity {
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         if (importantFill && timeChanged) {
-          db.updatePage2a(importantB2.getText.toString, importantB1.getText.toString, importantB3.getText.toString, dateView.getText.toString, importantB4.getText.toString)
+          db.updatePage2a(importantB2.getText.toString, importantB1.getText.toString, importantB3.getText.toString, dateView.getText.toString, importantB4.getText.toString,"1")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]))
         }
       }

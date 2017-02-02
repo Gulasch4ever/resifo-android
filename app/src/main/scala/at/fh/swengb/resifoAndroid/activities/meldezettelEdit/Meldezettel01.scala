@@ -186,7 +186,7 @@ class Meldezettel01 extends AppCompatActivity {
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         if (importantFill && importantCheck) {
-          db.updatePage1(importantB1.getText.toString, importantB2.getText.toString, famVErsterEhe.getText.toString, akad.getText.toString, if (radioB1.isChecked) "Frau" else "Herr")
+          db.updatePage1(importantB1.getText.toString, importantB2.getText.toString, famVErsterEhe.getText.toString, akad.getText.toString, if (radioB1.isChecked) "Frau" else "Herr","1")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel02]).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
         }
       }
@@ -210,7 +210,19 @@ class Meldezettel01 extends AppCompatActivity {
     })
   }
    override  def onBackPressed() {
-    startActivity(new Intent(this,classOf[ListActivity]).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+     new AlertDialog.Builder(Meldezettel01.this)
+       .setMessage("Wenn Sie diese Seite verlassen wird Ihr gesammter Meldezettel verworfen! Sind Sie sicher?")
+       .setNegativeButton("Nein", null)
+       .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+         override def onClick(dialog: DialogInterface, which: Int): Unit = {
+           db.deleteItem(db.getLastID)
+           val intent: Intent = new Intent(Meldezettel01.this, classOf[ListActivity])
+           intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+           startActivity(intent)
+           dialog.dismiss()
+         }
+       })
+       .show()
      //TODO
      //delete erstellten eintrag 
   }

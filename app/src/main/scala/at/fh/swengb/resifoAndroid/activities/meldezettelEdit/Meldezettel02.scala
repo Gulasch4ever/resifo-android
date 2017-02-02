@@ -219,10 +219,10 @@ class Meldezettel02 extends AppCompatActivity {
       def onClick(v: View): Unit = {
         if ((radioB1.isChecked && !radioB2.isChecked) && timeChanged && importantFill) {
           val country = "Österreich"
-          db.updatePage2(dateView.getText.toString, importantB2.getText.toString, religion.getText.toString, zmr.getText.toString, country)
+          db.updatePage2(dateView.getText.toString, importantB2.getText.toString, religion.getText.toString, zmr.getText.toString, country,"1")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
         } else if (radioB2.isChecked && !radioB1.isChecked && timeChanged) {
-          db.updatePage2(dateView.getText.toString, importantB2.getText.toString, religion.getText.toString, zmr.getText.toString, "")
+          db.updatePage2(dateView.getText.toString, importantB2.getText.toString, religion.getText.toString, zmr.getText.toString, "","1")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel02a]).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
         } else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
       }

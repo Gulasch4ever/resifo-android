@@ -199,9 +199,11 @@ class Meldezettel05 extends AppCompatActivity {
       def onClick(v: View): Unit = {
         if (radioB1.isChecked && (radioB3.isChecked || radioB4.isChecked)) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
-            getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString)
+            getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString,"1")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
         } else if (radioB2.isChecked) {
+          db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
+            getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString,"1")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]))
         } else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
       }

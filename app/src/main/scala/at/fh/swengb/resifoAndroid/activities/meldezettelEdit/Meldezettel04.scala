@@ -29,9 +29,6 @@ class Meldezettel04 extends AppCompatActivity {
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
     val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
 
-    val test: TextView = findViewById(R.id.textView7).asInstanceOf[TextView]
-
-
     val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
     val activity2Button: Button = findViewById(R.id.button2).asInstanceOf[Button]
     val activity3Button: Button = findViewById(R.id.button3).asInstanceOf[Button]
@@ -179,11 +176,7 @@ class Meldezettel04 extends AppCompatActivity {
 
         if (radioB1.isChecked) {
           db.updatePage4("1")
-
-          val testText = db.functionMeldezettel
-          test.setText(s"$testText")
-          //print(db.functionMeldezettel)
-          // startActivity(new Intent(getApplicationContext, classOf[Meldezettel05]))
+           startActivity(new Intent(getApplicationContext, classOf[Meldezettel05]))
         } else if (radioB2.isChecked) {
           db.updatePage4("2")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]))

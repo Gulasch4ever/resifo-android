@@ -285,10 +285,7 @@
         android:layout_marginTop="1dp"
         android:minWidth="15dp"
         android:text="5"
-        android:layout_alignParentLeft="true"
-        android:background="@android:color/darker_gray"
-        android:textColor="@android:color/white"
-        android:textColorLink="@android:color/white"/>
+        android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/button6"
@@ -363,6 +360,20 @@
             android:layout_gravity="end"
             android:layout_weight="1"
             android:src="@drawable/next_arrow_bootstrap" />
+
+        <Button
+            android:id="@+id/button2a"
+            android:layout_width="60dp"
+            android:minWidth="15dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:textColorLink="@android:color/white"
+            android:gravity="right|center_vertical|center_horizontal"
+            android:padding="2dp"
+            android:layout_height="52dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
 
