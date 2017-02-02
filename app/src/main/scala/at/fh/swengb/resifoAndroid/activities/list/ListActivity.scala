@@ -22,8 +22,8 @@ class ListActivity extends AppCompatActivity {
     //TODO
     //Search bar verändert größe beim öffnen
     val db = new DBHelper(this)
-//    db.restartTable
-     db.createTable
+//     db.restartTable
+    db.createTable
 
     setContentView(R.layout.activity_list)
 

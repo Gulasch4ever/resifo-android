@@ -19,4 +19,16 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/exitBtn" />
 
+    <TextView
+        android:text="ahfsduliuadshfiuasdfhafds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exitBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="52dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="29dp"
+        android:id="@+id/textView6" />
+
 </RelativeLayout>

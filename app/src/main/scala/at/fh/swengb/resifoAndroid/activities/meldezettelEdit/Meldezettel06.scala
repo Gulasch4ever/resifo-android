@@ -24,6 +24,8 @@ class Meldezettel06 extends AppCompatActivity {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.meldezettel06)
 
+
+
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
     val radioB3: RadioButton = findViewById(R.id.radioAd3).asInstanceOf[RadioButton]
     val radioB4: RadioButton = findViewById(R.id.radioAd4).asInstanceOf[RadioButton]
@@ -39,6 +41,9 @@ class Meldezettel06 extends AppCompatActivity {
     val importantB5: EditText = findViewById(R.id.AdPLZ).asInstanceOf[EditText]
     val importantB6: EditText = findViewById(R.id.AdOrt).asInstanceOf[EditText]
 
+
+    textStaat.setVisibility(View.INVISIBLE)
+    editTextStaat.setVisibility(View.INVISIBLE)
 
     importantB1.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
     importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)

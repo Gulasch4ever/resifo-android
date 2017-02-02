@@ -18,7 +18,6 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
   private val TABLE_NAME: String = "Meldezettel"
   private val TABLE_NAME_Final: String = "MeldezettelFINAL" //TODO
 
-
   private val COLUMN_ID: String = "id"
   private val COLUMN_FIRSTNAME: String = "firstname"
   private val COLUMN_LASTNAME: String = "lastname"
@@ -41,7 +40,24 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
   private val COLUMN_FIRST_DOOR = "firstDoor"
   private val COLUMN_FIRST_ZIPCODE = "firstZipcode"
   private val COLUMN_FIRST_LOCATION = "firstLocation"
+
+  private val COLUMN_SECOND_STREET = "secondStreet"
+  private val COLUMN_SECOND_HOUSENUMBER = "secondHousenumber"
+  private val COLUMN_SECOND_STAIRS = "secondStairs"
+  private val COLUMN_SECOND_DOOR = "secondDoor"
+  private val COLUMN_SECOND_ZIPCODE = "secondZipcode"
+  private val COLUMN_SECOND_LOCATION = "secondLocation"
+
+  private val COLUMN_THIRD_STREET = "thirdStreet"
+  private val COLUMN_THIRD_HOUSENUMBER = "thirdHousenumber"
+  private val COLUMN_THIRD_STAIRS = "thirdStairs"
+  private val COLUMN_THIRD_DOOR = "thirdDoor"
+  private val COLUMN_THIRD_ZIPCODE = "thirdZipcode"
+  private val COLUMN_THIRD_LOCATION = "thirdLocation"
+
   private val COLUMN_IMMIGRATION_COUNTRY = "immigrationCountry"
+  private val COLUMN_CONDONED_COUNTRY = "condonedCountry"
+
   private val COLUMN_FUNCTION = "function"
 
 
@@ -52,25 +68,53 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
       s" $COLUMN_GENDER text, $COLUMN_BIRTHDATE text, $COLUMN_BIRTHPLACE text, $COLUMN_RELIGION text, $COLUMN_ZMR text, $COLUMN_NATIONALITY text," +
       s"$COLUMN_TRAVELDOCUMENT_TYPE text, $COLUMN_TRAVELDOCUMENT_NUMBER text, $COLUMN_TRAVELDOCUMENT_DATE text, $COLUMN_TRAVELDOCUMENT_AGENCY text," +
       s" $COLUMN_FAMILY_STATUS text, $COLUMN_FIRST_STREET text, $COLUMN_FIRST_HOUSENUMBER text, " +
-      s"$COLUMN_FIRST_STAIRS text, $COLUMN_FIRST_DOOR text, $COLUMN_FIRST_ZIPCODE text, $COLUMN_FIRST_LOCATION text, $COLUMN_IMMIGRATION_COUNTRY text)"
+      s"$COLUMN_FIRST_STAIRS text, $COLUMN_FIRST_DOOR text, $COLUMN_FIRST_ZIPCODE text, $COLUMN_FIRST_LOCATION text, $COLUMN_SECOND_STREET text, " +
+      s"$COLUMN_SECOND_HOUSENUMBER text, $COLUMN_SECOND_STAIRS text, $COLUMN_SECOND_DOOR text, $COLUMN_SECOND_ZIPCODE text, $COLUMN_SECOND_LOCATION text, " +
+      s"$COLUMN_THIRD_STREET text, $COLUMN_THIRD_HOUSENUMBER text, $COLUMN_THIRD_STAIRS text, $COLUMN_THIRD_DOOR text, $COLUMN_THIRD_ZIPCODE text, $COLUMN_THIRD_LOCATION text," +
+      s"$COLUMN_IMMIGRATION_COUNTRY text, $COLUMN_CONDONED_COUNTRY text, $COLUMN_FUNCTION text)"
     db.execSQL(sql)
   }
 
-  //TODO
-  def checkCorrect:List[Int] = {
+  //TODO corrects
 
-    def tableFunction:Int = {
-      ??? //prüft ob 1,2 oder 3
-    }
-    def checkFunction:Int ={
-      ??? //prüft ob funktion 1,2 oder 3 korrekt ist
-    }
-    def checkOther:Int = {
-      ??? //prüft Pflichfelkder von 01-03
-    }
+  def functionMeldezettel: Int = {
+    //prüft ob 1,2 oder 3
 
-    return List(tableFunction,checkFunction,checkOther)
+    //TODO hier holt es sich den letzten
+
+    val db = this.getReadableDatabase
+    val sql = s"SELECT * FROM $TABLE_NAME"
+    val cursor = db.rawQuery(sql, null)
+    cursor.moveToLast
+    val functionString = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
+    functionString.toString
+    cursor.close
+
+    var functionM: Int = 0
+
+    functionString match {
+      case "1" => functionM = functionString.toInt
+      case "2" => functionM = functionString.toInt
+      case "3" => functionM = functionString.toInt
+      case _ => functionM = 0
+    }
+    functionM
   }
+
+
+
+
+    def checkCorrects: List[Int] = {
+
+      def checkFunction: Int = {
+        ??? //prüft ob funktion 1,2 oder 3 korrekt ist -> Pflichfelder bei 5-6
+      }
+      def checkOther: Int = {
+        ??? //prüft Pflichfelkder von 01-03
+      }
+
+      return List(functionMeldezettel, checkFunction, checkOther)
+    }
 
 
   def restartTable: Unit = {
@@ -88,7 +132,7 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
 
   def readData: List[FinalItem] = {
     val db = this.getReadableDatabase
-    val sql = s"SELECT * FROM $TABLE_NAME"
+    val sql = s"SELECT * FROM $TABLE_NAME" //TODO FINAL
     val cursor = db.rawQuery(sql, null)
     val listOfItems = new ListBuffer[FinalItem]()
     if (cursor.moveToFirst) {
@@ -109,17 +153,34 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
         val traveldocumentDate = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_DATE))
         val traveldocumentAgency = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_AGENCY))
         val familyStatus = cursor.getString(cursor.getColumnIndex(COLUMN_FAMILY_STATUS))
+
         val firstStreet = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_STREET))
         val firstHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_HOUSENUMBER))
         val firstStairs = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_STAIRS))
         val firstDoor = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_DOOR))
         val firstZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_ZIPCODE))
+
+        val secondStreet = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STREET))
+        val secondHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_HOUSENUMBER))
+        val secondStairs = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STAIRS))
+        val secondDoor = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_DOOR))
+        val secondZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_ZIPCODE))
+
+        val thirdStreet = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STREET))
+        val thirdHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_HOUSENUMBER))
+        val thirdStairs = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STAIRS))
+        val thirdDoor = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_DOOR))
+        val thirdZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_ZIPCODE))
+
         val immigrationCountry = cursor.getString(cursor.getColumnIndex(COLUMN_IMMIGRATION_COUNTRY))
+        val condonedCountry = cursor.getString(cursor.getColumnIndex(COLUMN_CONDONED_COUNTRY))
+        val function = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
 
         listOfItems += new FinalItem(id, lastname, firstname, surnameBeforeFirstMarriage, academicDegree, gender, birthdate, birthplace, religion, zmr,
           nationality, if (traveldocumentType == "") "" else traveldocumentType, if (traveldocumentNumber == "") "" else traveldocumentNumber,
           if (traveldocumentDate == "") "" else traveldocumentDate, if (traveldocumentAgency == "") "" else traveldocumentAgency, familyStatus,
-          firstStreet, firstHouseNumber, firstStairs, firstDoor, firstZipcode, immigrationCountry)
+          firstStreet, firstHouseNumber, firstStairs, firstDoor, firstZipcode, secondStreet, secondHouseNumber, secondStairs, secondDoor, secondZipcode,
+          thirdStreet, thirdHouseNumber, thirdStairs, thirdDoor, thirdZipcode, immigrationCountry, condonedCountry, function)
       }
       while (cursor.moveToNext)
     }
@@ -139,18 +200,25 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     id.toString
   }
 
-  //TODO
-  def insertFinal:Unit = {
-    ??? //insert Fertigen Meldezettel in MeldezettelFInal
+  //TODO insert Fertigen Meldezettel in MeldezettelFinal
+  def insertFinal: Unit = {
+    ???
   }
 
-  //TODO
-  def updateFinal:Unit={
-    //check auf ID
-    ??? //wenn ein vorhandener Meldezettel bearbeitet wird
-  }
+  //TODO LiSTVIEW löschen aller tabellen der Meldezettel Table
+
+
+//  //TODO wenn ein vorhandener Meldezettel bearbeitet wird -> nur wenn genug Zeit
+//  def updateFinal: Unit = {
+//    //check auf ID
+//    ???
+//  }
 
   //TODO
+  def search: Unit = {
+    ???
+  }
+
   //SEARCH
 
   def insertFirstPage: Unit = {
@@ -174,7 +242,7 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
 
   }
 
-  def updatePage2(birthdate: String, birthplace: String, religion: String, zmr: String, nationality: String):Unit = {
+  def updatePage2(birthdate: String, birthplace: String, religion: String, zmr: String, nationality: String): Unit = {
     val db = this.getWritableDatabase
     val id = getLastID
     val values = new ContentValues
@@ -187,7 +255,7 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     db.close
   }
 
-  def updatePage2a(nationality: String, traveldocumentType: String, traveldocumentNumber: String, traveldocumentDate: String, traveldocumentAgency: String):Unit = {
+  def updatePage2a(nationality: String, traveldocumentType: String, traveldocumentNumber: String, traveldocumentDate: String, traveldocumentAgency: String): Unit = {
     val db = this.getWritableDatabase
     val id = getLastID
     val values = new ContentValues
@@ -200,7 +268,7 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     db.close
   }
 
-  def updatePage3(familyStatus: String):Unit = {
+  def updatePage3(familyStatus: String): Unit = {
     val db = this.getWritableDatabase
     val id = getLastID
     val values = new ContentValues
@@ -209,7 +277,16 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     db.close
   }
 
-  def updatePage5(firstSreet: String, firstHouseNumber: String, firstStairs: String, firstDoor: String, firstZipcode: String, firstLocation: String, immigrationCountry: String):Unit = {
+  def updatePage4(functionMel: String): Unit = {
+    val db = this.getWritableDatabase
+    val id = getLastID
+    val values = new ContentValues
+    values.put(COLUMN_FUNCTION, functionMel)
+    db.update(TABLE_NAME, values, "id = ?", Array(id))
+    db.close
+  }
+
+  def updatePage5(firstSreet: String, firstHouseNumber: String, firstStairs: String, firstDoor: String, firstZipcode: String, firstLocation: String, immigrationCountry: String): Unit = {
     val db = this.getWritableDatabase
     val id = getLastID
     val values = new ContentValues
@@ -224,10 +301,40 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     db.close
   }
 
+  def updatePage5a(secondSreet: String, secondHouseNumber: String, secondStairs: String, secondDoor: String, secondZipcode: String, secondLocation: String, immigrationCountry: String): Unit = {
+    val db = this.getWritableDatabase
+    val id = getLastID
+    val values = new ContentValues
+    values.put(COLUMN_SECOND_STREET, secondSreet)
+    values.put(COLUMN_SECOND_HOUSENUMBER, secondHouseNumber)
+    values.put(COLUMN_SECOND_STAIRS, secondStairs)
+    values.put(COLUMN_SECOND_DOOR, secondDoor)
+    values.put(COLUMN_SECOND_ZIPCODE, secondZipcode)
+    values.put(COLUMN_SECOND_LOCATION, secondLocation)
+    values.put(COLUMN_IMMIGRATION_COUNTRY, immigrationCountry)
+    db.update(TABLE_NAME, values, "id = ?", Array(id))
+    db.close
+  }
+
+  def updatePage6(thirdSreet: String, thirdHouseNumber: String, thirdStairs: String, thirdDoor: String, thirdZipcode: String, thirdLocation: String, immigrationCountry: String): Unit = {
+    val db = this.getWritableDatabase
+    val id = getLastID
+    val values = new ContentValues
+    values.put(COLUMN_THIRD_STREET, thirdSreet)
+    values.put(COLUMN_THIRD_HOUSENUMBER, thirdHouseNumber)
+    values.put(COLUMN_THIRD_STAIRS, thirdStairs)
+    values.put(COLUMN_THIRD_DOOR, thirdDoor)
+    values.put(COLUMN_THIRD_ZIPCODE, thirdZipcode)
+    values.put(COLUMN_THIRD_LOCATION, thirdLocation)
+    values.put(COLUMN_CONDONED_COUNTRY, immigrationCountry)
+    db.update(TABLE_NAME, values, "id = ?", Array(id))
+    db.close
+  }
+
   """ This procedure updates the Meldezettelformular afterwards """.stripMargin
 
   def updateItem(id: String, firstname: String, lastname: String, surnameBeforeFirstMarriage: String, academicDegree: String, birthdate: String, birthplace: String,
-                 religion: String,zmr: String, nationality: String, traveldocumentType: String, traveldocumentDate: String, traveldocumentAgency: String, familyStatus: String):Unit = {
+                 religion: String, zmr: String, nationality: String, traveldocumentType: String, traveldocumentDate: String, traveldocumentAgency: String, familyStatus: String): Unit = {
     val db = this.getWritableDatabase
     val values = new ContentValues
     values.put(COLUMN_FIRSTNAME, firstname)
@@ -249,7 +356,7 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
 
   """ This procedure deletes an item """.stripMargin
 
-  def deleteItem(id: String):Unit = {
+  def deleteItem(id: String): Unit = {
     val db = this.getWritableDatabase
     db.delete(TABLE_NAME, "id = ?", Array(id))
     db.close

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -15,27 +16,32 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="Willkommen!"
-        android:textSize="24sp"
+        android:textSize="30sp"
         android:layout_weight="1"
         android:layout_below="@+id/banner"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="12dp"
         android:id="@+id/textView3"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="15dp"
+        android:textStyle="normal|bold"
+        android:layout_marginTop="15dp" />
 
     <TextView
-        android:text="Beschreibung des Programms und Info zur Entwicklung"
+        android:text="Dieses Applikation wurde im Rahmen eines Studienprojekts an der FH Joanneum entwickelt. \n\nDie App soll das Ausfüllen des Meldezettels erleichtern und den User es ermöglichen auf die bereits vorhandenen Einträge zuzugreifen.\n\nWeitere Information zu den Entwicklern finden Sie, wenn Sie auf den Informationsbutton drücken.\n\nZum Fortfahren klicken Sie auf den Pfeil und bei Fragen auf den Hilfebutton."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView3"
-        android:layout_marginTop="15dp"
         android:id="@+id/textView2"
-        android:textAlignment="center"
-        android:textSize="18sp" />
+        android:textAlignment="viewStart"
+        android:textSize="18sp"
+        android:layout_margin="15dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <ImageView
             android:src="@drawable/next_arrow_bootstrap"

@@ -5,14 +5,19 @@ import android.os.Bundle
 import android.support.v7.app.{AlertDialog, AppCompatActivity}
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.{Button, ImageView, RadioButton, Toast}
+import android.widget._
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.help.HelpActivity
+import at.fh.swengb.resifoAndroid.db.DBHelper
 
 /**
   * Created by laszlobalo on 02.01.17.
   */
 class Meldezettel04 extends AppCompatActivity {
+
+  //TODO an und abemlden richtig von seite
+  val db = new DBHelper(this)
+
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
@@ -23,6 +28,9 @@ class Meldezettel04 extends AppCompatActivity {
     val radioB3: RadioButton = findViewById(R.id.radioButton3).asInstanceOf[RadioButton]
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
     val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+
+    val test: TextView = findViewById(R.id.textView7).asInstanceOf[TextView]
+
 
     val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
     val activity2Button: Button = findViewById(R.id.button2).asInstanceOf[Button]
@@ -169,10 +177,19 @@ class Meldezettel04 extends AppCompatActivity {
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
 
-        if (radioB1.isChecked || radioB3.isChecked) {
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel05]))
+        if (radioB1.isChecked) {
+          db.updatePage4("1")
+
+          val testText = db.functionMeldezettel
+          test.setText(s"$testText")
+          //print(db.functionMeldezettel)
+          // startActivity(new Intent(getApplicationContext, classOf[Meldezettel05]))
         } else if (radioB2.isChecked) {
+          db.updatePage4("2")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]))
+        }else if (radioB3.isChecked){
+          db.updatePage4("3")
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel05]))
         } else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
       }
     })

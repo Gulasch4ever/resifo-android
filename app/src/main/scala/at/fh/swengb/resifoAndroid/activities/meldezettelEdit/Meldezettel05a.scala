@@ -18,6 +18,9 @@ class Meldezettel05a extends AppCompatActivity {
 
   val db = new DBHelper(this)
 
+
+  //TODO 5a button wie 2a
+
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.meldezettel05a)
