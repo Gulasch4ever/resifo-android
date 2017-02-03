@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.{AlertDialog, AppCompatActivity}
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.Button
+import android.widget.{Button, TextView}
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.help.HelpActivity
 import at.fh.swengb.resifoAndroid.db.DBHelper
@@ -26,6 +26,41 @@ class Meldezettel07 extends AppCompatActivity {
 
     //TODO values for textViews and Edit Text
     //###########################################
+    val textNachname: TextView = findViewById(R.id.textView1).asInstanceOf[TextView]
+    val textVorname: TextView = findViewById(R.id.textView2).asInstanceOf[TextView]
+    val textFamErserEhe: TextView = findViewById(R.id.textView3).asInstanceOf[TextView]
+    val textAKAD: TextView = findViewById(R.id.textView4).asInstanceOf[TextView]
+    val textGeschlecht: TextView = findViewById(R.id.textView5).asInstanceOf[TextView]
+    val textGebDatum: TextView = findViewById(R.id.textView6).asInstanceOf[TextView]
+    val textGebOrt: TextView = findViewById(R.id.textView7).asInstanceOf[TextView]
+    val textReligion: TextView = findViewById(R.id.textView8).asInstanceOf[TextView]
+    val textZRM: TextView = findViewById(R.id.textView9).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView10).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView11).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView12).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView13).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView14).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView15).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView16).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView17).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView18).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView19).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView20).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView21).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView22).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView23).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView24).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView25).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView26).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView27).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView28).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView29).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView30).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView31).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView32).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView33).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView34).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView35).asInstanceOf[TextView]
 
 
 
