@@ -37,7 +37,7 @@ class Meldezettel05a extends AppCompatActivity {
     val importantB2: EditText = findViewById(R.id.AdHausnr).asInstanceOf[EditText]
     val importantB3: EditText = findViewById(R.id.AdStiege).asInstanceOf[EditText]
     val importantB4: EditText = findViewById(R.id.AdTuer).asInstanceOf[EditText]
-    val importantB5: EditText = findViewById(R.id.AdPLZ).asInstanceOf[EditText]
+    val importantB5: EditText = findViewById(R.id.editText7).asInstanceOf[EditText]
     val importantB6: EditText = findViewById(R.id.AdOrt).asInstanceOf[EditText]
 
 
