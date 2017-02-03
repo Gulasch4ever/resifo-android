@@ -171,7 +171,18 @@ class Meldezettel05 extends AppCompatActivity {
 
     activity8Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(Meldezettel05.this, classOf[Meldezettel08]))
+        new AlertDialog.Builder(Meldezettel05 .this)
+          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel05.this, classOf[Meldezettel08])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
       }
     })
     

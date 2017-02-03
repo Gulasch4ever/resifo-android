@@ -160,13 +160,15 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:layout_width="63dp"
+                android:layout_width="64dp"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:ems="10"
-                android:id="@+id/AdPLZ"
-                android:layout_marginBottom="1dp"
-                android:layout_marginTop="1dp"/>
+                android:layout_alignBottom="@+id/button5"
+                android:layout_alignLeft="@+id/linearLayout2"
+                android:layout_alignStart="@+id/linearLayout2"
+                android:layout_marginBottom="27dp"
+                android:id="@+id/editText7" />
 
             <EditText
                 android:layout_width="wrap_content"

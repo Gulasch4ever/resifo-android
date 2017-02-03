@@ -231,7 +231,7 @@ class Meldezettel08 extends AppCompatActivity {
     activity1Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel08.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setMessage("Möchten SIe auf die 1 Seite wechseln?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
             override def onClick(dialog: DialogInterface, which: Int): Unit = {
@@ -248,7 +248,7 @@ class Meldezettel08 extends AppCompatActivity {
     activity2Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel08.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setMessage("Möchten SIe auf die 2 Seite wechseln?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
             override def onClick(dialog: DialogInterface, which: Int): Unit = {
@@ -265,7 +265,7 @@ class Meldezettel08 extends AppCompatActivity {
     activity3Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel08.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setMessage("Möchten SIe auf die 3 Seite wechseln?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
             override def onClick(dialog: DialogInterface, which: Int): Unit = {
@@ -282,7 +282,7 @@ class Meldezettel08 extends AppCompatActivity {
     activity4Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel08.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setMessage("Möchten SIe auf die 4 Seite wechseln?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
             override def onClick(dialog: DialogInterface, which: Int): Unit = {
@@ -299,7 +299,7 @@ class Meldezettel08 extends AppCompatActivity {
     activity5Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel08.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setMessage("Möchten SIe auf die 5 Seite wechseln?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
             override def onClick(dialog: DialogInterface, which: Int): Unit = {
@@ -316,7 +316,7 @@ class Meldezettel08 extends AppCompatActivity {
     activity6Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel08.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setMessage("Möchten SIe auf die 6 Seite wechseln?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
             override def onClick(dialog: DialogInterface, which: Int): Unit = {
@@ -333,7 +333,7 @@ class Meldezettel08 extends AppCompatActivity {
     activity7Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel08.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setMessage("Möchten SIe auf die 7 Seite wechseln?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
             override def onClick(dialog: DialogInterface, which: Int): Unit = {
