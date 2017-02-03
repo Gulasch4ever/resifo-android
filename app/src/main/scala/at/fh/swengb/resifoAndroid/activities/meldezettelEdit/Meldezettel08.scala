@@ -91,8 +91,6 @@ class Meldezettel08 extends AppCompatActivity {
         }
         list.lift(2) match {
           case Some(0) => textSeiteC.setText("Nein!")
-            valid = false
-
           case Some(1) => textSeiteC.setText("Ja!")
           case _ => println("penis")
 
@@ -110,7 +108,7 @@ class Meldezettel08 extends AppCompatActivity {
 
 
         valid match {
-          case true => textGeht.setText("Der Meldezettel wurde korrekt ausgefüllt!")
+          case true => textGeht.setText("Der Meldezettel ist korrekt!")
           case false => textGeht.setText("Der Meldezettel ist ungültig!")
         }
 
@@ -138,8 +136,6 @@ class Meldezettel08 extends AppCompatActivity {
         }
         list.lift(5) match {
           case Some(0) => textSeiteF.setText("Nein!")
-            valid = false
-
           case Some(1) => textSeiteF.setText("Ja!")
           case _ => println("penis")
 
@@ -186,8 +182,6 @@ class Meldezettel08 extends AppCompatActivity {
         }
         list.lift(5) match {
           case Some(0) => textSeiteF.setText("Nein!")
-            valid = false
-
           case Some(1) => textSeiteF.setText("Ja!")
           case _ => println("penis")
 

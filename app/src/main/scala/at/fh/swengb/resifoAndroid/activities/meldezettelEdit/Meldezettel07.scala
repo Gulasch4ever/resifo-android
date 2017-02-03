@@ -9,6 +9,7 @@ import android.widget.{Button, ImageView, TextView, Toast}
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.help.HelpActivity
 import at.fh.swengb.resifoAndroid.db.DBHelper
+import at.fh.swengb.resifoAndroid.db.objects.FinalItem
 
 /**
   * Created by laszlobalo on 03.01.17.
@@ -26,10 +27,10 @@ class Meldezettel07 extends AppCompatActivity {
 
     //TODO values for textViews and Edit Text
     //###########################################
-    val textNachname: TextView = findViewById(R.id.textView1).asInstanceOf[TextView]
     val textVorname: TextView = findViewById(R.id.textView2).asInstanceOf[TextView]
-    val textFamErsteEhe: TextView = findViewById(R.id.textView3).asInstanceOf[TextView]
     val textAKAD: TextView = findViewById(R.id.textView4).asInstanceOf[TextView]
+    val textNachname: TextView = findViewById(R.id.textView1).asInstanceOf[TextView]
+    val textFamErsteEhe: TextView = findViewById(R.id.textView3).asInstanceOf[TextView]
     val textGeschlecht: TextView = findViewById(R.id.textView5).asInstanceOf[TextView]
     val textGebDatum: TextView = findViewById(R.id.textView6).asInstanceOf[TextView]
     val textGebOrt: TextView = findViewById(R.id.textView7).asInstanceOf[TextView]
@@ -98,9 +99,6 @@ class Meldezettel07 extends AppCompatActivity {
     val ort3: TextView = findViewById(R.id.ort3).asInstanceOf[TextView]
     val verziehStaat: TextView = findViewById(R.id.verziehStaat).asInstanceOf[TextView]
 
-
-    //###########################################
-
     val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
     val activity2Button: Button = findViewById(R.id.button2).asInstanceOf[Button]
     val activity3Button: Button = findViewById(R.id.button3).asInstanceOf[Button]
@@ -113,14 +111,103 @@ class Meldezettel07 extends AppCompatActivity {
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
 
 
+    val item = db.readLast
+
     def getDetails = {
+
+      def setInvisble = {
+
+
+        textVorname.setText("")
+        textAKAD.setText("")
+        textNachname.setText("")
+        textFamErsteEhe.setText("")
+        textGeschlecht.setText("")
+        textGebDatum.setText("")
+        textGebOrt.setText("")
+        textReligion.setText("")
+        textZRM.setText("")
+        textStaatsangehörigkeit.setText("")
+        textRDArt.setText("")
+        textRDNr.setText("")
+        textRDDatum.setText("")
+        textRDBehörde.setText("")
+        textFamilienstand.setText("")
+        text1Straße.setText("")
+        text1HausNr.setText("")
+        text1Stiege.setText("")
+        text1Tür.setText("")
+        text1PLZ.setText("")
+        text1Ort.setText("")
+        textZuzugStaat.setText("")
+        text2Straße.setText("")
+        text2HausNr.setText("")
+        text2Stiege.setText("")
+        text2Tür.setText("")
+        text2PLZ.setText("")
+        text2Ort.setText("")
+        text3Straße.setText("")
+        text3HausNr.setText("")
+        text3Stiege.setText("")
+        text3Tür.setText("")
+        text3PLZ.setText("")
+        text3Ort.setText("")
+        textVerziehStaat.setText("")
+
+       nachname.setText("")
+       vorname.setText("")
+       famErsteEhe.setText("")
+       akad.setText("")
+        geschlecht.setText("")
+       gebDatum.setText("")
+       gebOrt.setText("")
+       religion.setText("")
+       zrm.setText("")
+       staatsangehörigkeit.setText("")
+       rdArt.setText("")
+       rdNr.setText("")
+       rdDatum.setText("")
+       rdBehörde.setText("")
+       familienstand.setText("")
+       straße1.setText("")
+       hausNr1.setText("")
+       stiege1.setText("")
+       tür1.setText("")
+       plz1.setText("")
+       ort1.setText("")
+       zuzugStaat.setText("")
+       straße2.setText("")
+       hausNr2.setText("")
+       stiege2.setText("")
+       tür2.setText("")
+       plz2.setText("")
+       ort2.setText("")
+       straße3.setText("")
+       hausNr3.setText("")
+       stiege3.setText("")
+       tür3.setText("")
+       plz3.setText("")
+       ort3.setText("")
+       verziehStaat.setText("")
+
+      }
 
       def standardTexts = {
         //TODO 1 - 10
+        nachname.setText(item.firstname)
+        vorname.setText(item.lastname)
+        famErsteEhe.setText(item.surnameBeforeFirstMarriage)
+        akad.setText(item.academicDegree)
+        geschlecht.setText(item.gender)
+        gebDatum.setText(item.birthdate)
+        gebOrt.setText(item.birthplace)
+        religion.setText(item.religion)
+        zrm.setText(item.zmr)
+        staatsangehörigkeit.setText(item.nationality)
+
       }
 
       def optinal2a(int: Int, list: List[Int]) = {
-
 
         //TODO 11 - 15
 
@@ -183,24 +270,42 @@ class Meldezettel07 extends AppCompatActivity {
         }
       }
 
+      def function0 = {
+        new AlertDialog.Builder(Meldezettel07.this)
+          .setMessage("Sie müssen eine Funktion des Meldezettels wählen!")
+          .setPositiveButton("Ok", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+            val intent: Intent = new Intent(Meldezettel07.this, classOf[Meldezettel04])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
+      }
+
+      setInvisble
 
       val optinal = db.checkCorrects
 
       val function = db.functionMeldezettel
+
+      standardTexts
 
       if (optinal.lift(2).contains(1)) optinal2a(function, optinal)
       else {
         //TODO 11 -> Familienstand
 
         function match {
+          case 0 => function0
           case 1 => function1(1, optinal)
           case 2 => function2(1, optinal)
           case 3 => function3(1, optinal)
         }
       }
+
+
     }
-
-
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
@@ -209,8 +314,6 @@ class Meldezettel07 extends AppCompatActivity {
 
       }
     })
-
-
 
     activity1Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
