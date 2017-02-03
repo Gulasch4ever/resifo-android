@@ -63,10 +63,6 @@ class Meldezettel07 extends AppCompatActivity {
     val textNachname: TextView = findViewById(R.id.textView35).asInstanceOf[TextView]
 
 
-
-
-
-
     //###########################################
 
     val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
@@ -86,28 +82,68 @@ class Meldezettel07 extends AppCompatActivity {
         //TODO 1 - 10
       }
 
-      def optinal2a(int: Int) = {
-        //TODO 11 - 14
+      def optinal2a(int: Int, list: List[Int]) = {
+
+
+        //TODO 11 - 15
 
         int match {
-          case 1 => function1(2)
-          case 2 => function2(2)
-          case 3 => function3(2)
+          case 1 => function1(2, list) // mit 2a und anmelden
+          case 2 => function2(2, list) // mit 2a und abmleden
+          case 3 => function3(2, list)
         }
 
       }
 
-      def function1(int: Int) = {
-        //TODO 16 - 28
-        if (int == 1) else
+      def function1(int: Int, list: List[Int]) = {
+        // int = 1 => ohne 2a
+        // int = 2 => mit 2a
+
+        if (int == 1) { //anmelden ohne 2a
+          //TODO 12-18
+          // 5a ???
+          if (list.lift(5).contains(1)) {
+            //TODO 19-24
+            ???
+          }
+
+
+
+        } else {
+          //TODO 16 - 22
+          if (list.lift(5).contains(1)) {
+            //TODO 23-28
+
+          }
+
+        }
+
+
       }
 
-      def function2(int: Int) = {
-        //TODO 1 - 15
+      def function2(int: Int, list: List[Int]) = {
+        //TODO 16
+        if (int == 2) {
+          //TODO 16-22 -> 22 verzieh
+        } else {
+          //TODO 12-18
+        }
       }
 
-      def function3(int: Int) = {
-        //TODO 16 -
+      def function3(int: Int, list: List[Int]) = {
+        if (int == 2) {
+          if (list.lift(5).contains(1)) {
+            //TODO 16 -35
+          } else {
+            //TODO 16- 29
+          }
+        }else {
+          if (list.lift(5).contains(1)) {
+            //TODO 12-31
+          }else {
+            //TODO 12-25
+          }
+        }
       }
 
 
@@ -115,13 +151,22 @@ class Meldezettel07 extends AppCompatActivity {
 
       val function = db.functionMeldezettel
 
-      if (optinal.lift(2).contains(1)) optinal2a(function) else function match {
+      if (optinal.lift(2).contains(1)) optinal2a(function, optinal)
+      else {
+        //TODO 11 -> Familienstand
 
-        case 1 => function1(1)
-        case 2 => function2(1)
-        case 3 => function3(1)
+        function match {
+          case 1 => function1(1, optinal)
+          case 2 => function2(1, optinal)
+          case 3 => function3(1, optinal)
+        }
       }
     }
+
+
+
+
+
 
     activity1Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
@@ -193,7 +238,7 @@ class Meldezettel07 extends AppCompatActivity {
 
     activity5Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07 .this)
+        new AlertDialog.Builder(Meldezettel07.this)
           .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
@@ -210,7 +255,7 @@ class Meldezettel07 extends AppCompatActivity {
 
     activity6Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07 .this)
+        new AlertDialog.Builder(Meldezettel07.this)
           .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
@@ -221,7 +266,8 @@ class Meldezettel07 extends AppCompatActivity {
               dialog.dismiss()
             }
           })
-          .show()      }
+          .show()
+      }
     })
 
     activity7Button.setOnClickListener(new OnClickListener {
@@ -235,7 +281,7 @@ class Meldezettel07 extends AppCompatActivity {
 
     activity8Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07 .this)
+        new AlertDialog.Builder(Meldezettel07.this)
           .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
