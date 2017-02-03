@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.{AlertDialog, AppCompatActivity}
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.{Button, TextView}
+import android.widget.{Button, ImageView, TextView, Toast}
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.help.HelpActivity
 import at.fh.swengb.resifoAndroid.db.DBHelper
@@ -110,6 +110,7 @@ class Meldezettel07 extends AppCompatActivity {
     val activity7Button: Button = findViewById(R.id.button7).asInstanceOf[Button]
     val activity8Button: Button = findViewById(R.id.button98).asInstanceOf[Button]
     val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
+    val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
 
 
     def getDetails = {
@@ -135,14 +136,14 @@ class Meldezettel07 extends AppCompatActivity {
         // int = 1 => ohne 2a
         // int = 2 => mit 2a
 
-        if (int == 1) { //anmelden ohne 2a
+        if (int == 1) {
+          //anmelden ohne 2a
           //TODO 12-18
           // 5a ???
           if (list.lift(5).contains(1)) {
             //TODO 19-24
             ???
           }
-
 
 
         } else {
@@ -173,10 +174,10 @@ class Meldezettel07 extends AppCompatActivity {
           } else {
             //TODO 16- 29
           }
-        }else {
+        } else {
           if (list.lift(5).contains(1)) {
             //TODO 12-31
-          }else {
+          } else {
             //TODO 12-25
           }
         }
@@ -201,6 +202,13 @@ class Meldezettel07 extends AppCompatActivity {
 
 
 
+    nextButton.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel08]))
+
+      }
+    })
 
 
 
