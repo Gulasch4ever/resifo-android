@@ -223,8 +223,7 @@ class Meldezettel01 extends AppCompatActivity {
          }
        })
        .show()
-     //TODO
-     //delete erstellten eintrag 
+
   }
 
 }

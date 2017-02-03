@@ -18,7 +18,6 @@ class Meldezettel05 extends AppCompatActivity {
 
   val db = new DBHelper(this)
 
-  //TODO EdiText leeren
   //TODO Google auto address
 
   override protected def onCreate(savedInstanceState: Bundle) {
@@ -200,7 +199,7 @@ class Meldezettel05 extends AppCompatActivity {
         if (radioB1.isChecked && (radioB3.isChecked || radioB4.isChecked)) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString,"1")
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
+          if (db.functionMeldezettel==3) startActivity(new Intent(getApplicationContext, classOf[Meldezettel06])) else startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
         } else if (radioB2.isChecked) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString,"1")

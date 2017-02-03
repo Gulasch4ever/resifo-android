@@ -60,6 +60,9 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
 
   private val COLUMN_FUNCTION = "function"
 
+  //diese Einträge sinfd nur für EDIT Table
+  //##########################################
+
   private val COLUMN_Seite1: String = "seitea"
   private val COLUMN_Seite2: String = "seiteb"
   private val COLUMN_Seite2a: String = "seitec"
@@ -67,6 +70,9 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
   private val COLUMN_Seite5: String = "seitee"
   private val COLUMN_Seite5a: String = "seitef"
   private val COLUMN_Seite6: String = "seiteg"
+
+  //##########################################
+
 
   def createTable: Unit = {
     val db = this.getWritableDatabase
@@ -83,8 +89,6 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     db.execSQL(sql)
 
   }
-
-  //TODO corrects
 
   def functionMeldezettel: Int = {
 

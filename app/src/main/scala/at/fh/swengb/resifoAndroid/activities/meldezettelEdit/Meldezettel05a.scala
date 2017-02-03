@@ -19,7 +19,8 @@ class Meldezettel05a extends AppCompatActivity {
   val db = new DBHelper(this)
 
 
-  //TODO 5a button wie 2a
+  //TODO buttons switch
+  //TODO PLZ nuummer eingabe für alle übernehmen
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
@@ -70,7 +71,7 @@ class Meldezettel05a extends AppCompatActivity {
         if (radioB3.isChecked || radioB4.isChecked) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString,"1")
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
+          if (db.functionMeldezettel == 3 ) startActivity(new Intent(getApplicationContext, classOf[Meldezettel06])) else startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
         }else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
       }
     })

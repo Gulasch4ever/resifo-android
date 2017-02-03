@@ -15,7 +15,7 @@ import at.fh.swengb.resifoAndroid.db.DBHelper
   */
 class Meldezettel04 extends AppCompatActivity {
 
-  //TODO an und abemlden richtig von seite
+
   val db = new DBHelper(this)
 
 

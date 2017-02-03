@@ -19,8 +19,8 @@ class ListActivity extends AppCompatActivity {
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
 
-    //TODO
-    //Search bar verändert größe beim öffnen
+    //TODO Search bar verändert größe beim öffnen
+
     val db = new DBHelper(this)
 //     db.restartTable
     db.createTable
