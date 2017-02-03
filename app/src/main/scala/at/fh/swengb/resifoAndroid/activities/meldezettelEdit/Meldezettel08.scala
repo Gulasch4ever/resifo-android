@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.{AlertDialog, AppCompatActivity}
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.{Button, TextView}
+import android.widget.{Button, TextView, Toast}
 import at.fh.swengb.resifoAndroid.activities.list.ListActivity
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.db.DBHelper
@@ -217,7 +217,7 @@ class Meldezettel08 extends AppCompatActivity {
       }
 
       val corrects = db.checkCorrects
-      val function: Int = db.functionMeldezettel
+      val function = db.functionMeldezettel
 
 
       function match {
@@ -355,6 +355,7 @@ class Meldezettel08 extends AppCompatActivity {
           .show()
       }
     })
+
 
 
     saveButton.setOnClickListener(new OnClickListener {

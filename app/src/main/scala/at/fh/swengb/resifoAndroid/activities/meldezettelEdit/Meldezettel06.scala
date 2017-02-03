@@ -50,6 +50,19 @@ class Meldezettel06 extends AppCompatActivity {
     val importantB5: EditText = findViewById(R.id.editText7).asInstanceOf[EditText]
     val importantB6: EditText = findViewById(R.id.AdOrt).asInstanceOf[EditText]
 
+    val function = db.functionMeldezettel.toString
+    if (function == "0") new AlertDialog.Builder(Meldezettel06.this)
+      .setMessage("Sie müssen eine Funktion des Meldezettels wählen!")
+      .setPositiveButton("Ok", new android.content.DialogInterface.OnClickListener() {
+        override def onClick(dialog: DialogInterface, which: Int): Unit = {
+          val intent: Intent = new Intent(Meldezettel06.this, classOf[Meldezettel04])
+          intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+          startActivity(intent)
+          dialog.dismiss()
+        }
+      })
+      .show()
+
 
     textStaat.setVisibility(View.INVISIBLE)
     editTextStaat.setVisibility(View.INVISIBLE)
@@ -212,7 +225,7 @@ class Meldezettel06 extends AppCompatActivity {
         if (radioB3.isChecked || radioB4.isChecked) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString,"1")
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]))
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
         } else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
       }
     })
