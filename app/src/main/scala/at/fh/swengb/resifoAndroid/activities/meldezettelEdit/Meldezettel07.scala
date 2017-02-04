@@ -220,6 +220,12 @@ class Meldezettel07 extends AppCompatActivity {
 
         activity3Button.setText("2a")
 
+        text31.setText("RD Art:")
+        text32.setText("RD NR.:")
+        text33.setText("RD Datum:")
+        text34.setText("RD Behörde:")
+        text44.setText("Familienstand:")
+
         edit31.setText(item.traveldocumentType)
         edit32.setText(item.traveldocumentNumber)
         edit33.setText(item.traveldocumentDate)
@@ -243,6 +249,14 @@ class Meldezettel07 extends AppCompatActivity {
 
           activity4Button.setText("5")
 
+          text41.setText("Straße:")
+          text42.setText("Haus Nr.:")
+          text43.setText("Stiege:")
+          text44.setText("Tür:")
+          text45.setText("PLZ:")
+          text46.setText("Ort:")
+          text47.setText("Zuzug Staat:")
+
           edit41.setText(item.firstStreet)
           edit42.setText(item.firstHouseNumber)
           edit43.setText(item.firstStairs)
@@ -255,6 +269,12 @@ class Meldezettel07 extends AppCompatActivity {
           if (list.lift(5).contains(1)) {
             activity5Button.setText("5a")
 
+            text51.setText("Straße:")
+            text52.setText("Haus Nr.:")
+            text53.setText("Stiege:")
+            text54.setText("Tür:")
+            text55.setText("PLZ:")
+            text56.setText("Ort:")
 
             edit51.setText(item.secondStreet)
             edit52.setText(item.secondHouseNumber)
@@ -268,6 +288,14 @@ class Meldezettel07 extends AppCompatActivity {
         } else {
           activity5Button.setText("5")
 
+          text51.setText("Straße:")
+          text52.setText("Haus Nr.:")
+          text53.setText("Stiege:")
+          text54.setText("Tür:")
+          text55.setText("PLZ:")
+          text56.setText("Ort:")
+          text57.setText("Zuzug Staat:")
+
           edit51.setText(item.firstStreet)
           edit52.setText(item.firstHouseNumber)
           edit53.setText(item.firstStairs)
@@ -279,6 +307,13 @@ class Meldezettel07 extends AppCompatActivity {
           if (list.lift(5).contains(1)) {
 
             activity6Button.setText("5a")
+
+            text61.setText("Straße:")
+            text62.setText("Haus Nr.:")
+            text63.setText("Stiege:")
+            text64.setText("Tür:")
+            text65.setText("PLZ:")
+            text66.setText("Ort:")
 
             edit61.setText(item.secondStreet)
             edit62.setText(item.secondHouseNumber)
@@ -296,16 +331,32 @@ class Meldezettel07 extends AppCompatActivity {
 
           activity5Button.setText("6")
 
+          text51.setText("Straße:")
+          text52.setText("Haus Nr.:")
+          text53.setText("Stiege:")
+          text54.setText("Tür:")
+          text55.setText("PLZ:")
+          text56.setText("Ort:")
+          text57.setText("Verzieh Staat:")
+
           edit51.setText(item.thirdStreet)
           edit52.setText(item.thirdHouseNumber)
           edit53.setText(item.thirdStairs)
           edit54.setText(item.thirdDoor)
           edit55.setText(item.thirdZipcode)
           edit56.setText(item.thirdLocation)
-          edit56.setText(item.condonedCountry)
+          edit57.setText(item.condonedCountry)
 
         } else {
           activity4Button.setText("6")
+
+          text41.setText("Straße:")
+          text42.setText("Haus Nr.:")
+          text43.setText("Stiege:")
+          text44.setText("Tür:")
+          text45.setText("PLZ:")
+          text46.setText("Ort:")
+          text47.setText("Verzieh Staat:")
 
           edit41.setText(item.thirdStreet)
           edit42.setText(item.thirdHouseNumber)
@@ -313,7 +364,7 @@ class Meldezettel07 extends AppCompatActivity {
           edit44.setText(item.thirdDoor)
           edit45.setText(item.thirdZipcode)
           edit46.setText(item.thirdLocation)
-          edit46.setText(item.condonedCountry)
+          edit47.setText(item.condonedCountry)
         }
       }
 
@@ -322,6 +373,14 @@ class Meldezettel07 extends AppCompatActivity {
           if (list.lift(5).contains(1)) {
 
             activity5Button.setText("5")
+
+            text51.setText("Straße:")
+            text52.setText("Haus Nr.:")
+            text53.setText("Stiege:")
+            text54.setText("Tür:")
+            text55.setText("PLZ:")
+            text56.setText("Ort:")
+            text57.setText("Zuzug Staat:")
 
             edit51.setText(item.firstStreet)
             edit52.setText(item.firstHouseNumber)
@@ -333,6 +392,13 @@ class Meldezettel07 extends AppCompatActivity {
 
             activity6Button.setText("5a")
 
+            text61.setText("Straße:")
+            text62.setText("Haus Nr.:")
+            text63.setText("Stiege:")
+            text64.setText("Tür:")
+            text65.setText("PLZ:")
+            text66.setText("Ort:")
+
             edit61.setText(item.secondStreet)
             edit62.setText(item.secondHouseNumber)
             edit63.setText(item.secondStairs)
@@ -341,6 +407,14 @@ class Meldezettel07 extends AppCompatActivity {
             edit66.setText(item.secondLocation)
 
             activity7Button.setText("6")
+
+            text71.setText("Straße:")
+            text72.setText("Haus Nr.:")
+            text73.setText("Stiege:")
+            text74.setText("Tür:")
+            text75.setText("PLZ:")
+            text76.setText("Ort:")
+            text77.setText("Verzieh Staat:")
 
             edit71.setText(item.thirdStreet)
             edit72.setText(item.thirdHouseNumber)
@@ -353,6 +427,15 @@ class Meldezettel07 extends AppCompatActivity {
           } else {
 
             activity5Button.setText("5")
+
+            text51.setText("Straße:")
+            text52.setText("Haus Nr.:")
+            text53.setText("Stiege:")
+            text54.setText("Tür:")
+            text55.setText("PLZ:")
+            text56.setText("Ort:")
+            text57.setText("Zuzug Staat:")
+
             edit51.setText(item.firstStreet)
             edit52.setText(item.firstHouseNumber)
             edit53.setText(item.firstStairs)
@@ -362,6 +445,14 @@ class Meldezettel07 extends AppCompatActivity {
             edit57.setText(item.immigrationCountry)
 
             activity6Button.setText("6")
+
+            text61.setText("Straße:")
+            text62.setText("Haus Nr.:")
+            text63.setText("Stiege:")
+            text64.setText("Tür:")
+            text65.setText("PLZ:")
+            text66.setText("Ort:")
+            text67.setText("Verzieh Staat:")
 
             edit61.setText(item.thirdStreet)
             edit62.setText(item.thirdHouseNumber)
@@ -378,6 +469,14 @@ class Meldezettel07 extends AppCompatActivity {
 
             activity4Button.setText("5")
 
+            text41.setText("Straße:")
+            text42.setText("Haus Nr.:")
+            text43.setText("Stiege:")
+            text44.setText("Tür:")
+            text45.setText("PLZ:")
+            text46.setText("Ort:")
+            text47.setText("Zuzug Staat:")
+
             edit41.setText(item.firstStreet)
             edit42.setText(item.firstHouseNumber)
             edit43.setText(item.firstStairs)
@@ -388,6 +487,13 @@ class Meldezettel07 extends AppCompatActivity {
 
             activity5Button.setText("5a")
 
+            text51.setText("Straße:")
+            text52.setText("Haus Nr.:")
+            text53.setText("Stiege:")
+            text54.setText("Tür:")
+            text55.setText("PLZ:")
+            text56.setText("Ort:")
+
             edit51.setText(item.secondStreet)
             edit52.setText(item.secondHouseNumber)
             edit53.setText(item.secondStairs)
@@ -396,6 +502,14 @@ class Meldezettel07 extends AppCompatActivity {
             edit56.setText(item.secondLocation)
 
             activity6Button.setText("6")
+
+            text61.setText("Straße:")
+            text62.setText("Haus Nr.:")
+            text63.setText("Stiege:")
+            text64.setText("Tür:")
+            text65.setText("PLZ:")
+            text66.setText("Ort:")
+            text67.setText("Verzieh Staat:")
 
 
             edit61.setText(item.thirdStreet)
@@ -410,6 +524,14 @@ class Meldezettel07 extends AppCompatActivity {
 
             activity4Button.setText("5")
 
+            text41.setText("Straße:")
+            text42.setText("Haus Nr.:")
+            text43.setText("Stiege:")
+            text44.setText("Tür:")
+            text45.setText("PLZ:")
+            text46.setText("Ort:")
+            text47.setText("Zuzug Staat:")
+
             edit41.setText(item.firstStreet)
             edit42.setText(item.firstHouseNumber)
             edit43.setText(item.firstStairs)
@@ -420,6 +542,13 @@ class Meldezettel07 extends AppCompatActivity {
 
             activity5Button.setText("6")
 
+            text51.setText("Straße:")
+            text52.setText("Haus Nr.:")
+            text53.setText("Stiege:")
+            text54.setText("Tür:")
+            text55.setText("PLZ:")
+            text56.setText("Ort:")
+            text57.setText("Verzieh Staat:")
 
             edit51.setText(item.thirdStreet)
             edit52.setText(item.thirdHouseNumber)
