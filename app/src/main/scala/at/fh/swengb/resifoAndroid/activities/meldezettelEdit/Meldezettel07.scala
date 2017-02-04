@@ -160,6 +160,33 @@ class Meldezettel07 extends AppCompatActivity {
     val item = db.readLast
 
 
+    def buttonInvisible = {
+
+      activity1Button.setVisibility(View.VISIBLE)
+      activity2Button.setVisibility(View.VISIBLE)
+      activity3Button.setVisibility(View.VISIBLE)
+      activity4Button.setVisibility(View.VISIBLE)
+      activity5Button.setVisibility(View.VISIBLE)
+      activity6Button.setVisibility(View.VISIBLE)
+      activity7Button.setVisibility(View.VISIBLE)
+
+      if (!optinal.lift(2).contains(1)) {
+        activity7Button.setVisibility(View.INVISIBLE)
+
+        if (!optinal.lift(5).contains(1)) {
+          activity6Button.setVisibility(View.INVISIBLE)
+          if (function == 2) {
+            activity5Button.setVisibility(View.INVISIBLE)
+          }else if (function == 1) {
+            activity5Button.setVisibility(View.INVISIBLE)
+          }
+        }
+      } else if (!optinal.lift(5).contains(1)) {
+        activity7Button.setVisibility(View.INVISIBLE)
+        if (function == 2) activity6Button.setVisibility(View.INVISIBLE)
+
+      }
+    }
 
     def getDetails = {
 
@@ -213,6 +240,9 @@ class Meldezettel07 extends AppCompatActivity {
 
         if (int == 1) {
           //anmelden ohne 2a
+
+          activity4Button.setText("5")
+
           edit41.setText(item.firstStreet)
           edit42.setText(item.firstHouseNumber)
           edit43.setText(item.firstStairs)
@@ -223,6 +253,9 @@ class Meldezettel07 extends AppCompatActivity {
 
           // 5a ???
           if (list.lift(5).contains(1)) {
+            activity5Button.setText("5a")
+
+
             edit51.setText(item.secondStreet)
             edit52.setText(item.secondHouseNumber)
             edit53.setText(item.secondStairs)
@@ -233,6 +266,8 @@ class Meldezettel07 extends AppCompatActivity {
 
 
         } else {
+          activity5Button.setText("5")
+
           edit51.setText(item.firstStreet)
           edit52.setText(item.firstHouseNumber)
           edit53.setText(item.firstStairs)
@@ -240,7 +275,11 @@ class Meldezettel07 extends AppCompatActivity {
           edit55.setText(item.firstZipcode)
           edit56.setText(item.firstLocation)
           edit57.setText(item.immigrationCountry)
+
           if (list.lift(5).contains(1)) {
+
+            activity6Button.setText("5a")
+
             edit61.setText(item.secondStreet)
             edit62.setText(item.secondHouseNumber)
             edit63.setText(item.secondStairs)
@@ -254,6 +293,9 @@ class Meldezettel07 extends AppCompatActivity {
       def function2(int: Int, list: List[Int]) = {
 
         if (int == 2) {
+
+          activity5Button.setText("6")
+
           edit51.setText(item.thirdStreet)
           edit52.setText(item.thirdHouseNumber)
           edit53.setText(item.thirdStairs)
@@ -263,6 +305,8 @@ class Meldezettel07 extends AppCompatActivity {
           edit56.setText(item.condonedCountry)
 
         } else {
+          activity4Button.setText("6")
+
           edit41.setText(item.thirdStreet)
           edit42.setText(item.thirdHouseNumber)
           edit43.setText(item.thirdStairs)
@@ -276,6 +320,9 @@ class Meldezettel07 extends AppCompatActivity {
       def function3(int: Int, list: List[Int]) = {
         if (int == 2) {
           if (list.lift(5).contains(1)) {
+
+            activity5Button.setText("5")
+
             edit51.setText(item.firstStreet)
             edit52.setText(item.firstHouseNumber)
             edit53.setText(item.firstStairs)
@@ -284,12 +331,16 @@ class Meldezettel07 extends AppCompatActivity {
             edit56.setText(item.firstLocation)
             edit57.setText(item.immigrationCountry)
 
+            activity6Button.setText("5a")
+
             edit61.setText(item.secondStreet)
             edit62.setText(item.secondHouseNumber)
             edit63.setText(item.secondStairs)
             edit64.setText(item.secondDoor)
             edit65.setText(item.secondZipcode)
             edit66.setText(item.secondLocation)
+
+            activity7Button.setText("6")
 
             edit71.setText(item.thirdStreet)
             edit72.setText(item.thirdHouseNumber)
@@ -300,6 +351,8 @@ class Meldezettel07 extends AppCompatActivity {
             edit77.setText(item.condonedCountry)
 
           } else {
+
+            activity5Button.setText("5")
             edit51.setText(item.firstStreet)
             edit52.setText(item.firstHouseNumber)
             edit53.setText(item.firstStairs)
@@ -307,6 +360,8 @@ class Meldezettel07 extends AppCompatActivity {
             edit55.setText(item.firstZipcode)
             edit56.setText(item.firstLocation)
             edit57.setText(item.immigrationCountry)
+
+            activity6Button.setText("6")
 
             edit61.setText(item.thirdStreet)
             edit62.setText(item.thirdHouseNumber)
@@ -339,6 +394,9 @@ class Meldezettel07 extends AppCompatActivity {
             edit54.setText(item.secondDoor)
             edit55.setText(item.secondZipcode)
             edit56.setText(item.secondLocation)
+
+            activity6Button.setText("6")
+
 
             edit61.setText(item.thirdStreet)
             edit62.setText(item.thirdHouseNumber)
@@ -481,7 +539,7 @@ class Meldezettel07 extends AppCompatActivity {
 
     getDetails
     buttonInvisible
-    buttonNumber
+
 
   }
 }
