@@ -222,7 +222,7 @@ class Meldezettel01 extends AppCompatActivity {
        .setNegativeButton("Nein", null)
        .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
          override def onClick(dialog: DialogInterface, which: Int): Unit = {
-           db.deleteItem(db.getLastID)
+           db.deleteItem(1,db.getLastID)
            val intent: Intent = new Intent(Meldezettel01.this, classOf[ListActivity])
            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
            startActivity(intent)

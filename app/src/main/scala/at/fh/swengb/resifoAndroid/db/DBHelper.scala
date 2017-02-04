@@ -589,9 +589,12 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
 
   """ This procedure deletes an item """.stripMargin
 
-  def deleteItem(id: String): Unit = {
+  def deleteItem(int: Int,id: String): Unit = {
     val db = this.getWritableDatabase
-    db.delete(TABLE_NAME, "id = ?", Array(id))
+    if (int == 1) {
+      db.delete(TABLE_NAME, "id = ?", Array(id))
+    } else db.delete(TABLE_NAME_Final, "id = ?", Array(id))
+
     db.close
   }
 }

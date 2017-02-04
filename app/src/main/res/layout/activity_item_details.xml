@@ -1245,17 +1245,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-        <ImageView
-            android:id="@+id/nxtButton"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="end"
-            android:layout_weight="1"
-            android:src="@drawable/next_arrow_bootstrap" />
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -1268,11 +1257,20 @@
                 android:text="Löschen"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/button" />
+                android:id="@+id/buttondelete" />
         </LinearLayout>
 
 
     </RelativeLayout>
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/exit_btn"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/exitBtn"
+        android:layout_alignParentRight="true" />
 
 
 </RelativeLayout>

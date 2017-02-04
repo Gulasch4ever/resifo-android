@@ -354,7 +354,6 @@ class Meldezettel08 extends AppCompatActivity {
 
     saveButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        //TODO
         if (textGeht.getText == "Der Meldezettel ist korrekt!"){
           db.transaction
           new AlertDialog.Builder(Meldezettel08.this)
