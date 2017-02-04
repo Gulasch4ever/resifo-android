@@ -27,7 +27,7 @@ class Meldezettel07 extends AppCompatActivity {
 
     //TODO values for textViews and Edit Text
     //###########################################
-    val textVorname: TextView = findViewById(R.id.textView2).asInstanceOf[TextView]
+    val text1: TextView = findViewById(R.id.textView2).asInstanceOf[TextView]
     val textAKAD: TextView = findViewById(R.id.textView4).asInstanceOf[TextView]
     val textNachname: TextView = findViewById(R.id.textView1).asInstanceOf[TextView]
     val textFamErsteEhe: TextView = findViewById(R.id.textView3).asInstanceOf[TextView]
@@ -63,7 +63,7 @@ class Meldezettel07 extends AppCompatActivity {
     val text3Ort: TextView = findViewById(R.id.textView34).asInstanceOf[TextView]
     val textVerziehStaat: TextView = findViewById(R.id.textView35).asInstanceOf[TextView]
 
-    val nachname: TextView = findViewById(R.id.nachname).asInstanceOf[TextView]
+    val edit1: TextView = findViewById(R.id.nachname).asInstanceOf[TextView]
     val vorname: TextView = findViewById(R.id.vorname).asInstanceOf[TextView]
     val famErsteEhe: TextView = findViewById(R.id.famErsteEhe).asInstanceOf[TextView]
     val akad: TextView = findViewById(R.id.akad).asInstanceOf[TextView]
@@ -164,7 +164,9 @@ class Meldezettel07 extends AppCompatActivity {
       rdNr.setText("")
       rdDatum.setText("")
       rdBehörde.setText("")
+
       familienstand.setText("")
+
       straße1.setText("")
       hausNr1.setText("")
       stiege1.setText("")
@@ -241,6 +243,14 @@ class Meldezettel07 extends AppCompatActivity {
         if (int == 1) {
           //anmelden ohne 2a
           //TODO 12-18
+          rdNr.setText(item.firstStreet)
+          rdDatum.setText(item.firstHouseNumber)
+          rdBehörde.setText(item.firstStairs)
+          familienstand.setText(item.firstDoor)
+          stra.setText(item.firstZipcode)
+          ort1.setText(item.firstLocation)
+          zuzugStaat.setText(item.immigrationCountry)
+
           // 5a ???
           if (list.lift(5).contains(1)) {
             //TODO 19-24
@@ -304,6 +314,8 @@ class Meldezettel07 extends AppCompatActivity {
       if (optinal.lift(2).contains(1)) optinal2a(function, optinal)
       else {
         //TODO 11 -> Familienstand
+        textRDArt.setText("Familienstand:")
+        rdArt.setText(item.familyStatus)
 
         function match {
           case 1 => function1(1, optinal)

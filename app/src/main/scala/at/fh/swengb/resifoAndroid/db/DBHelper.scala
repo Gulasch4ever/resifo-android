@@ -98,15 +98,15 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     cursor.moveToLast
     var functionM: Int = 0
 
-    def checknull ={
-      if (cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))==null) 0
+    def checknull = {
+      if (cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION)) == null) 0
     }
 
     val chNull = checknull
     var functionString = ""
 
     if (chNull == 0) functionM = 0
-    else  functionString = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
+    else functionString = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
     cursor.close()
 
     functionString match {
@@ -139,7 +139,7 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     cursor.close()
 
     val checkCorrect: List[Int] = List(seite1, seite2, seite2a, seite3, seite5, seite5a, seite6)
-     checkCorrect
+    checkCorrect
   }
 
 
@@ -186,18 +186,23 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
         val firstStairs = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_STAIRS))
         val firstDoor = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_DOOR))
         val firstZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_ZIPCODE))
+        val firstLocation = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_LOCATION))
+
 
         val secondStreet = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STREET))
         val secondHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_HOUSENUMBER))
         val secondStairs = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STAIRS))
         val secondDoor = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_DOOR))
         val secondZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_ZIPCODE))
+        val secondLocation = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_LOCATION))
+
 
         val thirdStreet = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STREET))
         val thirdHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_HOUSENUMBER))
         val thirdStairs = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STAIRS))
         val thirdDoor = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_DOOR))
         val thirdZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_ZIPCODE))
+        val thirdLocation = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_LOCATION))
 
         val immigrationCountry = cursor.getString(cursor.getColumnIndex(COLUMN_IMMIGRATION_COUNTRY))
         val condonedCountry = cursor.getString(cursor.getColumnIndex(COLUMN_CONDONED_COUNTRY))
@@ -206,8 +211,8 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
         listOfItems += new FinalItem(id, lastname, firstname, surnameBeforeFirstMarriage, academicDegree, gender, birthdate, birthplace, religion, zmr,
           nationality, if (traveldocumentType == "") "" else traveldocumentType, if (traveldocumentNumber == "") "" else traveldocumentNumber,
           if (traveldocumentDate == "") "" else traveldocumentDate, if (traveldocumentAgency == "") "" else traveldocumentAgency, familyStatus,
-          firstStreet, firstHouseNumber, firstStairs, firstDoor, firstZipcode, secondStreet, secondHouseNumber, secondStairs, secondDoor, secondZipcode,
-          thirdStreet, thirdHouseNumber, thirdStairs, thirdDoor, thirdZipcode, immigrationCountry, condonedCountry, function)
+          firstStreet, firstHouseNumber, firstStairs, firstDoor, firstZipcode, firstLocation, secondStreet, secondHouseNumber, secondStairs, secondDoor, secondZipcode, secondLocation,
+          thirdStreet, thirdHouseNumber, thirdStairs, thirdDoor, thirdZipcode, thirdLocation, immigrationCountry, condonedCountry, function)
       }
       while (cursor.moveToNext)
     }
@@ -221,50 +226,55 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     val sql = s"SELECT * FROM $TABLE_NAME"
     val cursor = db.rawQuery(sql, null)
     cursor.moveToLast
-        val id = cursor.getString(cursor.getColumnIndex(COLUMN_ID))
-        val lastname = cursor.getString(cursor.getColumnIndex(COLUMN_LASTNAME))
-        val firstname = cursor.getString(cursor.getColumnIndex(COLUMN_FIRSTNAME))
-        val surnameBeforeFirstMarriage = cursor.getString(cursor.getColumnIndex(COLUMN_SURNAME_BEFORE_FIRST_MARRIAGE))
-        val academicDegree = cursor.getString(cursor.getColumnIndex(COLUMN_ACADEMIC_DEGREE))
-        val gender = cursor.getString(cursor.getColumnIndex(COLUMN_GENDER))
-        val birthdate = cursor.getString(cursor.getColumnIndex(COLUMN_BIRTHDATE))
-        val birthplace = cursor.getString(cursor.getColumnIndex(COLUMN_BIRTHPLACE))
-        val religion = cursor.getString(cursor.getColumnIndex(COLUMN_RELIGION))
-        val zmr = cursor.getString(cursor.getColumnIndex(COLUMN_ZMR))
-        val nationality = cursor.getString(cursor.getColumnIndex(COLUMN_NATIONALITY))
-        val traveldocumentType = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_TYPE))
-        val traveldocumentNumber = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_NUMBER))
-        val traveldocumentDate = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_DATE))
-        val traveldocumentAgency = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_AGENCY))
-        val familyStatus = cursor.getString(cursor.getColumnIndex(COLUMN_FAMILY_STATUS))
+    val id = cursor.getString(cursor.getColumnIndex(COLUMN_ID))
+    val lastname = cursor.getString(cursor.getColumnIndex(COLUMN_LASTNAME))
+    val firstname = cursor.getString(cursor.getColumnIndex(COLUMN_FIRSTNAME))
+    val surnameBeforeFirstMarriage = cursor.getString(cursor.getColumnIndex(COLUMN_SURNAME_BEFORE_FIRST_MARRIAGE))
+    val academicDegree = cursor.getString(cursor.getColumnIndex(COLUMN_ACADEMIC_DEGREE))
+    val gender = cursor.getString(cursor.getColumnIndex(COLUMN_GENDER))
+    val birthdate = cursor.getString(cursor.getColumnIndex(COLUMN_BIRTHDATE))
+    val birthplace = cursor.getString(cursor.getColumnIndex(COLUMN_BIRTHPLACE))
+    val religion = cursor.getString(cursor.getColumnIndex(COLUMN_RELIGION))
+    val zmr = cursor.getString(cursor.getColumnIndex(COLUMN_ZMR))
+    val nationality = cursor.getString(cursor.getColumnIndex(COLUMN_NATIONALITY))
+    val traveldocumentType = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_TYPE))
+    val traveldocumentNumber = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_NUMBER))
+    val traveldocumentDate = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_DATE))
+    val traveldocumentAgency = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_AGENCY))
+    val familyStatus = cursor.getString(cursor.getColumnIndex(COLUMN_FAMILY_STATUS))
 
-        val firstStreet = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_STREET))
-        val firstHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_HOUSENUMBER))
-        val firstStairs = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_STAIRS))
-        val firstDoor = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_DOOR))
-        val firstZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_ZIPCODE))
+    val firstStreet = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_STREET))
+    val firstHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_HOUSENUMBER))
+    val firstStairs = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_STAIRS))
+    val firstDoor = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_DOOR))
+    val firstZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_ZIPCODE))
+    val firstLocation = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_LOCATION))
 
-        val secondStreet = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STREET))
-        val secondHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_HOUSENUMBER))
-        val secondStairs = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STAIRS))
-        val secondDoor = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_DOOR))
-        val secondZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_ZIPCODE))
 
-        val thirdStreet = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STREET))
-        val thirdHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_HOUSENUMBER))
-        val thirdStairs = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STAIRS))
-        val thirdDoor = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_DOOR))
-        val thirdZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_ZIPCODE))
+    val secondStreet = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STREET))
+    val secondHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_HOUSENUMBER))
+    val secondStairs = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STAIRS))
+    val secondDoor = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_DOOR))
+    val secondZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_ZIPCODE))
+    val secondLocation = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_LOCATION))
 
-        val immigrationCountry = cursor.getString(cursor.getColumnIndex(COLUMN_IMMIGRATION_COUNTRY))
-        val condonedCountry = cursor.getString(cursor.getColumnIndex(COLUMN_CONDONED_COUNTRY))
-        val function = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
 
-      val item = new FinalItem(id, lastname, firstname, surnameBeforeFirstMarriage, academicDegree, gender, birthdate, birthplace, religion, zmr,
-          nationality, if (traveldocumentType == "") "" else traveldocumentType, if (traveldocumentNumber == "") "" else traveldocumentNumber,
-          if (traveldocumentDate == "") "" else traveldocumentDate, if (traveldocumentAgency == "") "" else traveldocumentAgency, familyStatus,
-          firstStreet, firstHouseNumber, firstStairs, firstDoor, firstZipcode, secondStreet, secondHouseNumber, secondStairs, secondDoor, secondZipcode,
-          thirdStreet, thirdHouseNumber, thirdStairs, thirdDoor, thirdZipcode, immigrationCountry, condonedCountry, function)
+    val thirdStreet = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STREET))
+    val thirdHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_HOUSENUMBER))
+    val thirdStairs = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STAIRS))
+    val thirdDoor = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_DOOR))
+    val thirdZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_ZIPCODE))
+    val thirdLocation = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_LOCATION))
+
+    val immigrationCountry = cursor.getString(cursor.getColumnIndex(COLUMN_IMMIGRATION_COUNTRY))
+    val condonedCountry = cursor.getString(cursor.getColumnIndex(COLUMN_CONDONED_COUNTRY))
+    val function = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
+
+    val item = new FinalItem(id, lastname, firstname, surnameBeforeFirstMarriage, academicDegree, gender, birthdate, birthplace, religion, zmr,
+      nationality, if (traveldocumentType == "") "" else traveldocumentType, if (traveldocumentNumber == "") "" else traveldocumentNumber,
+      if (traveldocumentDate == "") "" else traveldocumentDate, if (traveldocumentAgency == "") "" else traveldocumentAgency, familyStatus,
+      firstStreet, firstHouseNumber, firstStairs, firstDoor, firstZipcode, firstLocation, secondStreet, secondHouseNumber, secondStairs, secondDoor, secondZipcode, secondLocation,
+      thirdStreet, thirdHouseNumber, thirdStairs, thirdDoor, thirdZipcode, thirdLocation, immigrationCountry, condonedCountry, function)
 
     cursor.close
 

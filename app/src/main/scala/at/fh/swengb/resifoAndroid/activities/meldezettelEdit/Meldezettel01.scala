@@ -192,7 +192,7 @@ class Meldezettel01 extends AppCompatActivity {
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         if (importantFill && importantCheck) {
-          db.updatePage1(importantB1.getText.toString, importantB2.getText.toString, famVErsterEhe.getText.toString, akad.getText.toString, if (radioB1.isChecked) "Frau" else "Herr","1")
+          db.updatePage1(importantB1.getText.toString, importantB2.getText.toString, famVErsterEhe.getText.toString, akad.getText.toString, if (radioB1.isChecked) "weiblich" else "männlich","1")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel02])
             .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
         }
