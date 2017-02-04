@@ -159,29 +159,7 @@ class Meldezettel07 extends AppCompatActivity {
 
     val item = db.readLast
 
-    def buttonInvisible = {
 
-      activity1Button.setVisibility(View.VISIBLE)
-      activity2Button.setVisibility(View.VISIBLE)
-      activity3Button.setVisibility(View.VISIBLE)
-      activity4Button.setVisibility(View.VISIBLE)
-      activity5Button.setVisibility(View.VISIBLE)
-      activity6Button.setVisibility(View.VISIBLE)
-      activity7Button.setVisibility(View.VISIBLE)
-
-      if (!optinal.lift(2).contains(1)) {
-        activity7Button.setVisibility(View.INVISIBLE)
-
-        if (!optinal.lift(5).contains(1)) {
-          activity6Button.setVisibility(View.INVISIBLE)
-          if (function == 2) {
-            activity5Button.setVisibility(View.INVISIBLE)
-          }else if (function == 1) {
-            activity5Button.setVisibility(View.INVISIBLE)
-          }
-        }
-      }
-    }
 
     def getDetails = {
 
@@ -213,7 +191,8 @@ class Meldezettel07 extends AppCompatActivity {
 
       def optinal2a(int: Int, list: List[Int]) = {
 
-        //TODO 11 - 15
+        activity3Button.setText("2a")
+
         edit31.setText(item.traveldocumentType)
         edit32.setText(item.traveldocumentNumber)
         edit33.setText(item.traveldocumentDate)
@@ -341,6 +320,9 @@ class Meldezettel07 extends AppCompatActivity {
           }
         } else {
           if (list.lift(5).contains(1)) {
+
+            activity4Button.setText("5")
+
             edit41.setText(item.firstStreet)
             edit42.setText(item.firstHouseNumber)
             edit43.setText(item.firstStairs)
@@ -348,6 +330,8 @@ class Meldezettel07 extends AppCompatActivity {
             edit45.setText(item.firstZipcode)
             edit46.setText(item.firstLocation)
             edit47.setText(item.immigrationCountry)
+
+            activity5Button.setText("5a")
 
             edit51.setText(item.secondStreet)
             edit52.setText(item.secondHouseNumber)
@@ -365,6 +349,9 @@ class Meldezettel07 extends AppCompatActivity {
             edit67.setText(item.condonedCountry)
 
           } else {
+
+            activity4Button.setText("5")
+
             edit41.setText(item.firstStreet)
             edit42.setText(item.firstHouseNumber)
             edit43.setText(item.firstStairs)
@@ -372,6 +359,9 @@ class Meldezettel07 extends AppCompatActivity {
             edit45.setText(item.firstZipcode)
             edit46.setText(item.firstLocation)
             edit47.setText(item.immigrationCountry)
+
+            activity5Button.setText("6")
+
 
             edit51.setText(item.thirdStreet)
             edit52.setText(item.thirdHouseNumber)
@@ -402,7 +392,9 @@ class Meldezettel07 extends AppCompatActivity {
       standardTexts
       if (optinal.lift(2).contains(1)) optinal2a(function, optinal)
       else {
-        //TODO 11 -> Familienstand
+
+        activity3Button.setText("3")
+
         text34.setText("Familienstand:")
         edit34.setText(item.familyStatus)
 
@@ -474,7 +466,9 @@ class Meldezettel07 extends AppCompatActivity {
       def onClick(v: View): Unit = {
         if (optinal.lift(2).contains(1)) {
           if (function == 2) startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-          else startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+          else {
+            startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+          }
         } else startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
       }
     })
@@ -485,10 +479,9 @@ class Meldezettel07 extends AppCompatActivity {
       }
     })
 
-
-
     getDetails
     buttonInvisible
+    buttonNumber
 
   }
 }
