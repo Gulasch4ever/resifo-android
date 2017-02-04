@@ -26,7 +26,7 @@ class Meldezettel07 extends AppCompatActivity {
     setContentView(R.layout.meldezettel07)
 
     //TODO values for textViews and Edit Text
-    //###########################################
+
     val text11: TextView = findViewById(R.id.textView11).asInstanceOf[TextView]
     val text12: TextView = findViewById(R.id.textView12).asInstanceOf[TextView]
     val text13: TextView = findViewById(R.id.textView13).asInstanceOf[TextView]
@@ -127,7 +127,7 @@ class Meldezettel07 extends AppCompatActivity {
     val edit76: TextView = findViewById(R.id.edit76).asInstanceOf[TextView]
     val edit77: TextView = findViewById(R.id.edit77).asInstanceOf[TextView]
 
-
+  //TODO buttons link
     val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
     val activity2Button: Button = findViewById(R.id.button2).asInstanceOf[Button]
     val activity3Button: Button = findViewById(R.id.button3).asInstanceOf[Button]
@@ -135,13 +135,12 @@ class Meldezettel07 extends AppCompatActivity {
     val activity5Button: Button = findViewById(R.id.button5).asInstanceOf[Button]
     val activity6Button: Button = findViewById(R.id.button6).asInstanceOf[Button]
     val activity7Button: Button = findViewById(R.id.button7).asInstanceOf[Button]
-    val activity8Button: Button = findViewById(R.id.button98).asInstanceOf[Button]
-    val helpButton: Button = findViewById(R.id.buttonHilfe).asInstanceOf[Button]
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
 
+
+
+
     val function = db.functionMeldezettel
-
-
 
     if (function == 0) new AlertDialog.Builder(Meldezettel07.this)
       .setMessage("Sie müssen eine Funktion des Meldezettels wählen!")
@@ -159,6 +158,8 @@ class Meldezettel07 extends AppCompatActivity {
 
 
     def getDetails = {
+
+
 
       def standardTexts = {
         //TODO 1 - 10
@@ -265,8 +266,8 @@ class Meldezettel07 extends AppCompatActivity {
       if (optinal.lift(2).contains(1)) optinal2a(function, optinal)
       else {
         //TODO 11 -> Familienstand
-        text34.setText("Familienstand:")
-        edit34.setText(item.familyStatus)
+//        text34.setText("Familienstand:")
+//        edit34.setText(item.familyStatus)
 
         function match {
           case 1 => function1(1, optinal)
@@ -396,39 +397,9 @@ class Meldezettel07 extends AppCompatActivity {
       }
     })
 
-    activity8Button.setOnClickListener(new OnClickListener {
-      def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
-          .setNegativeButton("Nein", null)
-          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
-            override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel07.this, classOf[Meldezettel08])
-              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-              startActivity(intent)
-              dialog.dismiss()
-            }
-          })
-          .show()
-      }
-    })
 
-    helpButton.setOnClickListener(new OnClickListener {
-      def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07.this)
-          .setMessage("Benötigen Sie Hilfe?")
-          .setNegativeButton("Nein", null)
-          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
-            override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel07.this, classOf[HelpActivity])
-              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-              startActivity(intent)
-              dialog.dismiss()
-            }
-          })
-          .show()
-      }
-    })
+
+
 
     getDetails
 
