@@ -11,6 +11,100 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="at.fh.swengb.resifoAndroid.activities.list.Credits">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:text="Infos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView93"
+                    android:textStyle="normal|bold"
+                    android:textSize="20sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="Dieses Projekt wurde vom Studiengang Informationsmanagement, im Laufe der Lehrveranstaltung SWENGB an der FH Joanneum entwickelt."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView94"
+                    android:textSize="18sp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:text="Projektteam:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView96"
+                    android:textSize="18sp"
+                    android:layout_marginTop="15dp"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:text="Laszlo Balo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView95"
+                    android:textSize="18sp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:text="David Mischak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView98"
+                    android:textSize="18sp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:text="Teresa Neuhold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView99"
+                    android:textSize="18sp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:text="Impressum:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView100"
+                    android:textSize="18sp"
+                    android:layout_marginTop="30dp"
+                    android:textStyle="normal|bold"/>
+
+                <TextView
+                    android:text="FH JOANNEUM Gesellschaft mbH\nAlte Poststraße 149\nA-8020 Graz\nTelefon: +43 316 5453 - 0\nEmail: info@fh-joanneum.at"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView101"
+                    android:textSize="18sp"
+                    android:layout_marginTop="5dp"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/fh_logo"
+                    android:id="@+id/imageView3"
+                    android:layout_marginTop="0dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
     <ImageView
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -19,117 +113,5 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/exitBtn"
         android:layout_alignParentRight="true" />
-
-    <TextView
-        android:text="ahfsduliuadshfiuasdfhafds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/exitBtn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="52dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="29dp"
-        android:id="@+id/textView6" />
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:text="Infos"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView93"
-                        android:textStyle="normal|bold"
-                        android:textSize="20sp"
-                        android:gravity="center"/>
-
-                    <TextView
-                        android:text="Dieses Projekt wurde vom Studiengang Informationsmanagement, im Laufe der Lehrveranstaltung SWENGB an der FH Joanneum entwickelt."
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView94"
-                        android:textSize="18sp"
-                        android:layout_marginTop="5dp"/>
-
-                    <TextView
-                        android:text="Projektteam:"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView96"
-                        android:textSize="18sp"
-                        android:layout_marginTop="15dp"
-                        android:textStyle="normal|bold" />
-
-                    <TextView
-                        android:text="Laszlo Balo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView95"
-                        android:textSize="18sp"
-                        android:layout_marginTop="5dp"/>
-
-                    <TextView
-                        android:text="David Mischak"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView98"
-                        android:textSize="18sp"
-                        android:layout_marginTop="5dp"/>
-
-                    <TextView
-                        android:text="Teresa Neuhold"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView99"
-                        android:textSize="18sp"
-                        android:layout_marginTop="5dp"/>
-
-                    <TextView
-                        android:text="Impressum:"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView100"
-                        android:textSize="18sp"
-                        android:layout_marginTop="30dp"
-                        android:textStyle="normal|bold"/>
-
-                    <TextView
-                        android:text="FH JOANNEUM Gesellschaft mbH\nAlte Poststraße 149\nA-8020 Graz\nTelefon: +43 316 5453 - 0\nEmail: info@fh-joanneum.at"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView101"
-                        android:textSize="18sp"
-                        android:layout_marginTop="5dp"/>
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/fh_logo"
-                        android:id="@+id/imageView3"
-                        android:layout_marginTop="0dp" />
-
-                </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
-
-    </LinearLayout>
 
 </RelativeLayout>

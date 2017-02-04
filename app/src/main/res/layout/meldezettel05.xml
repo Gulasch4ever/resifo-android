@@ -161,8 +161,9 @@
                 android:layout_alignBottom="@+id/button5"
                 android:layout_alignLeft="@+id/linearLayout2"
                 android:layout_alignStart="@+id/linearLayout2"
-                android:layout_marginBottom="27dp"
-                android:id="@+id/editText7" />
+                android:layout_marginBottom="1dp"
+                android:id="@+id/editText7"
+                android:layout_marginTop="1dp" />
 
             <EditText
                 android:layout_width="wrap_content"
