@@ -176,7 +176,7 @@ class Meldezettel03 extends AppCompatActivity {
     })
 
     def nextActivity: Unit = {
-      startActivity(new Intent(getApplicationContext, classOf[Meldezettel04]))
+      startActivity(new Intent(getApplicationContext, classOf[Meldezettel04]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
     }
 
     nextButton.setOnClickListener(new OnClickListener {
@@ -194,7 +194,7 @@ class Meldezettel03 extends AppCompatActivity {
           if (radioB6.isChecked) db.updatePage3("eingetragene Ehe aufgelöst oder für nichtig erklärt","1");nextActivity
           if (radioB7.isChecked) db.updatePage3("verwitwet","1");nextActivity
           if (radioB8.isChecked) db.updatePage3("hinterbliebener eingetragener Partnerschaft","1");nextActivity
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel04]))
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         }
       }
     })

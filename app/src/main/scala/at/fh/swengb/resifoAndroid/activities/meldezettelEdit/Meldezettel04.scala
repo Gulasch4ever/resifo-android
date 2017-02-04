@@ -174,13 +174,13 @@ class Meldezettel04 extends AppCompatActivity {
 
         if (radioB1.isChecked) {
           db.updatePage4("1")
-           startActivity(new Intent(getApplicationContext, classOf[Meldezettel05]))
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel05]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         } else if (radioB2.isChecked) {
           db.updatePage4("2")
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]))
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         }else if (radioB3.isChecked){
           db.updatePage4("3")
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel05]))
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel05]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         } else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
       }
     })

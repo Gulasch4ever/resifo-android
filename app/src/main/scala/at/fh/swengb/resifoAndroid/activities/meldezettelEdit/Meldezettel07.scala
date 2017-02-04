@@ -127,7 +127,7 @@ class Meldezettel07 extends AppCompatActivity {
     val edit76: TextView = findViewById(R.id.edit76).asInstanceOf[TextView]
     val edit77: TextView = findViewById(R.id.edit77).asInstanceOf[TextView]
 
-  //TODO buttons link
+    //TODO buttons link
     val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
     val activity2Button: Button = findViewById(R.id.button2).asInstanceOf[Button]
     val activity3Button: Button = findViewById(R.id.button3).asInstanceOf[Button]
@@ -139,6 +139,9 @@ class Meldezettel07 extends AppCompatActivity {
 
 
 
+
+
+    val optinal = db.checkCorrects
 
     val function = db.functionMeldezettel
 
@@ -156,10 +159,29 @@ class Meldezettel07 extends AppCompatActivity {
 
     val item = db.readLast
 
+    def buttonInvisible = {
+
+      activity1Button.setVisibility(View.VISIBLE)
+      activity2Button.setVisibility(View.VISIBLE)
+      activity3Button.setVisibility(View.VISIBLE)
+      activity4Button.setVisibility(View.VISIBLE)
+      activity5Button.setVisibility(View.VISIBLE)
+      activity6Button.setVisibility(View.VISIBLE)
+      activity7Button.setVisibility(View.VISIBLE)
+
+      if (!optinal.lift(2).contains(1)) {
+        activity7Button.setVisibility(View.INVISIBLE)
+
+        if (!optinal.lift(5).contains(1)) {
+          activity6Button.setVisibility(View.INVISIBLE)
+          if (function == 2) {
+            activity5Button.setVisibility(View.INVISIBLE)
+          }
+        }
+      }
+    }
 
     def getDetails = {
-
-
 
       def standardTexts = {
         //TODO 1 - 10
@@ -190,6 +212,11 @@ class Meldezettel07 extends AppCompatActivity {
       def optinal2a(int: Int, list: List[Int]) = {
 
         //TODO 11 - 15
+        edit31.setText(item.traveldocumentType)
+        edit32.setText(item.traveldocumentNumber)
+        edit33.setText(item.traveldocumentDate)
+        edit34.setText(item.traveldocumentAgency)
+        edit44.setText(item.familyStatus)
 
         int match {
           case 1 => function1(2, list) // mit 2a und anmelden
@@ -205,7 +232,6 @@ class Meldezettel07 extends AppCompatActivity {
 
         if (int == 1) {
           //anmelden ohne 2a
-          //TODO 12-18
           edit41.setText(item.firstStreet)
           edit42.setText(item.firstHouseNumber)
           edit43.setText(item.firstStairs)
@@ -216,44 +242,142 @@ class Meldezettel07 extends AppCompatActivity {
 
           // 5a ???
           if (list.lift(5).contains(1)) {
-            //TODO 19-24
-            ???
+            edit51.setText(item.secondStreet)
+            edit52.setText(item.secondHouseNumber)
+            edit53.setText(item.secondStairs)
+            edit54.setText(item.secondDoor)
+            edit55.setText(item.secondZipcode)
+            edit56.setText(item.secondLocation)
           }
 
 
         } else {
-          //TODO 16 - 22
+          edit51.setText(item.firstStreet)
+          edit52.setText(item.firstHouseNumber)
+          edit53.setText(item.firstStairs)
+          edit54.setText(item.firstDoor)
+          edit55.setText(item.firstZipcode)
+          edit56.setText(item.firstLocation)
+          edit57.setText(item.immigrationCountry)
           if (list.lift(5).contains(1)) {
-            //TODO 23-28
-
+            edit61.setText(item.secondStreet)
+            edit62.setText(item.secondHouseNumber)
+            edit63.setText(item.secondStairs)
+            edit64.setText(item.secondDoor)
+            edit65.setText(item.secondZipcode)
+            edit66.setText(item.secondLocation)
           }
-
         }
-
-
       }
 
       def function2(int: Int, list: List[Int]) = {
-        //TODO 16
+
         if (int == 2) {
-          //TODO 16-22 -> 22 verzieh
+          edit51.setText(item.thirdStreet)
+          edit52.setText(item.thirdHouseNumber)
+          edit53.setText(item.thirdStairs)
+          edit54.setText(item.thirdDoor)
+          edit55.setText(item.thirdZipcode)
+          edit56.setText(item.thirdLocation)
+          edit56.setText(item.condonedCountry)
+
         } else {
-          //TODO 12-18
+          edit41.setText(item.thirdStreet)
+          edit42.setText(item.thirdHouseNumber)
+          edit43.setText(item.thirdStairs)
+          edit44.setText(item.thirdDoor)
+          edit45.setText(item.thirdZipcode)
+          edit46.setText(item.thirdLocation)
+          edit46.setText(item.condonedCountry)
         }
       }
 
       def function3(int: Int, list: List[Int]) = {
         if (int == 2) {
           if (list.lift(5).contains(1)) {
-            //TODO 16 -35
+            edit51.setText(item.firstStreet)
+            edit52.setText(item.firstHouseNumber)
+            edit53.setText(item.firstStairs)
+            edit54.setText(item.firstDoor)
+            edit55.setText(item.firstZipcode)
+            edit56.setText(item.firstLocation)
+            edit57.setText(item.immigrationCountry)
+
+            edit61.setText(item.secondStreet)
+            edit62.setText(item.secondHouseNumber)
+            edit63.setText(item.secondStairs)
+            edit64.setText(item.secondDoor)
+            edit65.setText(item.secondZipcode)
+            edit66.setText(item.secondLocation)
+
+            edit71.setText(item.thirdStreet)
+            edit72.setText(item.thirdHouseNumber)
+            edit73.setText(item.thirdStairs)
+            edit74.setText(item.thirdDoor)
+            edit75.setText(item.thirdZipcode)
+            edit76.setText(item.thirdLocation)
+            edit77.setText(item.condonedCountry)
+
           } else {
-            //TODO 16- 29
+            edit51.setText(item.firstStreet)
+            edit52.setText(item.firstHouseNumber)
+            edit53.setText(item.firstStairs)
+            edit54.setText(item.firstDoor)
+            edit55.setText(item.firstZipcode)
+            edit56.setText(item.firstLocation)
+            edit57.setText(item.immigrationCountry)
+
+            edit61.setText(item.thirdStreet)
+            edit62.setText(item.thirdHouseNumber)
+            edit63.setText(item.thirdStairs)
+            edit64.setText(item.thirdDoor)
+            edit65.setText(item.thirdZipcode)
+            edit66.setText(item.thirdLocation)
+            edit67.setText(item.condonedCountry)
+
+
           }
         } else {
           if (list.lift(5).contains(1)) {
-            //TODO 12-31
+            edit41.setText(item.firstStreet)
+            edit42.setText(item.firstHouseNumber)
+            edit43.setText(item.firstStairs)
+            edit44.setText(item.firstDoor)
+            edit45.setText(item.firstZipcode)
+            edit46.setText(item.firstLocation)
+            edit47.setText(item.immigrationCountry)
+
+            edit51.setText(item.secondStreet)
+            edit52.setText(item.secondHouseNumber)
+            edit53.setText(item.secondStairs)
+            edit54.setText(item.secondDoor)
+            edit55.setText(item.secondZipcode)
+            edit56.setText(item.secondLocation)
+
+            edit61.setText(item.thirdStreet)
+            edit62.setText(item.thirdHouseNumber)
+            edit63.setText(item.thirdStairs)
+            edit64.setText(item.thirdDoor)
+            edit65.setText(item.thirdZipcode)
+            edit66.setText(item.thirdLocation)
+            edit67.setText(item.condonedCountry)
+
           } else {
-            //TODO 12-25
+            edit41.setText(item.firstStreet)
+            edit42.setText(item.firstHouseNumber)
+            edit43.setText(item.firstStairs)
+            edit44.setText(item.firstDoor)
+            edit45.setText(item.firstZipcode)
+            edit46.setText(item.firstLocation)
+            edit47.setText(item.immigrationCountry)
+
+            edit51.setText(item.thirdStreet)
+            edit52.setText(item.thirdHouseNumber)
+            edit53.setText(item.thirdStairs)
+            edit54.setText(item.thirdDoor)
+            edit55.setText(item.thirdZipcode)
+            edit56.setText(item.thirdLocation)
+            edit57.setText(item.condonedCountry)
           }
         }
       }
@@ -291,7 +415,6 @@ class Meldezettel07 extends AppCompatActivity {
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-
         startActivity(new Intent(getApplicationContext, classOf[Meldezettel08]))
 
       }
@@ -299,120 +422,71 @@ class Meldezettel07 extends AppCompatActivity {
 
     activity1Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
-          .setNegativeButton("Nein", null)
-          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
-            override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel07.this, classOf[Meldezettel01])
-              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-              startActivity(intent)
-              dialog.dismiss()
-            }
-          })
-          .show()
+        val intent: Intent = new Intent(Meldezettel07.this, classOf[Meldezettel01])
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        startActivity(intent)
       }
     })
 
     activity2Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
-          .setNegativeButton("Nein", null)
-          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
-            override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel07.this, classOf[Meldezettel02])
-              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-              startActivity(intent)
-              dialog.dismiss()
-            }
-          })
-          .show()
+        val intent: Intent = new Intent(Meldezettel07.this, classOf[Meldezettel02])
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        startActivity(intent)
       }
     })
 
     activity3Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
-          .setNegativeButton("Nein", null)
-          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
-            override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel07.this, classOf[Meldezettel07])
-              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-              startActivity(intent)
-              dialog.dismiss()
-            }
-          })
-          .show()
+
+        if (optinal.lift(2).contains(1)) {
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel02a]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        } else startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+
       }
     })
 
     activity4Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
-          .setNegativeButton("Nein", null)
-          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
-            override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel07.this, classOf[Meldezettel04])
-              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-              startActivity(intent)
-              dialog.dismiss()
-            }
-          })
-          .show()
+
+        if (optinal.lift(2).contains(1)) startActivity(new Intent(getApplicationContext, classOf[Meldezettel03]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        else if (function == 2) startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        else startActivity(new Intent(getApplicationContext, classOf[Meldezettel05]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+
       }
     })
 
     activity5Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
-          .setNegativeButton("Nein", null)
-          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
-            override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel07.this, classOf[Meldezettel05])
-              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-              startActivity(intent)
-              dialog.dismiss()
-            }
-          })
-          .show()
+
+        if (optinal.lift(2).contains(1)) {
+          if (function == 2) startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+          else startActivity(new Intent(getApplicationContext, classOf[Meldezettel05]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        } else if (optinal.lift(5).contains(1)) startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        else startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+
       }
     })
 
     activity6Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07.this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
-          .setNegativeButton("Nein", null)
-          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
-            override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel07.this, classOf[Meldezettel06])
-              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-              startActivity(intent)
-              dialog.dismiss()
-            }
-          })
-          .show()
+        if (optinal.lift(2).contains(1)) {
+          if (function == 2) startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+          else startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        } else startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
       }
     })
 
     activity7Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel07.this)
-          .setMessage("Sie befinden sich bereits auf der ersten Seite!")
-          .setNegativeButton("Zurück", null)
-          .show()
+        startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
       }
     })
 
 
 
-
-
     getDetails
+    buttonInvisible
 
   }
 }

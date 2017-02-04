@@ -255,7 +255,7 @@ class Meldezettel06 extends AppCompatActivity {
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         if (importantCheck) {
-          db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
+          db.updatePage6(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString, "1")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
         } else noP
