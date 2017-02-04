@@ -19,7 +19,6 @@ class Meldezettel05 extends AppCompatActivity {
   val db = new DBHelper(this)
 
 
-
   //TODO Google auto address
 
   override protected def onCreate(savedInstanceState: Bundle) {
@@ -45,14 +44,6 @@ class Meldezettel05 extends AppCompatActivity {
     val importantB6: EditText = findViewById(R.id.AdOrt).asInstanceOf[EditText]
 
 
-    importantB1.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
-    importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
-    importantB3.getBackground.clearColorFilter()
-    importantB4.getBackground.clearColorFilter()
-    importantB5.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
-    importantB6.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
-    editTextStaat.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
-
     val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
     val activity2Button: Button = findViewById(R.id.button2).asInstanceOf[Button]
     val activity3Button: Button = findViewById(R.id.button3).asInstanceOf[Button]
@@ -74,6 +65,63 @@ class Meldezettel05 extends AppCompatActivity {
         }
       })
       .show()
+
+
+    def colorImportant = {
+      importantB1.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+      importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+      importantB3.getBackground.clearColorFilter()
+      importantB4.getBackground.clearColorFilter()
+      importantB5.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+      importantB6.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+      editTextStaat.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+    }
+
+    def noP = {
+      Toast.makeText(getApplicationContext, "Pflichtpfelder bearbeiten!", Toast
+        .LENGTH_SHORT).show()
+    }
+
+    def importantFill(int: Int): Boolean = {
+
+      int match {
+        case 1 => if ((importantB1.getText.toString.trim == "")
+          || (importantB2.getText.toString.trim == "")
+          || (importantB5.getText.toString.trim == "")
+          || (importantB6.getText.toString.trim == "")) {
+          false
+        } else true
+        case 2 => if ((importantB1.getText.toString.trim == "")
+          || (importantB2.getText.toString.trim == "")
+          || (importantB5.getText.toString.trim == "")
+          || (importantB6.getText.toString.trim == ""
+          || editTextStaat.getText.toString.trim == "")) {
+          false
+        }
+        else true
+        case _ => false
+      }
+    }
+
+    def importantCheck(int: Int): Boolean = {
+      int match {
+        case 1 => if (radioB1.isChecked && (radioB3.isChecked || radioB4.isChecked)) {
+          return true
+        } else {
+
+          return false
+        }
+        case 2 => if (radioB2.isChecked) return true
+        else {
+          return false
+        }
+        case _ => false
+      }
+
+
+    }
+
+    colorImportant
 
     activity1Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
@@ -222,18 +270,17 @@ class Meldezettel05 extends AppCompatActivity {
       def onClick(v: View): Unit = {
 
 
-        if (radioB1.isChecked && (radioB3.isChecked || radioB4.isChecked)) {
-
+        if (importantCheck(1) && (importantFill(1) && importantFill(2))) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString, "1")
           if (function == "3") startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]))
           else startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
 
-        } else if (radioB2.isChecked) {
+        } else if (importantCheck(2) && importantFill(1)) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString, "1")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]))
-        } else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
+        }else noP
       }
     })
 

@@ -62,18 +62,54 @@ class Meldezettel06 extends AppCompatActivity {
       })
       .show()
 
+    def colorImportant = {
+      textStaat.setVisibility(View.INVISIBLE)
+      editTextStaat.setVisibility(View.INVISIBLE)
 
-    textStaat.setVisibility(View.INVISIBLE)
-    editTextStaat.setVisibility(View.INVISIBLE)
+      importantB1.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+      importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+      importantB5.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+      importantB6.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+      editTextStaat.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
 
-    importantB1.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
-    importantB2.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
-    importantB5.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
-    importantB6.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
-    editTextStaat.getBackground.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN)
+      importantB3.getBackground.clearColorFilter()
+      importantB4.getBackground.clearColorFilter()
+    }
 
-    importantB3.getBackground.clearColorFilter()
-    importantB4.getBackground.clearColorFilter()
+
+
+
+    def noP = {
+      Toast.makeText(getApplicationContext, "Pflichtpfelder bearbeiten!", Toast
+        .LENGTH_SHORT).show()
+    }
+
+    def importantFill(int: Int): Boolean = {
+
+      int match {
+        case 1 => if ((importantB1.getText.toString.trim == "")
+          || (importantB2.getText.toString.trim == "")
+          || (importantB5.getText.toString.trim == "")
+          || (importantB6.getText.toString.trim == "")) {
+          false
+        } else true
+        case 2 => if ((importantB1.getText.toString.trim == "")
+          || (importantB2.getText.toString.trim == "")
+          || (importantB5.getText.toString.trim == "")
+          || (importantB6.getText.toString.trim == ""
+          || editTextStaat.getText.toString.trim == "")) {
+          false
+        }
+        else true
+        case _ => false
+      }
+    }
+
+    def importantCheck: Boolean = {
+      if (radioB3.isChecked || radioB4.isChecked) {
+        if (radioB3.isChecked) importantFill(2) else importantFill(1)
+      } else false
+    }
 
     activity1Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
@@ -145,7 +181,7 @@ class Meldezettel06 extends AppCompatActivity {
 
     activity5Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel06 .this)
+        new AlertDialog.Builder(Meldezettel06.this)
           .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
@@ -166,7 +202,7 @@ class Meldezettel06 extends AppCompatActivity {
           .setMessage("Sie befinden sich bereits auf der ersten Seite!")
           .setNegativeButton("Zurück", null)
           .show()
-               }
+      }
     })
 
     activity7Button.setOnClickListener(new OnClickListener {
@@ -198,7 +234,7 @@ class Meldezettel06 extends AppCompatActivity {
           .show()
       }
     })
-    
+
     helpButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel06.this)
@@ -218,11 +254,11 @@ class Meldezettel06 extends AppCompatActivity {
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        if (radioB3.isChecked || radioB4.isChecked) {
+        if (importantCheck) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
-            getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString,"1")
+            getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString, "1")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
-        } else Toast.makeText(getApplicationContext, "eine Auswahl treffen", Toast.LENGTH_SHORT).show()
+        } else noP
       }
     })
 

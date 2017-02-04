@@ -27,7 +27,7 @@ class Meldezettel07 extends AppCompatActivity {
 
     //TODO values for textViews and Edit Text
     //###########################################
-    val text1: TextView = findViewById(R.id.textView2).asInstanceOf[TextView]
+    val text1: TextView = findViewById(R.id.textView1).asInstanceOf[TextView]
     val textAKAD: TextView = findViewById(R.id.textView4).asInstanceOf[TextView]
     val textNachname: TextView = findViewById(R.id.textView1).asInstanceOf[TextView]
     val textFamErsteEhe: TextView = findViewById(R.id.textView3).asInstanceOf[TextView]
@@ -63,7 +63,7 @@ class Meldezettel07 extends AppCompatActivity {
     val text3Ort: TextView = findViewById(R.id.textView34).asInstanceOf[TextView]
     val textVerziehStaat: TextView = findViewById(R.id.textView35).asInstanceOf[TextView]
 
-    val edit1: TextView = findViewById(R.id.nachname).asInstanceOf[TextView]
+    val nachname: TextView = findViewById(R.id.nachname).asInstanceOf[TextView]
     val vorname: TextView = findViewById(R.id.vorname).asInstanceOf[TextView]
     val famErsteEhe: TextView = findViewById(R.id.famErsteEhe).asInstanceOf[TextView]
     val akad: TextView = findViewById(R.id.akad).asInstanceOf[TextView]
@@ -247,7 +247,7 @@ class Meldezettel07 extends AppCompatActivity {
           rdDatum.setText(item.firstHouseNumber)
           rdBehörde.setText(item.firstStairs)
           familienstand.setText(item.firstDoor)
-          stra.setText(item.firstZipcode)
+          straße1.setText(item.firstZipcode)
           ort1.setText(item.firstLocation)
           zuzugStaat.setText(item.immigrationCountry)
 
