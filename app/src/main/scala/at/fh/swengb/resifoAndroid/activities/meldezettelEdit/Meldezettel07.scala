@@ -141,7 +141,7 @@ class Meldezettel07 extends AppCompatActivity {
 
     val function = db.functionMeldezettel
 
-    
+
 
     if (function == 0) new AlertDialog.Builder(Meldezettel07.this)
       .setMessage("Sie müssen eine Funktion des Meldezettels wählen!")
@@ -162,16 +162,16 @@ class Meldezettel07 extends AppCompatActivity {
 
       def standardTexts = {
         //TODO 1 - 10
-        nachname.setText(item.lastname)
-        vorname.setText(item.firstname)
-        famErsteEhe.setText(item.surnameBeforeFirstMarriage)
-        akad.setText(item.academicDegree)
-        geschlecht.setText(item.gender)
-        gebDatum.setText(item.birthdate)
-        gebOrt.setText(item.birthplace)
-        religion.setText(item.religion)
-        zrm.setText(item.zmr)
-        staatsangehörigkeit.setText(item.nationality)
+        edit11.setText(item.lastname)
+        edit12.setText(item.firstname)
+        edit13.setText(item.surnameBeforeFirstMarriage)
+        edit14.setText(item.academicDegree)
+        edit15.setText(item.gender)
+        edit21.setText(item.birthdate)
+        edit22.setText(item.birthplace)
+        edit23.setText(item.religion)
+        edit24.setText(item.zmr)
+        edit25.setText(item.nationality)
 
       }
 
@@ -194,13 +194,13 @@ class Meldezettel07 extends AppCompatActivity {
         if (int == 1) {
           //anmelden ohne 2a
           //TODO 12-18
-          rdNr.setText(item.firstStreet)
-          rdDatum.setText(item.firstHouseNumber)
-          rdBehörde.setText(item.firstStairs)
-          familienstand.setText(item.firstDoor)
-          stra.setText(item.firstZipcode)
-          ort1.setText(item.firstLocation)
-          zuzugStaat.setText(item.immigrationCountry)
+          edit41.setText(item.firstStreet)
+          edit42.setText(item.firstHouseNumber)
+          edit43.setText(item.firstStairs)
+          edit44.setText(item.firstDoor)
+          edit45.setText(item.firstZipcode)
+          edit46.setText(item.firstLocation)
+          edit47.setText(item.immigrationCountry)
 
           // 5a ???
           if (list.lift(5).contains(1)) {
@@ -265,8 +265,8 @@ class Meldezettel07 extends AppCompatActivity {
       if (optinal.lift(2).contains(1)) optinal2a(function, optinal)
       else {
         //TODO 11 -> Familienstand
-        textRDArt.setText("Familienstand:")
-        rdArt.setText(item.familyStatus)
+        text34.setText("Familienstand:")
+        edit34.setText(item.familyStatus)
 
         function match {
           case 1 => function1(1, optinal)
