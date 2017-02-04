@@ -163,6 +163,17 @@ class Meldezettel07 extends AppCompatActivity {
 
       def standardTexts = {
         //TODO 1 - 10
+        text11.setText("Nachname:")
+        text12.setText("Vorname:")
+        text13.setText("Fam. v. ersten Ehe:")
+        text14.setText("AKAD:")
+        text15.setText("Geschlecht:")
+        text21.setText("Geb. Datum:")
+        text22.setText("Geb. Ort:")
+        text23.setText("Religion:")
+        text24.setText("ZMR:")
+        text25.setText("Staatsangehörigkeit:")
+
         edit11.setText(item.lastname)
         edit12.setText(item.firstname)
         edit13.setText(item.surnameBeforeFirstMarriage)
@@ -266,8 +277,8 @@ class Meldezettel07 extends AppCompatActivity {
       if (optinal.lift(2).contains(1)) optinal2a(function, optinal)
       else {
         //TODO 11 -> Familienstand
-//        text34.setText("Familienstand:")
-//        edit34.setText(item.familyStatus)
+        text34.setText("Familienstand:")
+        edit34.setText(item.familyStatus)
 
         function match {
           case 1 => function1(1, optinal)
