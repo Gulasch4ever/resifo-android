@@ -79,20 +79,20 @@ class Meldezettel08 extends AppCompatActivity {
           case Some(0) => textSeiteA.setText("Nein!")
             valid = false
           case Some(1) => textSeiteA.setText("Ja!")
-          case _ => println("penis")
+          case _ =>  
 
         }
         list.lift(1) match {
           case Some(0) => textSeiteB.setText("Nein!")
             valid = false
           case Some(1) => textSeiteB.setText("Ja!")
-          case _ => println("penis")
+          case _ =>  
 
         }
         list.lift(2) match {
           case Some(0) => textSeiteC.setText("Nein!")
           case Some(1) => textSeiteC.setText("Ja!")
-          case _ => println("penis")
+          case _ =>  
 
         }
         list.lift(3) match {
@@ -100,7 +100,7 @@ class Meldezettel08 extends AppCompatActivity {
             valid = false
 
           case Some(1) => textSeiteD.setText("Ja!")
-          case _ => println("penis")
+          case _ =>  
         }
       }
 
@@ -119,7 +119,7 @@ class Meldezettel08 extends AppCompatActivity {
       def function1(list: List[Int]) = {
 
         textSeite5.setText("Seite 5:")
-        textSeite6.setText("Seite 5a (Optinal):")
+        textSeite6.setText("Seite 5a (Optional):")
         textFunktion.setText("Anmelden")
 
 
@@ -131,13 +131,13 @@ class Meldezettel08 extends AppCompatActivity {
             valid = false
 
           case Some(1) => textSeiteE.setText("Ja!")
-          case _ => println("penis")
+          case _ =>  
 
         }
         list.lift(5) match {
           case Some(0) => textSeiteF.setText("Nein!")
           case Some(1) => textSeiteF.setText("Ja!")
-          case _ => println("penis")
+          case _ =>  
 
         }
 
@@ -156,7 +156,7 @@ class Meldezettel08 extends AppCompatActivity {
             valid = false
 
           case Some(1) => textSeiteE.setText("Ja!")
-          case _ => println("penis")
+          case _ =>  
 
         }
         finalCheck
@@ -177,13 +177,13 @@ class Meldezettel08 extends AppCompatActivity {
             valid = false
 
           case Some(1) => textSeiteE.setText("Ja!")
-          case _ => println("penis")
+          case _ =>  
 
         }
         list.lift(5) match {
           case Some(0) => textSeiteF.setText("Nein!")
           case Some(1) => textSeiteF.setText("Ja!")
-          case _ => println("penis")
+          case _ =>  
 
         }
         list.lift(6) match {
@@ -191,7 +191,7 @@ class Meldezettel08 extends AppCompatActivity {
             valid = false
 
           case Some(1) => textSeiteG.setText("Ja!")
-          case _ => println("penis")
+          case _ =>  
 
         }
         finalCheck

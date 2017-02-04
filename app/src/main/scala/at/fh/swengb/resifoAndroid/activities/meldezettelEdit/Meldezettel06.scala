@@ -19,7 +19,6 @@ class Meldezettel06 extends AppCompatActivity {
   val db = new DBHelper(this)
 
   //TODO auto google address
-  //TODO Buttons
 
 
   override protected def onCreate(savedInstanceState: Bundle) {
@@ -163,40 +162,37 @@ class Meldezettel06 extends AppCompatActivity {
 
     activity6Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel06 .this)
-          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
-          .setNegativeButton("Nein", null)
-          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
-            override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel06.this, classOf[Meldezettel06])
-              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-              startActivity(intent)
-              dialog.dismiss()
-            }
-          })
-          .show()      }
+        new AlertDialog.Builder(Meldezettel06.this)
+          .setMessage("Sie befinden sich bereits auf der ersten Seite!")
+          .setNegativeButton("Zurück", null)
+          .show()
+               }
     })
 
     activity7Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         new AlertDialog.Builder(Meldezettel06.this)
-          .setMessage("Sie befinden sich bereits auf der ersten Seite!")
-          .setNegativeButton("Zurück", null)
+          .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
+
+            }
+          })
           .show()
       }
     })
 
     activity8Button.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        new AlertDialog.Builder(Meldezettel06 .this)
+        new AlertDialog.Builder(Meldezettel06.this)
           .setMessage("Wenn Sie die Seite verlassen werden die Daten der aktuellen Seite nicht gespeichert. Möchten Sie fortfahren?")
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
             override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel06.this, classOf[Meldezettel08])
-              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-              startActivity(intent)
-              dialog.dismiss()
+              startActivity(new Intent(getApplicationContext, classOf[Meldezettel08]))
+
             }
           })
           .show()
