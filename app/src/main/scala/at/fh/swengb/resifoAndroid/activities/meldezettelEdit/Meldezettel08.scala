@@ -355,8 +355,21 @@ class Meldezettel08 extends AppCompatActivity {
     saveButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         //TODO
-        db.transaction
-        startActivity(new Intent(getApplicationContext, classOf[ListActivity]))
+        if (textGeht.getText == "Der Meldezettel ist korrekt!"){
+          db.transaction
+          new AlertDialog.Builder(Meldezettel08.this)
+            .setMessage("Ihr Meldezettel wurde gespeichert! :D ")
+            .setPositiveButton("Ok", new android.content.DialogInterface.OnClickListener() {
+              override def onClick(dialog: DialogInterface, which: Int): Unit = {
+                val intent: Intent = new Intent(Meldezettel08.this, classOf[ListActivity])
+                startActivity(intent)
+                dialog.dismiss()
+              }
+            })
+            .show()
+        }else if (textGeht.getText=="Der Meldezettel ist ungültig!") Toast.makeText(getApplicationContext, "Der Meldezettel ist ungültig!", Toast
+          .LENGTH_SHORT).show()
+
       }
 
     })

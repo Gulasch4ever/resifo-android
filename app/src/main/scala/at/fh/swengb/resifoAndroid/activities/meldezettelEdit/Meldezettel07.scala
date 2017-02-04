@@ -176,6 +176,8 @@ class Meldezettel07 extends AppCompatActivity {
           activity6Button.setVisibility(View.INVISIBLE)
           if (function == 2) {
             activity5Button.setVisibility(View.INVISIBLE)
+          }else if (function == 1) {
+            activity5Button.setVisibility(View.INVISIBLE)
           }
         }
       }
