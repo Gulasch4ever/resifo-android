@@ -136,9 +136,9 @@ class Meldezettel07 extends AppCompatActivity {
 
 
 
-    val optinal = db.checkCorrects(1)
+    val optinal = db.checkCorrects
 
-    val function = db.functionMeldezettel(1)
+    val function = db.functionMeldezettel
 
     if (function == 0) new AlertDialog.Builder(Meldezettel07.this)
       .setMessage("Sie müssen eine Funktion des Meldezettels wählen!")
@@ -570,7 +570,7 @@ class Meldezettel07 extends AppCompatActivity {
           .show()
       }
 
-      val optinal = db.checkCorrects(1)
+      val optinal = db.checkCorrects
       standardTexts
       if (optinal.lift(2).contains(1)) optinal2a(function, optinal)
       else {
