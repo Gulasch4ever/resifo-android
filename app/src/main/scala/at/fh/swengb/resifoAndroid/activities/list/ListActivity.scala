@@ -1,11 +1,13 @@
 package at.fh.swengb.resifoAndroid.activities.list
 
 import android.content.Intent
+import android.database.Cursor
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.app.AppCompatActivity
-import android.view.View
-import android.widget.{AdapterView, ListView}
+import android.text.{Editable, TextWatcher}
+import android.view.{SearchEvent, View}
+import android.widget.{AdapterView, EditText, ListView, SearchView}
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.Meldezettel01
 import at.fh.swengb.resifoAndroid.db.DBHelper
@@ -24,6 +26,7 @@ class ListActivity extends AppCompatActivity {
     val db = new DBHelper(this)
 //     db.restartTable
     db.createTable
+    db.createFinalTable
 
     setContentView(R.layout.activity_list)
 
@@ -31,6 +34,8 @@ class ListActivity extends AppCompatActivity {
     val listView  = findViewById(R.id.myEntryList).asInstanceOf[ListView]
     val adapter = new CustomAdapter(getApplicationContext, listOfItems)
     listView.setAdapter(adapter)
+
+
 
     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       override def onItemClick(parent: AdapterView[_], view: View, position: Int, id: Long): Unit = {
@@ -49,7 +54,6 @@ class ListActivity extends AppCompatActivity {
       }
     })
   }
-
 }
 
 

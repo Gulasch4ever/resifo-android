@@ -355,7 +355,7 @@ class Meldezettel08 extends AppCompatActivity {
     saveButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         //TODO
-        //db.insertFinal
+        db.transaction
         startActivity(new Intent(getApplicationContext, classOf[ListActivity]))
       }
 
