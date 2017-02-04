@@ -177,7 +177,8 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/nachname"
                         android:layout_weight="1"
-                        android:layout_marginTop="5dp" />
+                        android:layout_marginTop="5dp"
+                        android:gravity="right" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -199,7 +200,8 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/vorname"
                         android:layout_weight="0.91"
-                        android:layout_marginTop="5dp" />
+                        android:layout_marginTop="5dp"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -221,7 +223,8 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/famErsteEhe"
                         android:layout_weight="1"
-                        android:layout_marginTop="5dp" />
+                        android:layout_marginTop="5dp"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -243,7 +246,8 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/akad"
                         android:layout_weight="1"
-                        android:layout_marginTop="5dp" />
+                        android:layout_marginTop="5dp"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -265,7 +269,8 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/geschlecht"
                         android:layout_weight="0.95"
-                        android:layout_marginTop="5dp" />
+                        android:layout_marginTop="5dp"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -286,7 +291,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/gebDatum"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -307,7 +313,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/gebOrt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -328,7 +335,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/religion"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -349,7 +357,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/zrm"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -369,7 +378,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/staatsangehörigkeit"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -390,7 +400,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rdArt"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -411,7 +422,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rdNr"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -432,7 +444,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rdDatum"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -453,7 +466,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/rdBehoerde"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -474,7 +488,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/familienstand"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -495,7 +510,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/strasse1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -516,7 +532,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/hausNr1"
-                        android:layout_weight="0.99" />
+                        android:layout_weight="0.99"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -537,7 +554,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/stiege1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -558,7 +576,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/tuer1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -579,7 +598,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/plz1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -600,7 +620,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/ort1"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -621,7 +642,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/zuzugStaat"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -642,7 +664,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/strasse2"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -663,7 +686,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/hausNr2"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -684,7 +708,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/stiege2"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -705,7 +730,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/tuer2"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -726,7 +752,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/plz2"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -747,7 +774,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/ort2"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -768,7 +796,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/strasse3"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -789,7 +818,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/hausNr3"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -810,7 +840,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/stiege3"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -831,7 +862,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/tuer3"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -852,7 +884,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/plz3"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
@@ -872,7 +905,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/ort3"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -893,7 +927,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/verziehStaat"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="right"/>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
