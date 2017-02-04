@@ -27,6 +27,7 @@ class Meldezettel07 extends AppCompatActivity {
 
     //TODO values for textViews and Edit Text
     //###########################################
+<<<<<<< HEAD
     val text1: TextView = findViewById(R.id.textView1).asInstanceOf[TextView]
 <<<<<<< HEAD
     val textAKAD: TextView = findViewById(R.id.textView4).asInstanceOf[TextView]
@@ -109,6 +110,8 @@ class Meldezettel07 extends AppCompatActivity {
     val text8: TextView = findViewById(R.id.textView8).asInstanceOf[TextView]
     val text9: TextView = findViewById(R.id.textView9).asInstanceOf[TextView]
     val text10: TextView = findViewById(R.id.textView10).asInstanceOf[TextView]
+=======
+>>>>>>> 4c099deb14ad3d6937d5555ee15ae0c2d904ad42
     val text11: TextView = findViewById(R.id.textView11).asInstanceOf[TextView]
     val text12: TextView = findViewById(R.id.textView12).asInstanceOf[TextView]
     val text13: TextView = findViewById(R.id.textView13).asInstanceOf[TextView]
@@ -116,9 +119,6 @@ class Meldezettel07 extends AppCompatActivity {
     val text15: TextView = findViewById(R.id.textView15).asInstanceOf[TextView]
     val text16: TextView = findViewById(R.id.textView16).asInstanceOf[TextView]
     val text17: TextView = findViewById(R.id.textView17).asInstanceOf[TextView]
-    val text18: TextView = findViewById(R.id.textView18).asInstanceOf[TextView]
-    val text19: TextView = findViewById(R.id.textView19).asInstanceOf[TextView]
-    val text20: TextView = findViewById(R.id.textView20).asInstanceOf[TextView]
     val text21: TextView = findViewById(R.id.textView21).asInstanceOf[TextView]
     val text22: TextView = findViewById(R.id.textView22).asInstanceOf[TextView]
     val text23: TextView = findViewById(R.id.textView23).asInstanceOf[TextView]
@@ -126,15 +126,93 @@ class Meldezettel07 extends AppCompatActivity {
     val text25: TextView = findViewById(R.id.textView25).asInstanceOf[TextView]
     val text26: TextView = findViewById(R.id.textView26).asInstanceOf[TextView]
     val text27: TextView = findViewById(R.id.textView27).asInstanceOf[TextView]
-    val text28: TextView = findViewById(R.id.textView28).asInstanceOf[TextView]
-    val text29: TextView = findViewById(R.id.textView29).asInstanceOf[TextView]
-    val text30: TextView = findViewById(R.id.textView30).asInstanceOf[TextView]
     val text31: TextView = findViewById(R.id.textView31).asInstanceOf[TextView]
     val text32: TextView = findViewById(R.id.textView32).asInstanceOf[TextView]
     val text33: TextView = findViewById(R.id.textView33).asInstanceOf[TextView]
     val text34: TextView = findViewById(R.id.textView34).asInstanceOf[TextView]
     val text35: TextView = findViewById(R.id.textView35).asInstanceOf[TextView]
+    val text36: TextView = findViewById(R.id.textView36).asInstanceOf[TextView]
+    val text37: TextView = findViewById(R.id.textView37).asInstanceOf[TextView]
+    val text41: TextView = findViewById(R.id.textView41).asInstanceOf[TextView]
+    val text42: TextView = findViewById(R.id.textView42).asInstanceOf[TextView]
+    val text43: TextView = findViewById(R.id.textView43).asInstanceOf[TextView]
+    val text44: TextView = findViewById(R.id.textView44).asInstanceOf[TextView]
+    val text45: TextView = findViewById(R.id.textView45).asInstanceOf[TextView]
+    val text46: TextView = findViewById(R.id.textView46).asInstanceOf[TextView]
+    val text47: TextView = findViewById(R.id.textView47).asInstanceOf[TextView]
+    val text51: TextView = findViewById(R.id.textView51).asInstanceOf[TextView]
+    val text52: TextView = findViewById(R.id.textView52).asInstanceOf[TextView]
+    val text53: TextView = findViewById(R.id.textView53).asInstanceOf[TextView]
+    val text54: TextView = findViewById(R.id.textView54).asInstanceOf[TextView]
+    val text55: TextView = findViewById(R.id.textView55).asInstanceOf[TextView]
+    val text56: TextView = findViewById(R.id.textView56).asInstanceOf[TextView]
+    val text57: TextView = findViewById(R.id.textView57).asInstanceOf[TextView]
+    val text61: TextView = findViewById(R.id.textView61).asInstanceOf[TextView]
+    val text62: TextView = findViewById(R.id.textView62).asInstanceOf[TextView]
+    val text63: TextView = findViewById(R.id.textView63).asInstanceOf[TextView]
+    val text64: TextView = findViewById(R.id.textView64).asInstanceOf[TextView]
+    val text65: TextView = findViewById(R.id.textView65).asInstanceOf[TextView]
+    val text66: TextView = findViewById(R.id.textView66).asInstanceOf[TextView]
+    val text67: TextView = findViewById(R.id.textView67).asInstanceOf[TextView]
+    val text71: TextView = findViewById(R.id.textView71).asInstanceOf[TextView]
+    val text72: TextView = findViewById(R.id.textView72).asInstanceOf[TextView]
+    val text73: TextView = findViewById(R.id.textView73).asInstanceOf[TextView]
+    val text74: TextView = findViewById(R.id.textView74).asInstanceOf[TextView]
+    val text75: TextView = findViewById(R.id.textView75).asInstanceOf[TextView]
+    val text76: TextView = findViewById(R.id.textView76).asInstanceOf[TextView]
+    val text77: TextView = findViewById(R.id.textView77).asInstanceOf[TextView]
 
+    val edit11: TextView = findViewById(R.id.edit11).asInstanceOf[TextView]
+    val edit12: TextView = findViewById(R.id.edit12).asInstanceOf[TextView]
+    val edit13: TextView = findViewById(R.id.edit13).asInstanceOf[TextView]
+    val edit14: TextView = findViewById(R.id.edit14).asInstanceOf[TextView]
+    val edit15: TextView = findViewById(R.id.edit15).asInstanceOf[TextView]
+    val edit16: TextView = findViewById(R.id.edit16).asInstanceOf[TextView]
+    val edit17: TextView = findViewById(R.id.edit17).asInstanceOf[TextView]
+    val edit21: TextView = findViewById(R.id.edit21).asInstanceOf[TextView]
+    val edit22: TextView = findViewById(R.id.edit22).asInstanceOf[TextView]
+    val edit23: TextView = findViewById(R.id.edit23).asInstanceOf[TextView]
+    val edit24: TextView = findViewById(R.id.edit24).asInstanceOf[TextView]
+    val edit25: TextView = findViewById(R.id.edit25).asInstanceOf[TextView]
+    val edit26: TextView = findViewById(R.id.edit26).asInstanceOf[TextView]
+    val edit27: TextView = findViewById(R.id.edit27).asInstanceOf[TextView]
+    val edit31: TextView = findViewById(R.id.edit31).asInstanceOf[TextView]
+    val edit32: TextView = findViewById(R.id.edit32).asInstanceOf[TextView]
+    val edit33: TextView = findViewById(R.id.edit33).asInstanceOf[TextView]
+    val edit34: TextView = findViewById(R.id.edit34).asInstanceOf[TextView]
+    val edit35: TextView = findViewById(R.id.edit35).asInstanceOf[TextView]
+    val edit36: TextView = findViewById(R.id.edit36).asInstanceOf[TextView]
+    val edit37: TextView = findViewById(R.id.edit37).asInstanceOf[TextView]
+    val edit41: TextView = findViewById(R.id.edit41).asInstanceOf[TextView]
+    val edit42: TextView = findViewById(R.id.edit42).asInstanceOf[TextView]
+    val edit43: TextView = findViewById(R.id.edit43).asInstanceOf[TextView]
+    val edit44: TextView = findViewById(R.id.edit44).asInstanceOf[TextView]
+    val edit45: TextView = findViewById(R.id.edit45).asInstanceOf[TextView]
+    val edit46: TextView = findViewById(R.id.edit46).asInstanceOf[TextView]
+    val edit47: TextView = findViewById(R.id.edit47).asInstanceOf[TextView]
+    val edit51: TextView = findViewById(R.id.edit51).asInstanceOf[TextView]
+    val edit52: TextView = findViewById(R.id.edit52).asInstanceOf[TextView]
+    val edit53: TextView = findViewById(R.id.edit53).asInstanceOf[TextView]
+    val edit54: TextView = findViewById(R.id.edit54).asInstanceOf[TextView]
+    val edit55: TextView = findViewById(R.id.edit55).asInstanceOf[TextView]
+    val edit56: TextView = findViewById(R.id.edit56).asInstanceOf[TextView]
+    val edit57: TextView = findViewById(R.id.edit57).asInstanceOf[TextView]
+    val edit61: TextView = findViewById(R.id.edit61).asInstanceOf[TextView]
+    val edit62: TextView = findViewById(R.id.edit62).asInstanceOf[TextView]
+    val edit63: TextView = findViewById(R.id.edit63).asInstanceOf[TextView]
+    val edit64: TextView = findViewById(R.id.edit64).asInstanceOf[TextView]
+    val edit65: TextView = findViewById(R.id.edit65).asInstanceOf[TextView]
+    val edit66: TextView = findViewById(R.id.edit66).asInstanceOf[TextView]
+    val edit67: TextView = findViewById(R.id.edit67).asInstanceOf[TextView]
+    val edit71: TextView = findViewById(R.id.edit71).asInstanceOf[TextView]
+    val edit72: TextView = findViewById(R.id.edit72).asInstanceOf[TextView]
+    val edit73: TextView = findViewById(R.id.edit73).asInstanceOf[TextView]
+    val edit74: TextView = findViewById(R.id.edit74).asInstanceOf[TextView]
+    val edit75: TextView = findViewById(R.id.edit75).asInstanceOf[TextView]
+    val edit76: TextView = findViewById(R.id.edit76).asInstanceOf[TextView]
+    val edit77: TextView = findViewById(R.id.edit77).asInstanceOf[TextView]
+
+<<<<<<< HEAD
     val edit1: TextView = findViewById(R.id.nachname).asInstanceOf[TextView]
     val edit2: TextView = findViewById(R.id.vorname).asInstanceOf[TextView]
     val edit3: TextView = findViewById(R.id.famErsteEhe).asInstanceOf[TextView]
@@ -171,6 +249,8 @@ class Meldezettel07 extends AppCompatActivity {
     val edit34: TextView = findViewById(R.id.ort3).asInstanceOf[TextView]
     val edit35: TextView = findViewById(R.id.verziehStaat).asInstanceOf[TextView]
 >>>>>>> 1a61c6da521249a082ce2a0fa1f163803ddfcb03
+=======
+>>>>>>> 4c099deb14ad3d6937d5555ee15ae0c2d904ad42
 
     val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
     val activity2Button: Button = findViewById(R.id.button2).asInstanceOf[Button]
@@ -185,85 +265,7 @@ class Meldezettel07 extends AppCompatActivity {
 
     val function = db.functionMeldezettel
 
-    def setInvisble = {
-
-//      textVorname.setText("")
-//      textAKAD.setText("")
-//      textNachname.setText("")
-//      textFamErsteEhe.setText("")
-//      textGeschlecht.setText("")
-//      textGebDatum.setText("")
-//      textGebOrt.setText("")
-//      textReligion.setText("")
-//      textZRM.setText("")
-//      textStaatsangehörigkeit.setText("")
-      textRDArt.setText("")
-      textRDNr.setText("")
-      textRDDatum.setText("")
-      textRDBehörde.setText("")
-      textFamilienstand.setText("")
-      text1Straße.setText("")
-      text1HausNr.setText("")
-      text1Stiege.setText("")
-      text1Tür.setText("")
-      text1PLZ.setText("")
-      text1Ort.setText("")
-      textZuzugStaat.setText("")
-      text2Straße.setText("")
-      text2HausNr.setText("")
-      text2Stiege.setText("")
-      text2Tür.setText("")
-      text2PLZ.setText("")
-      text2Ort.setText("")
-      text3Straße.setText("")
-      text3HausNr.setText("")
-      text3Stiege.setText("")
-      text3Tür.setText("")
-      text3PLZ.setText("")
-      text3Ort.setText("")
-      textVerziehStaat.setText("")
-
-      nachname.setText("")
-      vorname.setText("")
-      famErsteEhe.setText("")
-      akad.setText("")
-      geschlecht.setText("")
-      gebDatum.setText("")
-      gebOrt.setText("")
-      religion.setText("")
-      zrm.setText("")
-      staatsangehörigkeit.setText("")
-      rdArt.setText("")
-      rdNr.setText("")
-      rdDatum.setText("")
-      rdBehörde.setText("")
-
-      familienstand.setText("")
-
-      straße1.setText("")
-      hausNr1.setText("")
-      stiege1.setText("")
-      tür1.setText("")
-      plz1.setText("")
-      ort1.setText("")
-      zuzugStaat.setText("")
-      straße2.setText("")
-      hausNr2.setText("")
-      stiege2.setText("")
-      tür2.setText("")
-      plz2.setText("")
-      ort2.setText("")
-      straße3.setText("")
-      hausNr3.setText("")
-      stiege3.setText("")
-      tür3.setText("")
-      plz3.setText("")
-      ort3.setText("")
-      verziehStaat.setText("")
-
-    }
-
-    setInvisble
+    
 
     if (function == 0) new AlertDialog.Builder(Meldezettel07.this)
       .setMessage("Sie müssen eine Funktion des Meldezettels wählen!")
