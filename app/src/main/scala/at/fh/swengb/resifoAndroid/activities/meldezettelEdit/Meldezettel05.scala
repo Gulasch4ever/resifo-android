@@ -85,10 +85,10 @@ class Meldezettel05 extends AppCompatActivity {
     def importantFill(int: Int): Boolean = {
 
       int match {
-        case 1 => if ((importantB1.getText.toString.trim == "")
+        case 1 => if (((importantB1.getText.toString.trim == "")
           || (importantB2.getText.toString.trim == "")
           || (importantB5.getText.toString.trim == "")
-          || (importantB6.getText.toString.trim == "")) {
+          || (importantB6.getText.toString.trim == "")) ) {
           false
         } else true
         case 2 => if ((importantB1.getText.toString.trim == "")
@@ -106,7 +106,7 @@ class Meldezettel05 extends AppCompatActivity {
     def importantCheck(int: Int): Boolean = {
       int match {
         case 1 => if (radioB1.isChecked && (radioB3.isChecked || radioB4.isChecked)) {
-          return true
+           if (radioB3.isChecked) importantFill(2) else importantFill(1)
         } else {
 
           return false
@@ -270,7 +270,7 @@ class Meldezettel05 extends AppCompatActivity {
       def onClick(v: View): Unit = {
 
 
-        if (importantCheck(1) && (importantFill(1) && importantFill(2))) {
+        if (importantCheck(1)) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString, "1")
           if (function == "3") startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]))

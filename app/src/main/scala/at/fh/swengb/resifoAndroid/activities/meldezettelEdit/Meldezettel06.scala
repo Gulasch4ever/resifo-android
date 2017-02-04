@@ -76,7 +76,7 @@ class Meldezettel06 extends AppCompatActivity {
       importantB4.getBackground.clearColorFilter()
     }
 
-
+  colorImportant
 
 
     def noP = {
