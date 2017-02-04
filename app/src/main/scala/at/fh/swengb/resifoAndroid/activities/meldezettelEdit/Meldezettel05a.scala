@@ -100,7 +100,7 @@ class Meldezettel05a extends AppCompatActivity {
       }else false
     }
 
-    val function = db.functionMeldezettel
+    val function = db.functionMeldezettel(1)
     if (function == 0) new AlertDialog.Builder(Meldezettel05a.this)
       .setMessage("Sie müssen eine Funktion des Meldezettels wählen!")
       .setPositiveButton("Ok", new android.content.DialogInterface.OnClickListener() {
@@ -270,7 +270,7 @@ class Meldezettel05a extends AppCompatActivity {
           db.updatePage5a(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString,"1")
 
-          if (db.functionMeldezettel == 3 ) startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+          if (db.functionMeldezettel(1) == 3 ) startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]) addFlags Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
           else startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
         }else noP
       }

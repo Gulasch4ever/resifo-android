@@ -110,55 +110,55 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     val cursor = db.rawQuery(sql, null)
     cursor.moveToLast
     //copy last line from Edit-table
-      val lastname = cursor.getString(cursor.getColumnIndex(COLUMN_LASTNAME))
-      val firstname = cursor.getString(cursor.getColumnIndex(COLUMN_FIRSTNAME))
-      val surnameBeforeFirstMarriage = cursor.getString(cursor.getColumnIndex(COLUMN_SURNAME_BEFORE_FIRST_MARRIAGE))
-      val academicDegree = cursor.getString(cursor.getColumnIndex(COLUMN_ACADEMIC_DEGREE))
-      val gender = cursor.getString(cursor.getColumnIndex(COLUMN_GENDER))
-      val birthdate = cursor.getString(cursor.getColumnIndex(COLUMN_BIRTHDATE))
-      val birthplace = cursor.getString(cursor.getColumnIndex(COLUMN_BIRTHPLACE))
-      val religion = cursor.getString(cursor.getColumnIndex(COLUMN_RELIGION))
-      val zmr = cursor.getString(cursor.getColumnIndex(COLUMN_ZMR))
-      val nationality = cursor.getString(cursor.getColumnIndex(COLUMN_NATIONALITY))
-      val traveldocumentType = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_TYPE))
-      val traveldocumentNumber = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_NUMBER))
-      val traveldocumentDate = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_DATE))
-      val traveldocumentAgency = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_AGENCY))
-      val familyStatus = cursor.getString(cursor.getColumnIndex(COLUMN_FAMILY_STATUS))
+    val lastname = cursor.getString(cursor.getColumnIndex(COLUMN_LASTNAME))
+    val firstname = cursor.getString(cursor.getColumnIndex(COLUMN_FIRSTNAME))
+    val surnameBeforeFirstMarriage = cursor.getString(cursor.getColumnIndex(COLUMN_SURNAME_BEFORE_FIRST_MARRIAGE))
+    val academicDegree = cursor.getString(cursor.getColumnIndex(COLUMN_ACADEMIC_DEGREE))
+    val gender = cursor.getString(cursor.getColumnIndex(COLUMN_GENDER))
+    val birthdate = cursor.getString(cursor.getColumnIndex(COLUMN_BIRTHDATE))
+    val birthplace = cursor.getString(cursor.getColumnIndex(COLUMN_BIRTHPLACE))
+    val religion = cursor.getString(cursor.getColumnIndex(COLUMN_RELIGION))
+    val zmr = cursor.getString(cursor.getColumnIndex(COLUMN_ZMR))
+    val nationality = cursor.getString(cursor.getColumnIndex(COLUMN_NATIONALITY))
+    val traveldocumentType = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_TYPE))
+    val traveldocumentNumber = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_NUMBER))
+    val traveldocumentDate = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_DATE))
+    val traveldocumentAgency = cursor.getString(cursor.getColumnIndex(COLUMN_TRAVELDOCUMENT_AGENCY))
+    val familyStatus = cursor.getString(cursor.getColumnIndex(COLUMN_FAMILY_STATUS))
 
-      val firstStreet = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_STREET))
-      val firstHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_HOUSENUMBER))
-      val firstStairs = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_STAIRS))
-      val firstDoor = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_DOOR))
-      val firstZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_ZIPCODE))
-      val firstLocation = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_LOCATION))
-
-
-      val secondStreet = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STREET))
-      val secondHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_HOUSENUMBER))
-      val secondStairs = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STAIRS))
-      val secondDoor = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_DOOR))
-      val secondZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_ZIPCODE))
-      val secondLocation = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_LOCATION))
+    val firstStreet = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_STREET))
+    val firstHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_HOUSENUMBER))
+    val firstStairs = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_STAIRS))
+    val firstDoor = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_DOOR))
+    val firstZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_ZIPCODE))
+    val firstLocation = cursor.getString(cursor.getColumnIndex(COLUMN_FIRST_LOCATION))
 
 
-      val thirdStreet = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STREET))
-      val thirdHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_HOUSENUMBER))
-      val thirdStairs = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STAIRS))
-      val thirdDoor = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_DOOR))
-      val thirdZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_ZIPCODE))
-      val thirdLocation = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_LOCATION))
+    val secondStreet = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STREET))
+    val secondHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_HOUSENUMBER))
+    val secondStairs = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_STAIRS))
+    val secondDoor = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_DOOR))
+    val secondZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_ZIPCODE))
+    val secondLocation = cursor.getString(cursor.getColumnIndex(COLUMN_SECOND_LOCATION))
 
-      val immigrationCountry = cursor.getString(cursor.getColumnIndex(COLUMN_IMMIGRATION_COUNTRY))
-      val condonedCountry = cursor.getString(cursor.getColumnIndex(COLUMN_CONDONED_COUNTRY))
-      val function = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
+
+    val thirdStreet = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STREET))
+    val thirdHouseNumber = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_HOUSENUMBER))
+    val thirdStairs = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_STAIRS))
+    val thirdDoor = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_DOOR))
+    val thirdZipcode = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_ZIPCODE))
+    val thirdLocation = cursor.getString(cursor.getColumnIndex(COLUMN_THIRD_LOCATION))
+
+    val immigrationCountry = cursor.getString(cursor.getColumnIndex(COLUMN_IMMIGRATION_COUNTRY))
+    val condonedCountry = cursor.getString(cursor.getColumnIndex(COLUMN_CONDONED_COUNTRY))
+    val function = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
 
     cursor.close
 
     //Deletes all rows from Edit-table
-    db.execSQL("delete from "+ TABLE_NAME);
+    db.execSQL("delete from " + TABLE_NAME);
 
-      //write data
+    //write data
     val dbWrite = getWritableDatabase
     val values = new ContentValues
     values.put(COLUMN_LASTNAME, lastname)
@@ -200,44 +200,53 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     dbWrite.close
   }
 
-  def functionMeldezettel: Int = {
+  def functionMeldezettel(int: Int): Int = {
 
     val db = this.getReadableDatabase
-    val sql = s"SELECT * FROM $TABLE_NAME"
-    val cursor = db.rawQuery(sql, null)
-    cursor.moveToLast
-    var functionM: Int = 0
+    var sql = ""
+    if (int == 1) {
+      sql = s"SELECT * FROM $TABLE_NAME"
+    }else sql = s"SELECT * FROM $TABLE_NAME_Final"
 
-    def checknull = {
-      if (cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION)) == null) 0
+      val cursor = db.rawQuery(sql, null)
+      cursor.moveToLast
+      var functionM: Int = 0
+
+      def checknull = {
+        if (cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION)) == null) 0
+      }
+
+      val chNull = checknull
+      var functionString = ""
+
+      if (chNull == 0) functionM = 0
+      else functionString = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
+      cursor.close()
+
+      functionString match {
+        case "1" => functionM = functionString.toInt
+        case "2" => functionM = functionString.toInt
+        case "3" => functionM = functionString.toInt
+        case _ => functionM = 0
+      }
+      functionM
     }
 
-    val chNull = checknull
-    var functionString = ""
-
-    if (chNull == 0) functionM = 0
-    else functionString = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
-    cursor.close()
-
-    functionString match {
-      case "1" => functionM = functionString.toInt
-      case "2" => functionM = functionString.toInt
-      case "3" => functionM = functionString.toInt
-      case _ => functionM = 0
-    }
-    functionM
-  }
 
 
-  def checkCorrects: List[Int] = {
 
+  def checkCorrects(int: Int): List[Int] = {
 
     val db = this.getReadableDatabase
-    val sql = s"SELECT * FROM $TABLE_NAME"
+    var sql = ""
+    if (int == 1) {
+
+      sql = s"SELECT * FROM $TABLE_NAME"
+
+    } else sql = s"SELECT * FROM $TABLE_NAME_Final"
+
     val cursor = db.rawQuery(sql, null)
     cursor.moveToLast
-
-
 
     val seite1 = if (cursor.getString(cursor.getColumnIndex(COLUMN_Seite1)) == null) 0 else 1
     val seite2 = if (cursor.getString(cursor.getColumnIndex(COLUMN_Seite2)) == null) 0 else 1
@@ -250,6 +259,8 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
 
     val checkCorrect: List[Int] = List(seite1, seite2, seite2a, seite3, seite5, seite5a, seite6)
     checkCorrect
+
+
   }
 
 
@@ -404,7 +415,7 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
 
 
   //TODO insert Fertigen Meldezettel in MeldezettelFinal
-  def insertFinal(item:FinalItem): Unit = {
+  def insertFinal(item: FinalItem): Unit = {
     ???
   }
 

@@ -53,7 +53,7 @@ class Meldezettel05 extends AppCompatActivity {
     val activity7Button: Button = findViewById(R.id.button7).asInstanceOf[Button]
     val activity8Button: Button = findViewById(R.id.button98).asInstanceOf[Button]
 
-    val function = db.functionMeldezettel.toString
+    val function = db.functionMeldezettel(1).toString
     if (function == "0") new AlertDialog.Builder(Meldezettel05.this)
       .setMessage("Sie müssen eine Funktion des Meldezettels wählen!")
       .setPositiveButton("Ok", new android.content.DialogInterface.OnClickListener() {

@@ -16,16 +16,12 @@ import at.fh.swengb.resifoAndroid.db.objects.FinalItem
   */
 class Meldezettel07 extends AppCompatActivity {
 
-  //TODO fancy scrollVIEW
-  //TODO buttons
-
   val db = new DBHelper(this)
 
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.meldezettel07)
 
-    //TODO values for textViews and Edit Text
 
     val text11: TextView = findViewById(R.id.textView11).asInstanceOf[TextView]
     val text12: TextView = findViewById(R.id.textView12).asInstanceOf[TextView]
@@ -127,7 +123,6 @@ class Meldezettel07 extends AppCompatActivity {
     val edit76: TextView = findViewById(R.id.edit76).asInstanceOf[TextView]
     val edit77: TextView = findViewById(R.id.edit77).asInstanceOf[TextView]
 
-    //TODO buttons link
     val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
     val activity2Button: Button = findViewById(R.id.button2).asInstanceOf[Button]
     val activity3Button: Button = findViewById(R.id.button3).asInstanceOf[Button]
@@ -141,9 +136,9 @@ class Meldezettel07 extends AppCompatActivity {
 
 
 
-    val optinal = db.checkCorrects
+    val optinal = db.checkCorrects(1)
 
-    val function = db.functionMeldezettel
+    val function = db.functionMeldezettel(1)
 
     if (function == 0) new AlertDialog.Builder(Meldezettel07.this)
       .setMessage("Sie müssen eine Funktion des Meldezettels wählen!")
@@ -185,7 +180,7 @@ class Meldezettel07 extends AppCompatActivity {
         activity7Button.setVisibility(View.INVISIBLE)
         if (function == 2) activity6Button.setVisibility(View.INVISIBLE)
 
-      }
+      } else if (function == 1) activity6Button.setVisibility(View.INVISIBLE)
     }
 
     def getDetails = {
@@ -575,7 +570,7 @@ class Meldezettel07 extends AppCompatActivity {
           .show()
       }
 
-      val optinal = db.checkCorrects
+      val optinal = db.checkCorrects(1)
       standardTexts
       if (optinal.lift(2).contains(1)) optinal2a(function, optinal)
       else {

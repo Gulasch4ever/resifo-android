@@ -210,8 +210,8 @@ class Meldezettel08 extends AppCompatActivity {
         finalCheck
       }
 
-      val corrects = db.checkCorrects
-      val function = db.functionMeldezettel
+      val corrects = db.checkCorrects(1)
+      val function = db.functionMeldezettel(1)
 
 
       function match {
