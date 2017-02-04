@@ -200,13 +200,13 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     dbWrite.close
   }
 
-  def functionMeldezettel(int: Int): Int = {
+  def functionMeldezettel: Int = {
 
     val db = this.getReadableDatabase
     var sql = ""
-    if (int == 1) {
+
       sql = s"SELECT * FROM $TABLE_NAME"
-    }else sql = s"SELECT * FROM $TABLE_NAME_Final"
+
 
       val cursor = db.rawQuery(sql, null)
       cursor.moveToLast
@@ -235,15 +235,13 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
 
 
 
-  def checkCorrects(int: Int): List[Int] = {
+  def checkCorrects: List[Int] = {
 
     val db = this.getReadableDatabase
     var sql = ""
-    if (int == 1) {
+
 
       sql = s"SELECT * FROM $TABLE_NAME"
-
-    } else sql = s"SELECT * FROM $TABLE_NAME_Final"
 
     val cursor = db.rawQuery(sql, null)
     cursor.moveToLast
@@ -328,12 +326,19 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
         val immigrationCountry = cursor.getString(cursor.getColumnIndex(COLUMN_IMMIGRATION_COUNTRY))
         val condonedCountry = cursor.getString(cursor.getColumnIndex(COLUMN_CONDONED_COUNTRY))
         val function = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
+        val page1 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite1))
+        val page2 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite2))
+        val page2a = cursor.getString(cursor.getColumnIndex(COLUMN_Seite2a))
+        val page3 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite3))
+        val page5 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite5))
+        val page5a = cursor.getString(cursor.getColumnIndex(COLUMN_Seite5a))
+        val page6 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite6))
 
         listOfItems += new FinalItem(id, lastname, firstname, surnameBeforeFirstMarriage, academicDegree, gender, birthdate, birthplace, religion, zmr,
           nationality, if (traveldocumentType == "") "" else traveldocumentType, if (traveldocumentNumber == "") "" else traveldocumentNumber,
           if (traveldocumentDate == "") "" else traveldocumentDate, if (traveldocumentAgency == "") "" else traveldocumentAgency, familyStatus,
           firstStreet, firstHouseNumber, firstStairs, firstDoor, firstZipcode, firstLocation, secondStreet, secondHouseNumber, secondStairs, secondDoor, secondZipcode, secondLocation,
-          thirdStreet, thirdHouseNumber, thirdStairs, thirdDoor, thirdZipcode, thirdLocation, immigrationCountry, condonedCountry, function)
+          thirdStreet, thirdHouseNumber, thirdStairs, thirdDoor, thirdZipcode, thirdLocation, immigrationCountry, condonedCountry, function,page1,page2,page2a,page3,page5,page5a,page6)
       }
       while (cursor.moveToNext)
     }
@@ -391,11 +396,19 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     val condonedCountry = cursor.getString(cursor.getColumnIndex(COLUMN_CONDONED_COUNTRY))
     val function = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
 
+    val page1 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite1))
+    val page2 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite2))
+    val page2a = cursor.getString(cursor.getColumnIndex(COLUMN_Seite2a))
+    val page3 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite3))
+    val page5 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite5))
+    val page5a = cursor.getString(cursor.getColumnIndex(COLUMN_Seite5a))
+    val page6 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite6))
+
     val item = new FinalItem(id, lastname, firstname, surnameBeforeFirstMarriage, academicDegree, gender, birthdate, birthplace, religion, zmr,
       nationality, if (traveldocumentType == "") "" else traveldocumentType, if (traveldocumentNumber == "") "" else traveldocumentNumber,
       if (traveldocumentDate == "") "" else traveldocumentDate, if (traveldocumentAgency == "") "" else traveldocumentAgency, familyStatus,
       firstStreet, firstHouseNumber, firstStairs, firstDoor, firstZipcode, firstLocation, secondStreet, secondHouseNumber, secondStairs, secondDoor, secondZipcode, secondLocation,
-      thirdStreet, thirdHouseNumber, thirdStairs, thirdDoor, thirdZipcode, thirdLocation, immigrationCountry, condonedCountry, function)
+      thirdStreet, thirdHouseNumber, thirdStairs, thirdDoor, thirdZipcode, thirdLocation, immigrationCountry, condonedCountry, function,page1,page2,page2a,page3,page5,page5a,page6)
 
     cursor.close
 

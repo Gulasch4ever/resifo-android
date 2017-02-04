@@ -49,7 +49,7 @@ class Meldezettel06 extends AppCompatActivity {
     val importantB5: EditText = findViewById(R.id.editText7).asInstanceOf[EditText]
     val importantB6: EditText = findViewById(R.id.AdOrt).asInstanceOf[EditText]
 
-    val function = db.functionMeldezettel(1).toString
+    val function = db.functionMeldezettel.toString
     if (function == "0") new AlertDialog.Builder(Meldezettel06.this)
       .setMessage("Sie müssen eine Funktion des Meldezettels wählen!")
       .setPositiveButton("Ok", new android.content.DialogInterface.OnClickListener() {

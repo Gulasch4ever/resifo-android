@@ -10,7 +10,7 @@ case class FinalItem(id: String, lastname: String, val firstname: String, val su
                      val familyStatus: String, val firstStreet: String, val firstHouseNumber: String, val firstStairs: String, val firstDoor: String,
                      val firstZipcode: String,firstLocation:String, val secondStreet: String, val secondHouseNumber: String, val secondStairs: String, val secondDoor: String,
                      val secondZipcode: String,secondLocation:String, val thirdStreet: String, val thirdHouseNumber: String, val thirdStairs: String, val thirdDoor: String,
-                     thirdZipcode: String,thirdLocation:String, val immigrationCountry: String, val condonedCountry:String, val function: String ) extends Serializable {
+                     thirdZipcode: String,thirdLocation:String, val immigrationCountry: String, val condonedCountry:String, val function: String,page1:String,page2:String,page2a:String,page3:String,page5:String,page5a:String,page6:String ) extends Serializable {
 
 }
 
