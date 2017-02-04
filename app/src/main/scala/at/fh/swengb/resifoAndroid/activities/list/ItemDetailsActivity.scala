@@ -8,7 +8,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.widget.{Button, TextView}
 import at.fh.swengb.resifoAndroid.R
-import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.Meldezettel04
+import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.{Meldezettel04, Meldezettel06, Meldezettel07}
 import at.fh.swengb.resifoAndroid.db.DBHelper
 import at.fh.swengb.resifoAndroid.db.objects.FinalItem
 
@@ -120,6 +120,7 @@ class ItemDetailsActivity extends AppCompatActivity {
     val edit76: TextView = findViewById(R.id.edit76).asInstanceOf[TextView]
     val edit77: TextView = findViewById(R.id.edit77).asInstanceOf[TextView]
 
+    val nextButton:Button=findViewById(R.id.nxtButton).asInstanceOf[Button]
 
 
 
@@ -542,7 +543,14 @@ class ItemDetailsActivity extends AppCompatActivity {
       }
     }
 
+    nextButton.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        startActivity(new Intent(getApplicationContext, classOf[ListActivity]))
+      }
+    })
+
       getDetails
   }
+
 }
 
