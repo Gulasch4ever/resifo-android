@@ -149,7 +149,7 @@ class Meldezettel05 extends AppCompatActivity {
               importantB2.setText(number)
               importantB5.setText(postalCode)
               importantB6.setText(city)
-              }
+            }
             case _ => println("No match!")
           }
           // \n is for new line
