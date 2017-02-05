@@ -8,6 +8,7 @@ import android.view.View.OnClickListener
 import android.widget.{Button, TextView, Toast}
 import at.fh.swengb.resifoAndroid.activities.list.ListActivity
 import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.activities.help.HelpActivity
 import at.fh.swengb.resifoAndroid.db.DBHelper
 
 /**
@@ -371,6 +372,22 @@ class Meldezettel08 extends AppCompatActivity {
 
       }
 
+    })
+    helpButton.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        new AlertDialog.Builder(Meldezettel08.this)
+          .setMessage("Benötigen Sie Hilfe?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              val intent: Intent = new Intent(Meldezettel08.this, classOf[HelpActivity])
+              intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+              startActivity(intent)
+              dialog.dismiss()
+            }
+          })
+          .show()
+      }
     })
 
     autoCorrect
