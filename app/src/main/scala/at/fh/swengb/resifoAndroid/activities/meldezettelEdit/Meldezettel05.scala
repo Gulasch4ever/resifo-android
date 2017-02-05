@@ -1,5 +1,7 @@
 package at.fh.swengb.resifoAndroid.activities.meldezettelEdit
 
+import android.Manifest.permission
+import android.content.pm.PackageManager
 import android.content.{DialogInterface, Intent}
 import android.graphics.{Color, PorterDuff}
 import android.os.Bundle
@@ -24,7 +26,6 @@ class Meldezettel05 extends AppCompatActivity {
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.meldezettel05)
-
 
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
     val radioB1: RadioButton = findViewById(R.id.radioAd1).asInstanceOf[RadioButton]
@@ -130,42 +131,42 @@ class Meldezettel05 extends AppCompatActivity {
         val gps = new MyGPS(Meldezettel05.this)
         if (gps.canGetLocation) {
 
-                    val latitude:Double = gps.getLatitude
-                    val longitude:Double = gps.getLongitude
+          val latitude:Double = gps.getLatitude
+          val longitude:Double = gps.getLongitude
 
-                    // \n is for new line
-                    Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-                  } else {
-                    // Can't get location.
-                    // GPS or network is not enabled.
-                    // Ask user to enable GPS/network in settings.
-                    gps.showSettingsAlert();
-                  }
+          // \n is for new line
+          Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+        } else {
+          // Can't get location.
+          // GPS or network is not enabled.
+          // Ask user to enable GPS/network in settings.
+          gps.showSettingsAlert();
+        }
       }
     })
 
 
     //    {
-//      @Override
-//      public void onClick(View arg0) {
-//        // Create class object
-//        gps = new GPSTracker(AndroidGPSTrackingActivity.this);
-//
-//        // Check if GPS enabled
-//        if (gps.canGetLocation()) {
-//          double latitude = gps.getLatitude();
-//          double longitude = gps.getLongitude();
-//
-//          // \n is for new line
-//          Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-//        } else {
-//          // Can't get location.
-//          // GPS or network is not enabled.
-//          // Ask user to enable GPS/network in settings.
-//          gps.showSettingsAlert();
-//        }
-//      }
-//    };
+    //      @Override
+    //      public void onClick(View arg0) {
+    //        // Create class object
+    //        gps = new GPSTracker(AndroidGPSTrackingActivity.this);
+    //
+    //        // Check if GPS enabled
+    //        if (gps.canGetLocation()) {
+    //          double latitude = gps.getLatitude();
+    //          double longitude = gps.getLongitude();
+    //
+    //          // \n is for new line
+    //          Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+    //        } else {
+    //          // Can't get location.
+    //          // GPS or network is not enabled.
+    //          // Ask user to enable GPS/network in settings.
+    //          gps.showSettingsAlert();
+    //        }
+    //      }
+    //    };
 
 
     colorImportant
@@ -364,4 +365,21 @@ class Meldezettel05 extends AppCompatActivity {
 
   }
 
+
+
+  override def onResume(): Unit = {
+    super.onResume()
+    if (checkSelfPermission(permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+      requestPermissions(Array(permission.ACCESS_FINE_LOCATION), 0)
+    }
+  }
+  override def onRequestPermissionsResult(requestCode: Int, permissions: Array[String], grantResults: Array[Int]): Unit = {
+    if (permissions.contains(permission.ACCESS_FINE_LOCATION) && grantResults.contains(PackageManager.PERMISSION_GRANTED)) {
+      def location = new MyGPS(this).getLocation
+      println(location)
+    }
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+
+  }
 }

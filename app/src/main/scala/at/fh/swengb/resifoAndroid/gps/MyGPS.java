@@ -189,6 +189,8 @@ public class MyGPS extends Service implements LocationListener {
         alertDialog.show();
     }
 
+
+
     @Override
     public void onLocationChanged(Location location) {
     }
@@ -213,7 +215,6 @@ public class MyGPS extends Service implements LocationListener {
     public IBinder onBind(Intent arg0) {
         return null;
     }
-
 
 
 
