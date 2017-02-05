@@ -145,8 +145,14 @@ class Meldezettel05 extends AppCompatActivity {
 
           // \n is for new line
           //Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-          Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + address, Toast.LENGTH_LONG).show();
+          Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + address, Toast.LENGTH_LONG).show()
+
+
+          println(address)
+
         } else {
+          Toast.makeText(getApplicationContext, "Keine Location", Toast.LENGTH_LONG).show()
+
           // Can't get location.
           // GPS or network is not enabled.
           // Ask user to enable GPS/network in settings.
@@ -155,28 +161,6 @@ class Meldezettel05 extends AppCompatActivity {
       }
     })
 
-
-    //    {
-    //      @Override
-    //      public void onClick(View arg0) {
-    //        // Create class object
-    //        gps = new GPSTracker(AndroidGPSTrackingActivity.this);
-    //
-    //        // Check if GPS enabled
-    //        if (gps.canGetLocation()) {
-    //          double latitude = gps.getLatitude();
-    //          double longitude = gps.getLongitude();
-    //
-    //          // \n is for new line
-    //          Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-    //        } else {
-    //          // Can't get location.
-    //          // GPS or network is not enabled.
-    //          // Ask user to enable GPS/network in settings.
-    //          gps.showSettingsAlert();
-    //        }
-    //      }
-    //    };
 
 
     colorImportant
@@ -326,7 +310,6 @@ class Meldezettel05 extends AppCompatActivity {
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-
 
         if (importantCheck(1)) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
