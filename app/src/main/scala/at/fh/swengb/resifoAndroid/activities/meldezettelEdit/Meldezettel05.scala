@@ -10,6 +10,7 @@ import android.widget._
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.help.HelpActivity
 import at.fh.swengb.resifoAndroid.db.DBHelper
+import at.fh.swengb.resifoAndroid.gps.MyGPS
 
 /**
   * Created by laszlobalo on 02.01.17.
@@ -17,7 +18,6 @@ import at.fh.swengb.resifoAndroid.db.DBHelper
 class Meldezettel05 extends AppCompatActivity {
 
   val db = new DBHelper(this)
-
 
   //TODO Google auto address
 
@@ -44,6 +44,7 @@ class Meldezettel05 extends AppCompatActivity {
     val importantB6: EditText = findViewById(R.id.AdOrt).asInstanceOf[EditText]
 
 
+    val mapsButton: Button = findViewById(R.id.Auto).asInstanceOf[Button]
     val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
     val activity2Button: Button = findViewById(R.id.button2).asInstanceOf[Button]
     val activity3Button: Button = findViewById(R.id.button3).asInstanceOf[Button]
@@ -90,7 +91,7 @@ class Meldezettel05 extends AppCompatActivity {
         case 1 => if (((importantB1.getText.toString.trim == "")
           || (importantB2.getText.toString.trim == "")
           || (importantB5.getText.toString.trim == "")
-          || (importantB6.getText.toString.trim == "")) ) {
+          || (importantB6.getText.toString.trim == ""))) {
           false
         } else true
         case 2 => if ((importantB1.getText.toString.trim == "")
@@ -106,9 +107,10 @@ class Meldezettel05 extends AppCompatActivity {
     }
 
     def importantCheck(int: Int): Boolean = {
+
       int match {
         case 1 => if (radioB1.isChecked && (radioB3.isChecked || radioB4.isChecked)) {
-           if (radioB3.isChecked) importantFill(2) else importantFill(1)
+          if (radioB3.isChecked) importantFill(2) else importantFill(1)
         } else {
 
           return false
@@ -122,6 +124,49 @@ class Meldezettel05 extends AppCompatActivity {
 
 
     }
+
+    mapsButton.setOnClickListener(new OnClickListener {
+      def onClick(v: View): Unit = {
+        val gps = new MyGPS(Meldezettel05.this)
+        if (gps.canGetLocation) {
+
+                    val latitude:Double = gps.getLatitude
+                    val longitude:Double = gps.getLongitude
+
+                    // \n is for new line
+                    Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+                  } else {
+                    // Can't get location.
+                    // GPS or network is not enabled.
+                    // Ask user to enable GPS/network in settings.
+                    gps.showSettingsAlert();
+                  }
+      }
+    })
+
+
+    //    {
+//      @Override
+//      public void onClick(View arg0) {
+//        // Create class object
+//        gps = new GPSTracker(AndroidGPSTrackingActivity.this);
+//
+//        // Check if GPS enabled
+//        if (gps.canGetLocation()) {
+//          double latitude = gps.getLatitude();
+//          double longitude = gps.getLongitude();
+//
+//          // \n is for new line
+//          Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+//        } else {
+//          // Can't get location.
+//          // GPS or network is not enabled.
+//          // Ask user to enable GPS/network in settings.
+//          gps.showSettingsAlert();
+//        }
+//      }
+//    };
+
 
     colorImportant
 
@@ -282,7 +327,7 @@ class Meldezettel05 extends AppCompatActivity {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString, "1")
           startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]))
-        }else noP
+        } else noP
       }
     })
 

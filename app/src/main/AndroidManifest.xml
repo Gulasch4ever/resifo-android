@@ -38,12 +38,10 @@
             android:name=".activities.list.ItemDetailsActivity"
             android:label="Entry Details"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activities.list.ModificationActivity"
-            android:label="ModificationActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        <uses-permission android:name="android.permission.INTERNET" />
+
         <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     </application>
