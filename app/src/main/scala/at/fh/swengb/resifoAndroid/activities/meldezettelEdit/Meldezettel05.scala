@@ -24,8 +24,6 @@ class Meldezettel05 extends AppCompatActivity {
 
   val db = new DBHelper(this)
 
-  //TODO Google auto address
-
   override protected def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.meldezettel05)
@@ -152,19 +150,13 @@ class Meldezettel05 extends AppCompatActivity {
             }
             case _ => println("No match!")
           }
-          // \n is for new line
-          //Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-          Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + address, Toast.LENGTH_LONG).show()
+          Toast.makeText(getApplicationContext, "Adresse gefunden", Toast.LENGTH_LONG).show()
 
 
           println(address)
 
         } else {
-          Toast.makeText(getApplicationContext, "Keine Location", Toast.LENGTH_LONG).show()
-
-          // Can't get location.
-          // GPS or network is not enabled.
-          // Ask user to enable GPS/network in settings.
+          Toast.makeText(getApplicationContext, "Keine Adresse", Toast.LENGTH_LONG).show()
           gps.showSettingsAlert();
         }
       }
