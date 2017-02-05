@@ -125,8 +125,6 @@ class Meldezettel05 extends AppCompatActivity {
         }
         case _ => false
       }
-
-
     }
 
     mapsButton.setOnClickListener(new OnClickListener {
@@ -141,11 +139,19 @@ class Meldezettel05 extends AppCompatActivity {
           val addresses = geocoder.getFromLocation(latitude, longitude, 1)
 
           val address = addresses.get(0).getAddressLine(0)
+          val postalCode = addresses.get(0).getPostalCode
+          val city = addresses.get(0).getLocality
 
-
-          // \n is for new line
-          //Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-          Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + address, Toast.LENGTH_LONG).show();
+          val addressRe = """^\s*(.*)\s(\d*.*)\s*$""".r
+          address match {
+            case addressRe(street, number) => {
+              importantB1.setText(street)
+              importantB2.setText(number)
+              importantB5.setText(postalCode)
+              importantB6.setText(city)
+              }
+            case _ => println("No match!")
+          }
         } else {
           // Can't get location.
           // GPS or network is not enabled.
