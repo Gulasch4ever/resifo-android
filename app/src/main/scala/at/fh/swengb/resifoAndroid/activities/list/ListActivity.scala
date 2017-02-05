@@ -1,14 +1,14 @@
 package at.fh.swengb.resifoAndroid.activities.list
 
-import android.content.Intent
+import android.content.{DialogInterface, Intent}
 import android.database.Cursor
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
-import android.support.v7.app.AppCompatActivity
+import android.support.v7.app.{AlertDialog, AppCompatActivity}
 import android.text.{Editable, TextWatcher}
 import android.view.{SearchEvent, View}
 import android.widget.{AdapterView, EditText, ListView, SearchView}
-import at.fh.swengb.resifoAndroid.R
+import at.fh.swengb.resifoAndroid.{MainActivity, R}
 import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.Meldezettel01
 import at.fh.swengb.resifoAndroid.db.DBHelper
 import at.fh.swengb.resifoAndroid.db.objects.FinalItem
@@ -53,6 +53,23 @@ class ListActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext, classOf[Meldezettel01]))
       }
     })
+
+
+  }
+  override  def onBackPressed() {
+    new AlertDialog.Builder(ListActivity.this)
+      .setMessage("Wollen Sie zur Startseite zurückkehren?")
+      .setNegativeButton("Nein", null)
+      .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+        override def onClick(dialog: DialogInterface, which: Int): Unit = {
+          val intent: Intent = new Intent(ListActivity.this, classOf[MainActivity])
+          intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+          startActivity(intent)
+          dialog.dismiss()
+        }
+      })
+      .show()
+
   }
 }
 

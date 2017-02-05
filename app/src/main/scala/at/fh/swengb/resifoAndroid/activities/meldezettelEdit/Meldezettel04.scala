@@ -79,7 +79,7 @@ class Meldezettel04 extends AppCompatActivity {
           .setNegativeButton("Nein", null)
           .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
             override def onClick(dialog: DialogInterface, which: Int): Unit = {
-              val intent: Intent = new Intent(Meldezettel04.this, classOf[Meldezettel04])
+              val intent: Intent = new Intent(Meldezettel04.this, classOf[Meldezettel03])
               intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
               startActivity(intent)
               dialog.dismiss()
