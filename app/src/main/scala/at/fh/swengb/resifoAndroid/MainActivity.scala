@@ -36,7 +36,7 @@ class MainActivity extends AppCompatActivity {
     infoButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
         //TODO
-        //startActivity(new Intent(getApplicationContext, classOf[TEST]))
+        startActivity(new Intent(getApplicationContext, classOf[Credits]))
       }
     })
 

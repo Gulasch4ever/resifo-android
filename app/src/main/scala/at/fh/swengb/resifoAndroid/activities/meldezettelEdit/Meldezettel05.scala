@@ -139,6 +139,7 @@ class Meldezettel05 extends AppCompatActivity {
           val addresses = geocoder.getFromLocation(latitude, longitude, 1)
 
           val address = addresses.get(0).getAddressLine(0)
+<<<<<<< HEAD
           val postalCode = addresses.get(0).getPostalCode
           val city = addresses.get(0).getLocality
 
@@ -152,7 +153,20 @@ class Meldezettel05 extends AppCompatActivity {
               }
             case _ => println("No match!")
           }
+=======
+
+
+          // \n is for new line
+          //Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+          Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + address, Toast.LENGTH_LONG).show()
+
+
+          println(address)
+
+>>>>>>> b9aa3b6a62d4a4b9620f1630a7617fa8579adb16
         } else {
+          Toast.makeText(getApplicationContext, "Keine Location", Toast.LENGTH_LONG).show()
+
           // Can't get location.
           // GPS or network is not enabled.
           // Ask user to enable GPS/network in settings.
@@ -161,28 +175,6 @@ class Meldezettel05 extends AppCompatActivity {
       }
     })
 
-
-    //    {
-    //      @Override
-    //      public void onClick(View arg0) {
-    //        // Create class object
-    //        gps = new GPSTracker(AndroidGPSTrackingActivity.this);
-    //
-    //        // Check if GPS enabled
-    //        if (gps.canGetLocation()) {
-    //          double latitude = gps.getLatitude();
-    //          double longitude = gps.getLongitude();
-    //
-    //          // \n is for new line
-    //          Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-    //        } else {
-    //          // Can't get location.
-    //          // GPS or network is not enabled.
-    //          // Ask user to enable GPS/network in settings.
-    //          gps.showSettingsAlert();
-    //        }
-    //      }
-    //    };
 
 
     colorImportant
@@ -332,7 +324,6 @@ class Meldezettel05 extends AppCompatActivity {
 
     nextButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-
 
         if (importantCheck(1)) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
