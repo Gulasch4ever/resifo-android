@@ -1,9 +1,12 @@
 package at.fh.swengb.resifoAndroid.activities.meldezettelEdit
 
+import java.util.Locale
+
 import android.Manifest.permission
 import android.content.pm.PackageManager
 import android.content.{DialogInterface, Intent}
 import android.graphics.{Color, PorterDuff}
+import android.location.Geocoder
 import android.os.Bundle
 import android.support.v7.app.{AlertDialog, AppCompatActivity}
 import android.view.View
@@ -134,8 +137,15 @@ class Meldezettel05 extends AppCompatActivity {
           val latitude:Double = gps.getLatitude
           val longitude:Double = gps.getLongitude
 
+          val geocoder = new Geocoder(getApplicationContext, Locale.getDefault)
+          val addresses = geocoder.getFromLocation(latitude, longitude, 1)
+
+          val address = addresses.get(0).getAddressLine(0)
+
+
           // \n is for new line
-          Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+          //Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+          Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + address, Toast.LENGTH_LONG).show();
         } else {
           // Can't get location.
           // GPS or network is not enabled.

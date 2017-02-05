@@ -27,7 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import at.fh.swengb.resifoAndroid.R;
-
+/*
 public class TEST extends Activity {
 
 
@@ -47,3 +47,4 @@ public class TEST extends Activity {
     }
 
 }
+*/
