@@ -40,9 +40,11 @@
                     android:layout_height="wrap_content">
 
                     <LinearLayout
+                        android:id="@+id/lay1"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:background="@color/white">
 
                         <LinearLayout
                             android:orientation="horizontal"
@@ -403,9 +405,11 @@
                     android:layout_margin="10dp"/>
 
                 <LinearLayout
+                    android:id="@+id/lay3"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -776,9 +780,11 @@
                     android:layout_height="wrap_content">
 
                     <LinearLayout
+                        android:id="@+id/lay5"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:background="@color/white">
 
                         <LinearLayout
                             android:orientation="horizontal"
@@ -1139,9 +1145,11 @@
                     android:layout_margin="10dp"/>
 
                 <LinearLayout
+                    android:id="@+id/lay7"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
 
                     <LinearLayout
                         android:orientation="vertical"

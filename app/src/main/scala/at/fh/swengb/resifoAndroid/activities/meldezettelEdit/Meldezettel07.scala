@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.{AlertDialog, AppCompatActivity}
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.{Button, ImageView, TextView, Toast}
+import android.widget._
 import at.fh.swengb.resifoAndroid.R
 import at.fh.swengb.resifoAndroid.activities.help.HelpActivity
 import at.fh.swengb.resifoAndroid.db.DBHelper
@@ -123,6 +123,10 @@ class Meldezettel07 extends AppCompatActivity {
     val edit76: TextView = findViewById(R.id.edit76).asInstanceOf[TextView]
     val edit77: TextView = findViewById(R.id.edit77).asInstanceOf[TextView]
 
+    val lay5: LinearLayout = findViewById(R.id.lay1).asInstanceOf[LinearLayout]
+    val lay7: LinearLayout = findViewById(R.id.lay1).asInstanceOf[LinearLayout]
+
+
     val activity1Button: Button = findViewById(R.id.button1).asInstanceOf[Button]
     val activity2Button: Button = findViewById(R.id.button2).asInstanceOf[Button]
     val activity3Button: Button = findViewById(R.id.button3).asInstanceOf[Button]
@@ -131,7 +135,6 @@ class Meldezettel07 extends AppCompatActivity {
     val activity6Button: Button = findViewById(R.id.button6).asInstanceOf[Button]
     val activity7Button: Button = findViewById(R.id.button7).asInstanceOf[Button]
     val nextButton: ImageView = findViewById(R.id.nxtButton).asInstanceOf[ImageView]
-
 
 
 
@@ -167,17 +170,26 @@ class Meldezettel07 extends AppCompatActivity {
 
       if (!optinal.lift(2).contains(1)) {
         activity7Button.setVisibility(View.INVISIBLE)
+        lay7.setBackgroundColor(0)
 
         if (!optinal.lift(5).contains(1)) {
           activity6Button.setVisibility(View.INVISIBLE)
+
           if (function == 2) {
+
+            lay5.setBackgroundColor(0)
             activity5Button.setVisibility(View.INVISIBLE)
+
           }else if (function == 1) {
+            lay5.setBackgroundColor(0)
+
             activity5Button.setVisibility(View.INVISIBLE)
           }
         }
       } else if (!optinal.lift(5).contains(1)) {
         activity7Button.setVisibility(View.INVISIBLE)
+        lay7.setBackgroundColor(0)
+
         if (function == 2) activity6Button.setVisibility(View.INVISIBLE)
 
       } else if (function == 1) activity6Button.setVisibility(View.INVISIBLE)
