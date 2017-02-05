@@ -185,7 +185,7 @@
 
 
         <TextView
-            android:text="Zuzug ins Ausland:"
+            android:text="Zuzug aus dem Ausland:"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/AdAusland"

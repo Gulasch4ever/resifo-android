@@ -27,7 +27,7 @@
         android:layout_marginTop="15dp" />
 
     <TextView
-        android:text="Dieses Applikation wurde im Rahmen eines Studienprojekts an der FH Joanneum entwickelt. \n\nDie App soll das Ausfüllen des Meldezettels erleichtern und den User es ermöglichen auf die bereits vorhandenen Einträge zuzugreifen.\n\nWeitere Information zu den Entwicklern finden Sie, wenn Sie auf den Informationsbutton drücken.\n\nZum Fortfahren klicken Sie auf den Pfeil und bei Fragen auf den Hilfebutton."
+        android:text="Dieses Applikation wurde im Rahmen eines Studienprojekts an der FH Joanneum entwickelt. \n\nDie App soll das Ausfüllen des Meldezettels erleichtern und es dem User ermöglichen auf die bereits vorhandenen Einträge zuzugreifen.\n\nWeitere Informationen zu den Entwicklern finden Sie, wenn Sie auf den Informationsbutton drücken.\n\nZum Fortfahren klicken Sie auf den Pfeil und bei Fragen auf den Hilfebutton."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView3"
