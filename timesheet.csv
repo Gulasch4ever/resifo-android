@@ -19,14 +19,9 @@ lbalo ; 20170202; 2; Prüfungen
 dmischak; 20161229; 6; Erstellen von DBHelper
 lbalo ; 20170203; 6; Prüfungen und DB checks
 dmischak; 20161230; 3; Koppeln von DBHelper mit ListActivity
-tneuhold; 20170204; 10; HelpView
-Impressum
-Details
-Meldezettel07
+tneuhold; 20170204; 10; HelpView Impressum Details Meldezettel07
 lbalo ; 20170204; 10; Fertigstellung der Meldezettel Klassen 
 lbalo ; 20170205; 5; Doku und feinheiten und BugFixes 
-tneuhold; 20170205; 5; Doku
-postmortem.md
-Präsentation
+tneuhold; 20170205; 5; Doku postmortem.md Präsentation
 dmischak; 20170114; 5; Erstellen von DBUpdates
 dmischak; 20170205; 2; Geocoder
