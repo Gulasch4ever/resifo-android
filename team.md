@@ -14,11 +14,22 @@ Arbeitsaufteilung **23.12.2016**
 * Readme Datei update
 * Schreiben der proposal.md 
 * Schreiben der team.md
+* DB
+* Help
+* ItemDetails
+* Meldezettel 01-08
+* Location
+* Layout (Meldezettel)
+* Doku
 
 
 ###Teresa Neuhold 
 * Erstes Meeting 
 * Zeichnung des Prototyps 
+* Help
+* Credits
+* Layout (Meldezettel, Details)
+* Doku
 
 
 
@@ -26,3 +37,7 @@ Arbeitsaufteilung **23.12.2016**
 * Erstes Meeting 
 * Design Ideen 
 * Schreiben der Readme Datei 
+* DB
+* ListView
+* GPS
+* Layout (ListView)
