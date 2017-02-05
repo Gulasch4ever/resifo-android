@@ -367,9 +367,6 @@ class Meldezettel05 extends AppCompatActivity {
 
 
 
-
-
-
   override def onResume(): Unit = {
     super.onResume()
     if (checkSelfPermission(permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {

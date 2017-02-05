@@ -8,6 +8,7 @@ import android.view.{View, Window, WindowManager}
 import android.view.View.OnClickListener
 import android.widget.ImageView
 import at.fh.swengb.resifoAndroid.activities.list.{Credits, ListActivity}
+import at.fh.swengb.resifoAndroid.activities.meldezettelEdit.TEST
 import at.fh.swengb.resifoAndroid.db.DBHelper
 
 
@@ -34,7 +35,8 @@ class MainActivity extends AppCompatActivity {
 
     infoButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        startActivity(new Intent(getApplicationContext, classOf[Credits]))
+        //TODO
+        startActivity(new Intent(getApplicationContext, classOf[TEST]))
       }
     })
 
