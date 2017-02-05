@@ -139,7 +139,6 @@ class Meldezettel05 extends AppCompatActivity {
           val addresses = geocoder.getFromLocation(latitude, longitude, 1)
 
           val address = addresses.get(0).getAddressLine(0)
-<<<<<<< HEAD
           val postalCode = addresses.get(0).getPostalCode
           val city = addresses.get(0).getLocality
 
@@ -153,9 +152,6 @@ class Meldezettel05 extends AppCompatActivity {
               }
             case _ => println("No match!")
           }
-=======
-
-
           // \n is for new line
           //Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
           Toast.makeText(getApplicationContext, "Your Location is - \nLat: " + address, Toast.LENGTH_LONG).show()
@@ -163,7 +159,6 @@ class Meldezettel05 extends AppCompatActivity {
 
           println(address)
 
->>>>>>> b9aa3b6a62d4a4b9620f1630a7617fa8579adb16
         } else {
           Toast.makeText(getApplicationContext, "Keine Location", Toast.LENGTH_LONG).show()
 
