@@ -1,7 +1,27 @@
-﻿Person;Datum;Stunden;Beschreibung 
-lbalo;20161221;2;Erstes Meeting(Arbeitaufteilung,Prototyp) 
-tneuhold;20161221;2;Erstes Meeting(Arbeitaufteilung,Prototyp) 
-dmischak;20161221;2;Erstes Meeting(Arbeitaufteilung,Prototyp) 
-lbalo;20161223;2;erstellen aller txt und md Dateien
-tneuhold;20161222;1;zeichnung des Prototyps
-dmischak;20161223;0.5;erstellen der Readme.md 
+Person; Datum; Stunden; Beschreibung
+dmischak; 20161221; 2; Erstes Meeting (Arbeitsaufteilung, Prototyp)
+tneuhold; 20161221; 2; Erstes Meeting (Arbeitsaufteilung)
+lbalo; 20161221;2; 2; Erstes Meeting(Arbeitaufteilung,Prototyp) 
+lbalo; 20161223; 2; erstellen aller txt und md Dateien
+tneuhold; 20161222; 1; Zeichnung des Prototypes
+dmischak; 20161223; 0.5; Erstellen der Readme.md
+lbalo; 20161229; 2; PopView
+tneuhold; 20170104; 6; Views erstellen (Meldezettel 01-04)
+dmischak; 20161222; 1; Erstellen von MainActivity und Credits (teilweise mit Inhalt)
+lbalo; 20170104; 6; Views erstellen
+tneuhold; 20170105; 6; Views erstellen (Meldezettel 05-08)
+dmischak; 20161227; 6; ListActivity, CustomAdapter
+lbalo ; 20161229; 4; DB Updates
+lbalo ; 20170105; 6; Klassen für Views
+lbalo ; 20170129; 6; DB Updates and Pop redesign
+tneuhold; 20170203; 6; Updates Views
+lbalo ; 20170202; 2; Prüfungen 
+dmischak; 20161229; 6; Erstellen von DBHelper
+lbalo ; 20170203; 6; Prüfungen und DB checks
+dmischak; 20161230; 3; Koppeln von DBHelper mit ListActivity
+tneuhold; 20170204; 10; HelpView Impressum Details Meldezettel07
+lbalo ; 20170204; 10; Fertigstellung der Meldezettel Klassen 
+lbalo ; 20170205; 5; Doku und feinheiten und BugFixes 
+tneuhold; 20170205; 5; Doku postmortem.md Präsentation
+dmischak; 20170114; 5; Erstellen von DBUpdates
+dmischak; 20170205; 2; Geocoder
