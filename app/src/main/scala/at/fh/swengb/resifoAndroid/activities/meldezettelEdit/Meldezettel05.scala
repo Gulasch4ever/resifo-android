@@ -315,13 +315,13 @@ class Meldezettel05 extends AppCompatActivity {
         if (importantCheck(1)) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString, "1")
-          if (function == "3") startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]))
+          if (function == "3") startActivity(new Intent(getApplicationContext, classOf[Meldezettel06]).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
           else startActivity(new Intent(getApplicationContext, classOf[Meldezettel07]))
 
         } else if (importantCheck(2) && importantFill(1)) {
           db.updatePage5(importantB1.getText.toString, importantB2.getText.toString, importantB3.getText.toString, importantB4.
             getText.toString, importantB5.getText.toString, importantB6.getText.toString, editTextStaat.getText.toString, "1")
-          startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]))
+          startActivity(new Intent(getApplicationContext, classOf[Meldezettel05a]).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
         } else noP
       }
     })
