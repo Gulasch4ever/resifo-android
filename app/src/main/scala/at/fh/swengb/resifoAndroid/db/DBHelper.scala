@@ -152,6 +152,13 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     val immigrationCountry = cursor.getString(cursor.getColumnIndex(COLUMN_IMMIGRATION_COUNTRY))
     val condonedCountry = cursor.getString(cursor.getColumnIndex(COLUMN_CONDONED_COUNTRY))
     val function = cursor.getString(cursor.getColumnIndex(COLUMN_FUNCTION))
+    val page1 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite1))
+    val page2 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite2))
+    val page2a = cursor.getString(cursor.getColumnIndex(COLUMN_Seite2a))
+    val page3 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite3))
+    val page5 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite5))
+    val page5a = cursor.getString(cursor.getColumnIndex(COLUMN_Seite5a))
+    val page6 = cursor.getString(cursor.getColumnIndex(COLUMN_Seite6))
 
     cursor.close
 
@@ -196,6 +203,16 @@ class DBHelper(val context: Context) extends SQLiteOpenHelper(context, "Meldezet
     values.put(COLUMN_THIRD_DOOR, thirdDoor)
     values.put(COLUMN_THIRD_ZIPCODE, thirdZipcode)
     values.put(COLUMN_THIRD_LOCATION, thirdLocation)
+    values.put(COLUMN_Seite1, page1)
+    values.put(COLUMN_Seite2, page2)
+    values.put(COLUMN_Seite2a, page2a)
+    values.put(COLUMN_Seite3, page3)
+    values.put(COLUMN_Seite5, page5)
+    values.put(COLUMN_Seite5a, page5a)
+    values.put(COLUMN_Seite6, page6)
+    values.put(COLUMN_FUNCTION, function)
+
+
     dbWrite.insert(TABLE_NAME_Final, null, values)
     dbWrite.close
   }

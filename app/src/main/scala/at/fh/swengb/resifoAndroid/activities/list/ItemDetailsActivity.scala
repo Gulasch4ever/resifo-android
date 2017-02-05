@@ -141,6 +141,14 @@ class ItemDetailsActivity extends AppCompatActivity {
 
       val checkCorrect: List[Int] = List(seite1, seite2, seite2a, seite3, seite5, seite5a, seite6)
 
+      println("##########################################"+checkCorrect)
+      println(item.page1)
+      println(item.page2)
+      println(item.page2a)
+      println(item.page3)
+      println(item.page5)
+      println(item.page6)
+
       checkCorrect
 
     }
@@ -166,6 +174,7 @@ class ItemDetailsActivity extends AppCompatActivity {
         case "3" => functionM = functionString.toInt
         case _ => functionM = 0
       }
+      println("function"+functionM)
       functionM
     }
 
@@ -553,8 +562,18 @@ class ItemDetailsActivity extends AppCompatActivity {
 
     deleteButton.setOnClickListener(new OnClickListener {
       def onClick(v: View): Unit = {
-        db.deleteItem(2,item.id)
-        startActivity(new Intent(getApplicationContext, classOf[ListActivity]))
+        new AlertDialog.Builder(ItemDetailsActivity.this)
+          .setMessage("Wollen Sie den Meldezettel wirklich löschen?")
+          .setNegativeButton("Nein", null)
+          .setPositiveButton("Ja", new android.content.DialogInterface.OnClickListener() {
+            override def onClick(dialog: DialogInterface, which: Int): Unit = {
+              db.deleteItem(2,item.id)
+              startActivity(new Intent(getApplicationContext, classOf[ListActivity]))
+              dialog.dismiss()
+            }
+          })
+          .show()
+
       }
     })
 
