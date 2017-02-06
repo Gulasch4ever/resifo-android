@@ -185,7 +185,7 @@ class Meldezettel07 extends AppCompatActivity {
 
             activity5Button.setVisibility(View.INVISIBLE)
           }
-        }
+        } else if (function == 1) activity6Button.setVisibility(View.INVISIBLE)
       } else if (!optinal.lift(5).contains(1)) {
         activity7Button.setVisibility(View.INVISIBLE)
         lay7.setBackgroundColor(0)
@@ -586,12 +586,9 @@ class Meldezettel07 extends AppCompatActivity {
       standardTexts
       if (optinal.lift(2).contains(1)) optinal2a(function, optinal)
       else {
-
         activity3Button.setText("3")
-
         text34.setText("Familienstand:")
         edit34.setText(item.familyStatus)
-
         function match {
           case 1 => function1(1, optinal)
           case 2 => function2(1, optinal)
@@ -673,7 +670,10 @@ class Meldezettel07 extends AppCompatActivity {
       }
     })
 
+
+
     getDetails
+
     buttonInvisible
 
 
