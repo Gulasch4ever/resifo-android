@@ -362,6 +362,7 @@ class Meldezettel08 extends AppCompatActivity {
             .setPositiveButton("Ok", new android.content.DialogInterface.OnClickListener() {
               override def onClick(dialog: DialogInterface, which: Int): Unit = {
                 val intent: Intent = new Intent(Meldezettel08.this, classOf[ListActivity])
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(intent)
                 dialog.dismiss()
               }
